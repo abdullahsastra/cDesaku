@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>SIDEKEM Desa Bulakan </title>
+  <meta name="description" content="Sistem Informasi Desa dan Kawasan Online by Python" />
+  <meta name="keywords" content="Sistem Informasi Desa dan Kawasan Online" />
+  <meta name="author" content="pythonesia"/>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="/baru/vendors/bower_components/datatables/media/css/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
+  <link href="/baru/dist/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="wrapper theme-2-active pimary-color-blue">
+		{% include 'desa/head.html' %}
+				<div class="fixed-sidebar-left">
+			<ul class="nav navbar-nav side-nav nicescroll-bar">
+				<li><hr class="light-grey-hr mb-10"/></li>
+				<li>
+					<a href="/penggunamasuk" data-toggle="collapse" data-target="#dashboard_dr"><div class="pull-left"><i class="zmdi zmdi-home mr-20"></i>Dashboard</div><div class="clearfix"></div></a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#app_dr"><div class="pull-left"><i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">Pelayanan Umum</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="app_dr" class="collapse collapse-level-1">
+						<li>
+							<a href="/keluhanwarga">Aduan Masyarakat</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" data-toggle="collapse" data-target="#auth_dra">Layanan Surat<div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+							<ul id="auth_dra" class="collapse collapse-level-2">
+								<li><a href="/buatsurat" >Pembuatan Surat</a></li>
+                  				<li><a href="/suratmasuk">Surat Masuk</a></li>
+                  				<li><a href="/suratkeluar">Surat Keluar</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="zmdi zmdi-accounts mr-20"></i><span class="right-nav-text">Data Kependudukan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="ui_dr" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/kepalakeluarga"  > Kepala Keluarga</a></li>
+            			<li><a href="/anggotakeluarga" > Anggota Keluarga</a></li>
+            			<li><a href="/datakelahiran" > Data Kelahiran</a></li>
+            			<li><a href="/datakematian" >Data Kematian</a></li>
+						<li><a href="/datamutasi" > Data Mutasi</a></li>
+						<li><a href="/pecahkk" > Pecah KK</a></li>
+            			<li><a href="/importdatapenduduk" > Import Data Penduduk</a></li>
+						<li>
+							<a href="javascript:void(0);" data-toggle="collapse" data-target="#pengaturanpenduduk">Pengaturan<div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+							<ul id="pengaturanpenduduk" class="collapse collapse-level-2">
+								<li><a href="/hapuspenduduk" >Hapus Data Penduduk</a></li>
+								<li><a href="/grafikpenduduk"  >Grafik Kependudukan</a></li>
+								<li><a href="/updatedatapenduduk" >Update Data Penduduk</a></li>
+							</ul>
+						</li>
+
+
+					</ul>
+				</li>
+
+				<li>
+					<a   href="javascript:void(0);" data-toggle="collapse" data-target="#pages_dr"><div class="pull-left"><i class="zmdi zmdi-google-pages mr-20"></i><span class="right-nav-text">Pemerintah Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="pages_dr" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/sotkdesa">SOTK Desa</a></li>
+            			<li><a href="/AsetDesa">Aset Desa</a></li>
+            			<li><a href="/RegulasiDesa">Regulasi Desa</a></li>
+						<li><a href="/SaranaPrasarana">Data Pembangunan</a></li>
+						<li><a href="/Pemberdayaan">Data Pemberdayaan</a></li>
+					</ul>
+				</li>
+				<!-- <li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#dropdown_dr_lv1"><div class="pull-left"><i class="zmdi zmdi-city-alt mr-20"></i><span class="right-nav-text">Potensi Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="dropdown_dr_lv1" class="collapse collapse-level-1">
+						<li><a href="/prodeskelwilayah"> Wilayah Penggunaan</a></li>
+						<li><a href="/prodeskellahan"> Luas Lahan</a></li>
+						<li><a href="/prodeskelekonomi"> Bidang Ekonomi</a></li>
+						<li><a href="/prodeskelkesehatan"> Bidang Kesehatan</a></li>
+						<li><a href="/prodeskeladat"> Bidang Pendidikan</a></li>
+
+					</ul>
+				</li> -->
+
+                <li>
+                    <a href="javascript:void(0);" data-toggle="collapse" data-target="#datakemiskinan"><div class="pull-left"><i class="zmdi zmdi-account-o mr-20"></i><span class="right-nav-text">Data Kemiskinan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+                        <ul id="datakemiskinan" class="collapse collapse-level-1">
+                            <li><a href="/rumahtangga"  >Rumah Tangga</a></li>
+                            <li><a href="/anggotarumahtangga"  >Anggota Rumah Tangga</a></li>
+                        </ul>
+                </li>
+
+
+
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#keuangan"><div class="pull-left"><i class="zmdi zmdi-money-box mr-20"></i><span class="right-nav-text">Keuangan Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="keuangan" class="collapse collapse-level-1">
+
+							<li><a href="/importdatamdb"> Import Siskeudes</a></li>
+
+					</ul>
+				</li>
+                <li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#petadesa"><div class="pull-left"><i class="zmdi zmdi-globe mr-20"></i><span class="right-nav-text">Peta Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="petadesa" class="collapse collapse-level-1">
+
+							<li><a href="/inputlatlong"> Input Lat-Long</a></li>
+							<li><a href="/petadesa"> Lihat Peta Desa</a></li>
+
+					</ul>
+				</li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+
+				<li>
+					<a class="active" href="javascript:void(0);" data-toggle="collapse" data-target="#form_dr"><div class="pull-left"><i class="zmdi zmdi-chart mr-20"></i><span class="right-nav-text">Statistik Penduduk</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="form_dr" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/statusia" >Statistik Usia</a></li>
+            			<li><a href="/statjk" > Statistik Jenis Kelamin</a></li>
+            			<li><a href="/statagama"> Statistik Agama</a></li>
+            			<li><a href="/statpend"> Statistik Pendidikan</a></li>
+            			<li><a href="/statpek"> Statistik Pekerjaan</a></li>
+           				<li><a href="/statistikgolongandarah">Statistik Golongan Darah</a></li>
+
+					</ul>
+				</li>
+				<li>
+                    <a href="javascript:void(0);" data-toggle="collapse" data-target="#statistikdatakemiskinan"><div class="pull-left"><i class="zmdi zmdi-trending-up mr-20"></i><span class="right-nav-text">Statistik Kemiskinan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+                        <ul id="statistikdatakemiskinan" class="collapse collapse-level-1">
+                            <li><a href="/statistikperumahan"  >Perumahan</a></li>
+                            <li><a href="/statistiksanitasi"  >Sanitasi</a></li>
+                            <li><a href="/statistikpenerangan"  >Penerangan</a></li>
+                            <li><a href="/statistikbahanbakarmasak"  >Bahan Bakar Masak</a></li>
+                            <li><a href="/statistikkepemilikanaset" >Kepemilikan Aset</a></li>
+                            <li><a href="/statistikkeikutsertaanprogram" >Keikutsertaan Program</a></li>
+                            <li><a href="/statistikkepemilikankartuidentitas" >Kepemilikan kartu identitas</a></li>
+                            <li><a href="/disabilitas" >Disabilitas</a></li>
+                            <li><a href="/penyakitkronis" id="animasi11">Penyakit kronis</a></li>
+                            <li><a href="/partisipasisekolah" id="animasi12">Partisipasi sekolah</a></li>
+                        </ul>
+                </li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#kom"><div class="pull-left"><i class="zmdi  zmdi-comment-alt-text mr-20"></i><span class="right-nav-text">Komunikasi</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="kom" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/chatroom">Chat Room</a></li>
+            			<li><a href="/kirimpesan">Pesan Khusus</a></li>
+
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#profil"><div class="pull-left"><i class="zmdi zmdi-account-box mr-20"></i><span class="right-nav-text">Pengguna Layanan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="profil" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/tambahpengguna">Tambah Pengguna</a></li>
+						<li><a href="/profil">Profil Anda</a></li>
+						<li><a href="/logout">Keluar</a></li>
+
+					</ul>
+				</li>
+
+			</ul>
+		</div>
+		
+		{% include 'desa/kanan.html' %}
+		<div class="right-sidebar-backdrop">  
+    </div>
+		<div class="page-wrapper">
+			<div class="container-fluid">
+				<div class="row heading-bg">
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+					  <h5 class="txt-dark">STATISTIK PEKERJAAN</h5>
+					</div>
+        </div>
+          <div class="row">
+            <div class="col-lg-6">
+             <div class="panel panel-default card-view">
+              <div class="panel-heading">
+                <div class="pull-left">
+                  <h6 class="panel-title txt-dark">Grafik Pekerjaan</h6>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                  <canvas id="chart_2" height="800" ></canvas>
+                </div>  
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+             <div class="panel panel-default card-view">
+                <div class="panel-wrapper collapse in">
+                  <div class="panel-body">
+                    <div class="table-responsive">
+                      <table id="myTable" class="table table-bordered table-striped" >
+                      <tr class="header">
+                      <th>NO</th>
+                      <th>PEKERJAAN</th>
+                      <th>LAKI-LAKI</th>
+                      <th>PEREMPUAN</th>
+                      <th>JUMLAH</th>
+                      </tr>
+                      <tr>
+                        <td>1.</td>
+                        <td> Belum/Tidak Bekerja</td>
+                        <td>{{hasilstat.90}} </td>
+                        <td>{{hasilstat.179}}</td>
+                        <td>{{hasilstat.1}}</td>
+                      </tr>
+                      <tr>
+                        <td>2.</td>
+                        <td> Mengurus Rumah Tangga</td>
+                        <td>{{hasilstat.91}}</td>
+                        <td>{{hasilstat.180}}</td>
+                        <td>{{hasilstat.2}}</td>
+                      </tr>
+                      <tr>
+                        <td>3.</td>
+                        <td> Pelajar/Mahasiswa</td>
+                        <td>{{hasilstat.92}}</td>
+                        <td>{{hasilstat.181}}</td>
+                        <td>{{hasilstat.3}}</td>
+                      </tr>
+                      <tr>
+                        <td>4.</td>
+                        <td> Pensiunan</td>
+                        <td>{{hasilstat.93}}</td>
+                        <td>{{hasilstat.182}}</td>
+                        <td>{{hasilstat.4}}</td>
+                      </tr>
+                      <tr>
+                        <td>5.</td>
+                        <td> Pegawai Negeri Sipil</td>
+                        <td>{{hasilstat.94}}</td>
+                        <td>{{hasilstat.183}}</td>
+                        <td>{{hasilstat.5}}</td>
+                      </tr>
+                      <tr>
+                        <td>6.</td>
+                        <td> Tentara Nasional Indonesia</td>
+                        <td>{{hasilstat.95}}</td>
+                        <td>{{hasilstat.184}}</td>
+                        <td>{{hasilstat.6}}</td>
+                      </tr>
+                      <tr>
+                        <td>7.</td>
+                        <td> Kepolisian RI</td>
+                        <td>{{hasilstat.96}}</td>
+                        <td>{{hasilstat.185}}</td>
+                        <td>{{hasilstat.7}}</td>
+                      </tr>
+                      <tr>
+                        <td>8.</td>
+                        <td> Perdagangan</td>
+                        <td>{{hasilstat.97}}</td>
+                        <td>{{hasilstat.186}}</td>
+                        <td>{{hasilstat.8}}</td>
+                      </tr>
+                      <tr>
+                        <td>9.</td>
+                        <td> Petani/Pekebun</td>
+                        <td>{{hasilstat.98}}</td>
+                        <td>{{hasilstat.187}}</td>
+                        <td>{{hasilstat.9}}</td>
+                      </tr>
+                      <tr>
+                        <td>10.</td>
+                        <td> Peternak</td>
+                        <td>{{hasilstat.99}}</td>
+                        <td>{{hasilstat.188}}</td>
+                        <td>{{hasilstat.10}}</td>
+                      </tr>
+                      <tr>
+                        <td>11.</td>
+                        <td> Nelayan/Perikanan</td>
+                        <td>{{hasilstat.100}}</td>
+                        <td>{{hasilstat.189}}</td>
+                        <td>{{hasilstat.11}}</td>
+                      </tr>
+                      <tr>
+                        <td>12.</td>
+                        <td> Industri</td>
+                        <td>{{hasilstat.101}}</td>
+                        <td>{{hasilstat.190}}</td>
+                        <td>{{hasilstat.12}}</td>
+                      </tr>
+                      <tr>
+                        <td>13.</td>
+                        <td> Konstruksi</td>
+                        <td>{{hasilstat.102}}</td>
+                        <td>{{hasilstat.191}}</td>
+                        <td>{{hasilstat.13}}</td>
+                      </tr>
+                      <tr>
+                        <td>14.</td>
+                        <td> Transportasi</td>
+                        <td>{{hasilstat.103}}</td>
+                        <td>{{hasilstat.192}}</td>
+                        <td>{{hasilstat.14}}</td>
+                      </tr>
+                      <tr>
+                        <td>15.</td>
+                        <td> Karyawan Swasta</td>
+                        <td>{{hasilstat.104}}</td>
+                        <td>{{hasilstat.193}}</td>
+                        <td>{{hasilstat.15}}</td>
+                      </tr>
+                       <tr>
+                        <td>16.</td>
+                        <td> Karyawan BUMN</td>
+                        <td>{{hasilstat.105}}</td>
+                        <td>{{hasilstat.194}}</td>
+                        <td>{{hasilstat.16}}</td>
+                      </tr>
+                       <tr>
+                        <td>17.</td>
+                        <td> Karyawan BUMD</td>
+                        <td>{{hasilstat.106}}</td>
+                        <td>{{hasilstat.195}}</td>
+                        <td>{{hasilstat.17}}</td>
+                      </tr>
+                      <tr>
+                        <td>18.</td>
+                        <td> Karyawan Honorer</td>
+                        <td>{{hasilstat.107}}</td>
+                        <td>{{hasilstat.196}}</td>
+                        <td>{{hasilstat.18}}</td>
+                      </tr>
+                      <tr>
+                        <td>19.</td>
+                        <td> Buruh Harian Lepas</td>
+                        <td>{{hasilstat.108}}</td>
+                        <td>{{hasilstat.197}}</td>
+                        <td>{{hasilstat.19}}</td>
+                      </tr>
+                      <tr>
+                        <td>20.</td>
+                        <td> Buruh Tani/Perkebunan</td>
+                        <td>{{hasilstat.109}}</td>
+                        <td>{{hasilstat.198}}</td>
+                        <td>{{hasilstat.20}}</td>
+                      </tr>
+                      <tr>
+                        <td>21.</td>
+                        <td> Buruh Nelayan/Perikanan</td>
+                        <td>{{hasilstat.110}}</td>
+                        <td>{{hasilstat.199}}</td>
+                        <td>{{hasilstat.21}}</td>
+                      </tr>
+                      <tr>
+                        <td>22.</td>
+                        <td> Buruh Peternakan</td>
+                        <td>{{hasilstat.111}}</td>
+                        <td>{{hasilstat.200}}</td>
+                        <td>{{hasilstat.22}}</td>
+                      </tr>
+                      <tr>
+                        <td>23.</td>
+                        <td> Pembantu Rumah Tangga</td>
+                        <td>{{hasilstat.112}}</td>
+                        <td>{{hasilstat.201}}</td>
+                        <td>{{hasilstat.23}}</td>
+                      </tr>
+                      <tr>
+                        <td>24.</td>
+                        <td> Tukang Cukur</td>
+                        <td>{{hasilstat.113}}</td>
+                        <td>{{hasilstat.202}}</td>
+                        <td>{{hasilstat.24}}</td>
+                      </tr>
+                      <tr>
+                        <td>25.</td>
+                        <td> Tukang Listrik</td>
+                        <td>{{hasilstat.114}}</td>
+                        <td>{{hasilstat.203}}</td>
+                        <td>{{hasilstat.25}}</td>
+                      </tr>
+                      <tr>
+                        <td>26.</td>
+                        <td> Tukang Batu</td>
+                        <td>{{hasilstat.115}}</td>
+                        <td>{{hasilstat.204}}</td>
+                        <td>{{hasilstat.26}}</td>
+                      </tr>
+                      <tr>
+                        <td>27.</td>
+                        <td> Tukang Kayu</td>
+                        <td>{{hasilstat.116}}</td>
+                        <td>{{hasilstat.205}}</td>
+                        <td>{{hasilstat.27}}</td>
+                      </tr>
+                      <tr>
+                        <td>28.</td>
+                        <td> Tukang Sol Sepatu</td>
+                        <td>{{hasilstat.206}}</td>
+                        <td>{{hasilstat.117}}</td>
+                        <td>{{hasilstat.28}}</td>
+                      </tr>
+                      <tr>
+                        <td>29.</td>
+                        <td> Tukang Las/Pandai Besi</td>
+                        <td>{{hasilstat.118}}</td>
+                        <td>{{hasilstat.207}}</td>
+                        <td>{{hasilstat.29}}</td>
+                      </tr>
+                      <tr>
+                        <td>30.</td>
+                        <td> Tukang Jahit</td>
+                        <td>{{hasilstat.119}}</td>
+                        <td>{{hasilstat.208}}</td>
+                        <td>{{hasilstat.30}}</td>
+                      </tr>
+                      <tr>
+                        <td>31.</td>
+                        <td> Penata Rambut</td>
+                        <td>{{hasilstat.120}}</td>
+                        <td>{{hasilstat.209}}</td>
+                        <td>{{hasilstat.31}}</td>
+                      </tr>
+                      <tr>
+                        <td>32.</td>
+                        <td> Penata Rias</td>
+                        <td>{{hasilstat.121}}</td>
+                        <td>{{hasilstat.210}}</td>
+                        <td>{{hasilstat.32}}</td>
+                      </tr>
+                      <tr>
+                        <td>33.</td>
+                        <td> Penata Busana</td>
+                        <td>{{hasilstat.122}}</td>
+                        <td>{{hasilstat.211}}</td>
+                        <td>{{hasilstat.33}}</td>
+                      </tr>
+                      <tr>
+                        <td>34.</td>
+                        <td> Mekanik</td>
+                        <td>{{hasilstat.123}}</td>
+                        <td>{{hasilstat.212}}</td>
+                        <td>{{hasilstat.34}}</td>
+                      </tr>
+                      <tr>
+                        <td>35.</td>
+                        <td> Tukang Gigi</td>
+                        <td>{{hasilstat.124}}</td>
+                        <td>{{hasilstat.213}}</td>
+                        <td>{{hasilstat.35}}</td>
+                      </tr>
+                      <tr>
+                        <td>36.</td>
+                        <td> Seniman</td>
+                        <td>{{hasilstat.125}}</td>
+                        <td>{{hasilstat.214}}</td>
+                        <td>{{hasilstat.36}}</td>
+                      </tr>
+                      <tr>
+                        <td>37.</td>
+                        <td> Tabib</td>
+                        <td>{{hasilstat.126}}</td>
+                        <td>{{hasilstat.215}}</td>
+                        <td>{{hasilstat.37}}</td>
+                      </tr>
+                      <tr>
+                        <td>38.</td>
+                        <td> Paraji</td>
+                        <td>{{hasilstat.127}}</td>
+                        <td>{{hasilstat.216}}</td>
+                        <td>{{hasilstat.38}}</td>
+                      </tr>
+                      <tr>
+                        <td>39.</td>
+                        <td> Perancang Busana</td>
+                        <td>{{hasilstat.128}}</td>
+                        <td>{{hasilstat.217}}</td>
+                        <td>{{hasilstat.39}}</td>
+                      </tr>
+                      <tr>
+                        <td>40.</td>
+                        <td> Penterjemah</td>
+                        <td>{{hasilstat.129}}</td>
+                        <td>{{hasilstat.218}}</td>
+                        <td>{{hasilstat.40}}</td>
+                      </tr>
+                      <tr>
+                        <td>41.</td>
+                        <td> Imam Masjid</td>
+                        <td>{{hasilstat.130}}</td>
+                        <td>{{hasilstat.219}}</td>
+                        <td>{{hasilstat.41}}</td>
+                      </tr>
+                      <tr>
+                        <td>42.</td>
+                        <td> Pendeta</td>
+                        <td>{{hasilstat.131}}</td>
+                        <td>{{hasilstat.220}}</td>
+                        <td>{{hasilstat.42}}</td>
+                      </tr>
+                      <tr>
+                        <td>43.</td>
+                        <td> Pastur</td>
+                        <td>{{hasilstat.132}}</td>
+                        <td>{{hasilstat.221}}</td>
+                        <td>{{hasilstat.43}}</td>
+                      </tr>
+                      <tr>
+                        <td>44.</td>
+                        <td> Wartawan</td>
+                        <td>{{hasilstat.133}}</td>
+                        <td>{{hasilstat.222}}</td>
+                        <td>{{hasilstat.44}}</td>
+                      </tr>
+                      <tr>
+                        <td>45.</td>
+                        <td> Ustadz/Mubaligh</td>
+                        <td>{{hasilstat.134}}</td>
+                        <td>{{hasilstat.223}}</td>
+                        <td>{{hasilstat.45}}</td>
+                      </tr>
+                      <tr>
+                        <td>46.</td>
+                        <td> Juru Masak</td>
+                        <td>{{hasilstat.135}}</td>
+                        <td>{{hasilstat.224}}</td>
+                        <td>{{hasilstat.46}}</td>
+                      </tr>
+                      <tr>
+                        <td>47.</td>
+                        <td> Promotor Acara</td>
+                        <td>{{hasilstat.136}}</td>
+                        <td>{{hasilstat.225}}</td>
+                        <td>{{hasilstat.47}}</td>
+                      </tr>
+                      <tr>
+                        <td>48.</td>
+                        <td> Anggota DPR-RI</td>
+                        <td>{{hasilstat.137}}</td>
+                        <td>{{hasilstat.226}}</td>
+                        <td>{{hasilstat.48}}</td>
+                      </tr>
+                      <tr>
+                        <td>49.</td>
+                        <td> Anggota DPD</td>
+                        <td>{{hasilstat.138}}</td>
+                        <td>{{hasilstat.227}}</td>
+                        <td>{{hasilstat.49}}</td>
+                      </tr>
+                      <tr>
+                        <td>50.</td>
+                        <td> Anggota BPK</td>
+                        <td>{{hasilstat.139}}</td>
+                        <td>{{hasilstat.228}}</td>
+                        <td>{{hasilstat.50}}</td>
+                      </tr>
+                      <tr>
+                        <td>51.</td>
+                        <td> Presiden</td>
+                        <td>{{hasilstat.140}}</td>
+                        <td>{{hasilstat.229}}</td>
+                        <td>{{hasilstat.51}}</td>
+                      </tr>
+                      <tr>
+                        <td>52.</td>
+                        <td> Wakil Presiden</td>
+                        <td>{{hasilstat.141}}</td>
+                        <td>{{hasilstat.230}}</td>
+                        <td>{{hasilstat.52}}</td>
+                      </tr>
+                      <tr>
+                        <td>53.</td>
+                        <td> Anggota Mahkamah Konstitusi</td>
+                        <td>{{hasilstat.142}}</td>
+                        <td>{{hasilstat.231}}</td>
+                        <td>{{hasilstat.53}}</td>
+                      </tr>
+                      <tr>
+                        <td>54.</td>
+                        <td> Anggota Kabinet/Kementerian</td>
+                        <td>{{hasilstat.143}}</td>
+                        <td>{{hasilstat.232}}</td>
+                        <td>{{hasilstat.54}}</td>
+                      </tr>
+                      <tr>
+                        <td>55.</td>
+                        <td> Duta Besar</td>
+                        <td>{{hasilstat.144}}</td>
+                        <td>{{hasilstat.233}}</td>
+                        <td>{{hasilstat.55}}</td>
+                      </tr>
+                      <tr>
+                        <td>56.</td>
+                        <td> Gubernur</td>
+                        <td>{{hasilstat.145}}</td>
+                        <td>{{hasilstat.234}}</td>
+                        <td>{{hasilstat.56}}</td>
+                      </tr>
+                      <tr>
+                        <td>57.</td>
+                        <td> Wakil Gubernur</td>
+                        <td>{{hasilstat.146}}</td>
+                        <td>{{hasilstat.235}}</td>
+                        <td>{{hasilstat.57}}</td>
+                      </tr>
+                      <tr>
+                        <td>58.</td>
+                        <td> Bupati</td>
+                        <td>{{hasilstat.147}}</td>
+                        <td>{{hasilstat.236}}</td>
+                        <td>{{hasilstat.58}}</td>
+                      </tr>
+                      <tr>
+                        <td>59.</td>
+                        <td> Wakil Bupati</td>
+                        <td>{{hasilstat.148}}</td>
+                        <td>{{hasilstat.237}}</td>
+                        <td>{{hasilstat.59}}</td>
+                      </tr>
+                      <tr>
+                        <td>60.</td>
+                        <td> Walikota</td>
+                        <td>{{hasilstat.149}}</td>
+                        <td>{{hasilstat.238}}</td>
+                        <td>{{hasilstat.60}}</td>
+                      </tr>
+                      <tr>
+                        <td>61.</td>
+                        <td> Wakil Walikota</td>
+                        <td>{{hasilstat.150}}</td>
+                        <td>{{hasilstat.239}}</td>
+                        <td>{{hasilstat.61}}</td>
+                      </tr>
+                      <tr>
+                        <td>62.</td>
+                        <td> Anggota DPRD Propinsi</td>
+                        <td>{{hasilstat.151}}</td>
+                        <td>{{hasilstat.240}}</td>
+                        <td>{{hasilstat.62}}</td>
+                      </tr>
+                      <tr>
+                        <td>63.</td>
+                        <td> Anggota DPRD Kabupaten/Kota</td>
+                        <td>{{hasilstat.152}}</td>
+                        <td>{{hasilstat.241}}</td>
+                        <td>{{hasilstat.63}}</td>
+                      </tr>
+                      <tr>
+                        <td>64.</td>
+                        <td> Dosen</td>
+                        <td>{{hasilstat.153}}</td>
+                        <td>{{hasilstat.242}}</td>
+                        <td>{{hasilstat.64}}</td>
+                      </tr>
+                      <tr>
+                        <td>65.</td>
+                        <td> Guru</td>
+                        <td>{{hasilstat.154}}</td>
+                        <td>{{hasilstat.243}}</td>
+                        <td>{{hasilstat.65}}</td>
+                      </tr>
+                      <tr>
+                        <td>66.</td>
+                        <td> Pilot</td>
+                        <td>{{hasilstat.155}}</td>
+                        <td>{{hasilstat.244}}</td>
+                        <td>{{hasilstat.66}}</td>
+                      </tr>
+                       <tr>
+                        <td>67.</td>
+                        <td> Pengacara</td>
+                        <td>{{hasilstat.156}}</td>
+                        <td>{{hasilstat.245}}</td>
+                        <td>{{hasilstat.67}}</td>
+                      </tr>
+                      <tr>
+                        <td>68.</td>
+                        <td> Notaris</td>
+                        <td>{{hasilstat.157}}</td>
+                        <td>{{hasilstat.246}}</td>
+                        <td>{{hasilstat.68}}</td>
+                      </tr>
+                      <tr>
+                        <td>69.</td>
+                        <td> Arsitek</td>
+                        <td>{{hasilstat.158}}</td>
+                        <td>{{hasilstat.247}}</td>
+                        <td>{{hasilstat.69}}</td>
+                      </tr>
+                      <tr>
+                        <td>70.</td>
+                        <td> Akuntan</td>
+                        <td>{{hasilstat.159}}</td>
+                        <td>{{hasilstat.248}}</td>
+                        <td>{{hasilstat.70}}</td>
+                      </tr>
+                      <tr>
+                        <td>71.</td>
+                        <td> Konsultan</td>
+                        <td>{{hasilstat.160}}</td>
+                        <td>{{hasilstat.249}}</td>
+                        <td>{{hasilstat.71}}</td>
+                      </tr>
+                      <tr>
+                        <td>72.</td>
+                        <td> Dokter</td>
+                        <td>{{hasilstat.161}}</td>
+                        <td>{{hasilstat.250}}</td>
+                        <td>{{hasilstat.72}}</td>
+                      </tr>
+                      <tr>
+                        <td>73.</td>
+                        <td> Bidan</td>
+                        <td>{{hasilstat.162}}</td>
+                        <td>{{hasilstat.251}}</td>
+                        <td>{{hasilstat.73}}</td>
+                      </tr>
+                      <tr>
+                        <td>74.</td>
+                        <td> Perawat</td>
+                        <td>{{hasilstat.163}}</td>
+                        <td>{{hasilstat.252}}</td>
+                        <td>{{hasilstat.74}}</td>
+                      </tr>
+                      <tr>
+                        <td>75.</td>
+                        <td> Apoteker</td>
+                        <td>{{hasilstat.164}}</td>
+                        <td>{{hasilstat.253}}</td>
+                        <td>{{hasilstat.75}}</td>
+                      </tr>
+                      <tr>
+                        <td>76.</td>
+                        <td> Psikiater/Psikolog</td>
+                        <td>{{hasilstat.165}}</td>
+                        <td>{{hasilstat.254}}</td>
+                        <td>{{hasilstat.76}}</td>
+                      </tr>
+                      <tr>
+                        <td>77.</td>
+                        <td> Penyiar Televisi</td>
+                        <td>{{hasilstat.166}}</td>
+                        <td>{{hasilstat.255}}</td>
+                        <td>{{hasilstat.77}}</td>
+                      </tr>
+                      <tr>
+                        <td>78.</td>
+                        <td> Penyiar Radio</td>
+                        <td>{{hasilstat.167}}</td>
+                        <td>{{hasilstat.256}}</td>
+                        <td>{{hasilstat.78}}</td>
+                      </tr>
+                      <tr>
+                        <td>79.</td>
+                        <td> Pelaut</td>
+                        <td>{{hasilstat.168}}</td>
+                        <td>{{hasilstat.257}}</td>
+                        <td>{{hasilstat.79}}</td>
+                      </tr>
+                      <tr>
+                        <td>80.</td>
+                        <td> Peneliti</td>
+                        <td>{{hasilstat.169}}</td>
+                        <td>{{hasilstat.258}}</td>
+                        <td>{{hasilstat.80}}</td>
+                      </tr>
+                      <tr>
+                        <td>81.</td>
+                        <td> Sopir</td>
+                        <td>{{hasilstat.170}}</td>
+                        <td>{{hasilstat.259}}</td>
+                        <td>{{hasilstat.81}}</td>
+                      </tr>
+                      <tr>
+                        <td>82.</td>
+                        <td> Pialang</td>
+                        <td>{{hasilstat.171}}</td>
+                        <td>{{hasilstat.260}}</td>
+                        <td>{{hasilstat.82}}</td>
+                      </tr>
+                      <tr>
+                        <td>83.</td>
+                        <td> Paranormal</td>
+                        <td>{{hasilstat.172}}</td>
+                        <td>{{hasilstat.261}}</td>
+                        <td>{{hasilstat.83}}</td>
+                      </tr>
+                      <tr>
+                        <td>84.</td>
+                        <td> Pedagang</td>
+                        <td>{{hasilstat.173}}</td>
+                        <td>{{hasilstat.262}}</td>
+                        <td>{{hasilstat.84}}</td>
+                      </tr>
+                      <tr>
+                        <td>85.</td>
+                        <td> Perangkat Desa</td>
+                        <td>{{hasilstat.174}}</td>
+                        <td>{{hasilstat.263}}</td>
+                        <td>{{hasilstat.85}}</td>
+                      </tr>
+                      <tr>
+                        <td>86.</td>
+                        <td> Kepala Desa</td>
+                        <td>{{hasilstat.175}}</td>
+                        <td>{{hasilstat.264}}</td>
+                        <td>{{hasilstat.86}}</td>
+                      </tr>
+                      <tr>
+                        <td>87.</td>
+                        <td> Biarawati</td>
+                        <td>{{hasilstat.176}}</td>
+                        <td>{{hasilstat.265}}</td>
+                        <td>{{hasilstat.87}}</td>
+                      </tr>
+                      <tr>
+                        <td>88.</td>
+                        <td> Wiraswasta</td>
+                        <td>{{hasilstat.177}}</td>
+                        <td>{{hasilstat.266}}</td>
+                        <td>{{hasilstat.88}}</td>
+                      </tr>
+                      <tr>
+                        <td>89.</td>
+                        <td> Buruh Migran</td>
+                        <td>{{hasilstat.178}}</td>
+                        <td>{{hasilstat.267}}</td>
+                        <td>{{hasilstat.89}}</td>
+                      </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>  
+     </div>
+         {% include 'desa/foot.html' %}
+			</div>
+		</div>
+{% include 'desa/script.html' %}
+<script type="text/javascript">
+    /*Chartjs Init*/
+
+$( document ).ready(function() {
+    "use strict"; 
+  if( $('#chart_2').length > 0 ){
+    var ctx2 = document.getElementById("chart_2").getContext("2d");
+    var data2 = {
+      labels: ["Belum/Tidak Bekerja","Mengurus Rumah Tangga","Pelajar/Mahasiswa","Pensiunan","Pegawai Negeri Sipil","Tentara Nasional Indonesia","Kepolisian RI","Perdagangan","Petani/Pekebun","Peternak","Nelayan/Perikanan","Industri","Konstruksi","Transportasi","Karyawan Swasta","Karyawan BUMN","Karyawan BUMD","Karyawan Honorer","Buruh Harian Lepas","Buruh Tani/Perkebunan","Buruh Nelayan/Perikanan","Buruh Peternakan","Pembantu Rumah Tangga","Tukang Cukur","Tukang Listrik","Tukang Batu","Tukang Kayu","Tukang Sol Sepatu","Tukang Las/Pandai Besi","Tukang Jahit","Penata Rambut","Penata Rias","Penata Busana","Mekanik","Tukang Gigi","Seniman","Tabib","Paraji","Perancang Busana","Penterjemah","Imam Masjid","Pendeta","Pastur","Wartawan","Ustadz/Mubaligh","Juru Masak","Promotor Acara","Anggota DPR-RI","Anggota DPD","Anggota BPK","Presiden","Wakil Presiden","Anggota Mahkamah Konstitusi","Anggota Kabinet/Kementerian","Duta Besar","Gubernur","Wakil Gubernur","Bupati","Wakil Bupati","Walikota","Wakil Walikota","Anggota DPRD Propinsi","Anggota DPRD Kabupaten/Kota","Dosen","Guru","Pilot","Pengacara","Notaris","Arsitek","Akuntan","Konsultan","Dokter","Bidan","Perawat","Apoteker","Psikiater/Psikolog","Penyiar Televisi","Penyiar Radio","Pelaut","Peneliti","Sopir","Pialang","Paranormal","Pedagang","Perangkat Desa","Kepala Desa","Biarawati","Wiraswasta","Buruh Migran"],
+      datasets: [
+        {
+          label: "Laki-laki",
+          backgroundColor: "rgba(240,197,65,.6)",
+          borderColor: "rgba(240,197,65,.6)",
+          data: [{{hasilstat.90}},{{hasilstat.91}},{{hasilstat.92}},{{hasilstat.93}},{{hasilstat.94}},{{hasilstat.95}},{{hasilstat.96}},{{hasilstat.97}},{{hasilstat.98}},{{hasilstat.99}},{{hasilstat.100}},{{hasilstat.101}},{{hasilstat.102}},{{hasilstat.103}},{{hasilstat.104}},{{hasilstat.105}},{{hasilstat.106}},{{hasilstat.107}},{{hasilstat.108}},{{hasilstat.109}},{{hasilstat.110}},{{hasilstat.111}},{{hasilstat.112}},{{hasilstat.113}},{{hasilstat.114}},{{hasilstat.115}},{{hasilstat.116}},{{hasilstat.117}},{{hasilstat.118}},{{hasilstat.119}},{{hasilstat.120}},{{hasilstat.121}},{{hasilstat.122}},{{hasilstat.123}},{{hasilstat.124}},{{hasilstat.125}},{{hasilstat.126}},{{hasilstat.127}},{{hasilstat.128}},{{hasilstat.129}},{{hasilstat.130}},{{hasilstat.131}},{{hasilstat.132}},{{hasilstat.133}},{{hasilstat.134}},{{hasilstat.135}},{{hasilstat.136}},{{hasilstat.137}},{{hasilstat.138}},{{hasilstat.139}},{{hasilstat.140}},{{hasilstat.141}},{{hasilstat.142}},{{hasilstat.143}},{{hasilstat.144}},{{hasilstat.145}},{{hasilstat.146}},{{hasilstat.147}},{{hasilstat.148}},{{hasilstat.149}},{{hasilstat.150}},{{hasilstat.151}},{{hasilstat.152}},{{hasilstat.153}},{{hasilstat.154}},{{hasilstat.155}},{{hasilstat.156}},{{hasilstat.157}},{{hasilstat.158}},{{hasilstat.159}},{{hasilstat.160}},{{hasilstat.161}},{{hasilstat.162}},{{hasilstat.163}},{{hasilstat.164}},{{hasilstat.165}},{{hasilstat.166}},{{hasilstat.167}},{{hasilstat.168}},{{hasilstat.169}},{{hasilstat.170}},{{hasilstat.171}},{{hasilstat.172}},{{hasilstat.173}},{{hasilstat.174}},{% if hasilstat.175!=None %} {{hasilstat.175}} {% endif %},{{hasilstat.176}},{{hasilstat.177}},{{hasilstat.178}}]
+        },
+        {
+          label: "Perempuan",
+          backgroundColor: "rgba(46,205,153,.6)",
+          borderColor: "rgba(46,205,153,.6)",
+          data: [{{hasilstat.179}},{{hasilstat.180}},{{hasilstat.181}},{{hasilstat.182}},{{hasilstat.183}},{{hasilstat.184}},{{hasilstat.185}},{{hasilstat.186}},{{hasilstat.187}},{{hasilstat.188}},{{hasilstat.189}},{{hasilstat.190}},{{hasilstat.191}},{{hasilstat.192}},{{hasilstat.193}},{{hasilstat.194}},{{hasilstat.195}},{{hasilstat.196}},{{hasilstat.197}},{{hasilstat.198}},{{hasilstat.199}},{{hasilstat.200}},{{hasilstat.201}},{{hasilstat.202}},{{hasilstat.203}},{{hasilstat.204}},{{hasilstat.205}},{{hasilstat.206}},{{hasilstat.207}},{{hasilstat.208}},{{hasilstat.209}},{{hasilstat.210}},{{hasilstat.211}},{{hasilstat.212}},{{hasilstat.213}},{{hasilstat.214}},{{hasilstat.215}},{{hasilstat.216}},{{hasilstat.217}},{{hasilstat.218}},{{hasilstat.219}},{{hasilstat.220}},{{hasilstat.221}},{{hasilstat.222}},{{hasilstat.223}},{{hasilstat.224}},{{hasilstat.225}},{{hasilstat.226}},{{hasilstat.227}},{{hasilstat.228}},{{hasilstat.229}},{{hasilstat.230}},{{hasilstat.231}},{{hasilstat.232}},{{hasilstat.233}},{{hasilstat.234}},{{hasilstat.235}},{{hasilstat.236}},{{hasilstat.237}},{{hasilstat.238}},{{hasilstat.239}},{{hasilstat.240}},{{hasilstat.241}},{{hasilstat.242}},{{hasilstat.243}},{{hasilstat.244}},{{hasilstat.245}},{{hasilstat.246}},{{hasilstat.247}},{{hasilstat.248}},{{hasilstat.249}},{{hasilstat.250}},{{hasilstat.251}},{{hasilstat.252}},{{hasilstat.253}},{{hasilstat.254}},{{hasilstat.255}},{{hasilstat.256}},{{hasilstat.257}},{{hasilstat.258}},{{hasilstat.259}},{{hasilstat.260}},{{hasilstat.261}},{{hasilstat.262}},{{hasilstat.263}},{% if hasilstat.264!=None %} {{hasilstat.264}}{% endif %},{{hasilstat.265}},{{hasilstat.266}},{{hasilstat.267}}]
+        }
+      ]
+    };
+    
+    var hBar = new Chart(ctx2, {
+      type:"horizontalBar",
+      data:data2,
+      
+      options: {
+        tooltips: {
+          mode:"label"
+        },
+        scales: {
+          yAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          xAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          
+        },
+        elements:{
+          point: {
+            hitRadius:40
+          }
+        },
+        animation: {
+          duration: 3000
+        },
+        responsive: true,
+        legend: {
+          display: false,
+        },
+        tooltip: {
+          backgroundColor:'rgba(33,33,33,1)',
+          cornerRadius:0,
+          footerFontFamily:"'Poppins'"
+        }
+        
+      }
+    });
+  }
+  
+});
+  </script>
+</body>
+</html>

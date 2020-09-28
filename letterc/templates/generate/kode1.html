@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Data Desa</title>
+  <link href="/static/baru/vendors/bower_components/datatables/media/css/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
+  <link href="/static/baru/dist/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="panel panel-default card-view">
+            <div class="panel-heading"><div class="pull-left"><h6 class="panel-title txt-dark">Grafik Jenis Kelamin Penduduk</h6></div><div class="clearfix"></div></div>
+              <div class="panel-wrapper collapse in"><div class="panel-body"><canvas id="chart_3" height="100"></canvas></div>  
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="row">
+        <div class="col-lg-12">
+             <div class="panel panel-default card-view"><div class="panel-heading"><div class="pull-left"><h6 class="panel-title txt-dark">Tabel Jenis Kelamin Penduduk</h6></div><div class="clearfix"></div></div>
+            <div class="panel-wrapper collapse in">
+              <div class="panel-body">
+                <div class="table-responsive">
+                  <table id="myTable" class="table table-bordered table-striped">
+                  <tr class="header">
+                  <th >NO</th> 
+                  <th>JENIS KELAMIN</th>
+                  <th>JUMLAH</th>
+                  </tr>
+                  <tr>
+                  <td>1</td>
+                  <td> Laki - Laki</td>
+                  <td>{{ hasilstat.3 }}</td>
+                  </tr>
+                  <tr>
+                  <td>2</td>
+                  <td> Perempuan</td>
+                  <td>{{ hasilstat.6 }}</td>
+                  </tr>
+                  <tr>
+                  <td>3</td>
+                  <td> JUMLAH</td>
+                  <td>{{ session['datapen'] }}</td>
+                  </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+  <script src="/static/baru/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+  <script src="/static/baru/dist/js/jquery.slimscroll.js"></script>
+  <script src="/static/baru/vendors/bower_components/waypoints/lib/jquery.waypoints.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/jquery.counterup/jquery.counterup.min.js"></script>
+  <script src="/static/baru/dist/js/dropdown-bootstrap-extended.js"></script>
+  <script src="/static/baru/vendors/jquery.sparkline/dist/jquery.sparkline.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+  <script src="/static/baru/vendors/chart.js/Chart.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/raphael/raphael.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/morris.js/morris.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/switchery/dist/switchery.min.js"></script>
+  <script src="/static/baru/dist/js/init.js"></script>
+<script type="text/javascript">
+$( document ).ready(function() {"use strict";if( $('#chart_1').length > 0 ){var ctx1 = document.getElementById("chart_1").getContext("2d");var data1 = {labels: ["Laki-laki","Perempuan"],datasets: [{data: [{{hasilstat.1}}, {{hasilstat.4}}],backgroundColor: ["rgba(15, 15, 228,.6)","rgba(228, 15, 15,.6)"],hoverBackgroundColor: ["rgba(15, 15, 228,.6)","rgba(228, 15, 15,.6)"]}]};var pieChart  = new Chart(ctx1,{type: 'pie',data: data1,options: {animation: {duration: 3000},responsive: true,legend: {labels: {fontFamily: "Poppins",fontColor:"#878787"}},tooltip: {backgroundColor:'rgba(33,33,33,1)',cornerRadius:0,footerFontFamily:"'Poppins'"},elements: {arc: {borderWidth: 0}}}});}if( $('#chart_2').length > 0 ){var ctx2 = document.getElementById("chart_2").getContext("2d");var data2 = {labels: ["Laki-laki","Perempuan"],datasets: [{data: [{{hasilstat.2}}, {{hasilstat.5}}],backgroundColor: ["rgba(15, 15, 228,.6)","rgba(228, 15, 15,.6)"],hoverBackgroundColor: ["rgba(15, 15, 228,.6)","rgba(228, 15, 15,.6)"]}]};var pieChart  = new Chart(ctx2,{type: 'pie',data: data2,options: {animation: {duration: 3000},responsive: true,legend: {labels: {fontFamily: "Poppins",fontColor:"#878787"}},tooltip: {backgroundColor:'rgba(33,33,33,1)',cornerRadius:0,footerFontFamily:"'Poppins'"},elements: {arc: {borderWidth: 0}}}});}if( $('#chart_3').length > 0 ){var ctx3 = document.getElementById("chart_3").getContext("2d");var data3 = {labels: ["Laki-laki","Perempuan"],datasets: [{data: [{{hasilstat.3}}, {{hasilstat.6}}],backgroundColor: ["rgba(15, 15, 228,.6)","rgba(228, 15, 15,.6)"],hoverBackgroundColor: ["rgba(15, 15, 228,.6)","rgba(228, 15, 15,.6)"]}]};var pieChart  = new Chart(ctx3,{type: 'pie',data: data3,options: {animation: {duration: 3000},responsive: true,legend: {labels: {fontFamily: "Poppins",fontColor:"#878787"}},tooltip: {backgroundColor:'rgba(33,33,33,1)',cornerRadius:0,footerFontFamily:"'Poppins'"},elements: {arc: {borderWidth: 0}}}});}});
+</script>   
+</body>
+</html>

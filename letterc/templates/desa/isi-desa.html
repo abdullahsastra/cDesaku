@@ -1,0 +1,130 @@
+<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default card-view">
+				<div class="panel-wrapper collapse in">
+					<div class="panel-body">
+                      <form role="form" action="/penggunamasuk" method="post">
+                        <div class="row">
+							<div class="col-sm-12 col-xs-12">
+								<div class="form-wrap">
+                                  <div class="form-body">
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label class="control-label mb-10">Provinsi<input type="hidden" name="kodedesa" value="{{hasildata.0}} "></label>
+                                          <input type="text" class="form-control" name="kodepro" value="{{hasildata.1}}" readonly >
+                                        </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label class="control-label mb-10">Kabupaten</label>
+                                          <input type="text" class="form-control" name="kodekab" value="{{hasildata.2}}"  readonly>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label class="control-label mb-10">Kecamatan</label>
+                                          <input type="text" class="form-control" name="kodekec" value="{{hasildata.3}}" readonly>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label class="control-label mb-10">Nama Desa</label>
+                                          <input type="text"  class="form-control" name="kodedes" value="{{hasildata.4}}" readonly>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label class="control-label mb-10">Alamat Desa</label>
+                                          <input type="text"  class="form-control" name="alamatdesa" value="{{hasildata.5}}" placeholder="Masukkan Alamat Desa">
+                                        </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label class="control-label mb-10">Nama Kepala Desa</label>
+                                          <input type="text"  class="form-control" name="namakades" value="{{hasildata.6}}" placeholder="Masukkan Nama Kepala Desa">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label class="control-label mb-10">Luas WIlayah Darat</label>
+                                          <input type="text"  class="form-control" name="luasdarat" value="{{hasildata.7}}">
+                                        </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label class="control-label mb-10">Luas WIlayah Laut</label>
+                                          <input type="text" class="form-control" name="luaslaut" value="{{hasildata.8}}">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label class="control-label mb-10">Batas Wilayah Barat</label>
+                                          <input type="text"  class="form-control" name="batasbarat" value="{{hasildata.9}}">
+                                        </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label class="control-label mb-10">Batas Wilayah Timur</label>
+                                          <input type="text"  class="form-control" name="batastimur" value="{{hasildata.10}}">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label class="control-label mb-10">Batas Wilayah Selatan</label>
+                                          <input type="text"  class="form-control" name="batasselatan" value="{{hasildata.11}}">
+                                        </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label class="control-label mb-10">Batas Wilayah Utara</label>
+                                          <input type="text" class="form-control" name="batasutara" value="{{hasildata.12}}">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label class="control-label mb-10">Alamat Website</label>
+                                          <input type="text"  class="form-control" name="website" value="{{hasildata.13}}" placeholder="Masukkan Alamat Website Desa">
+                                        </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label class="control-label mb-10">Email</label>
+                                          <input type="text"  class="form-control" name="email" value="{{hasildata.14}}" placeholder="Masukkan Alamat Email Desa">
+                                        </div>
+                                      </div>
+                                    </div>
+                                   <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label class="control-label mb-10">Nomor Telepon</label>
+                                          <input type="text"  class="form-control" name="telepon" value="{{hasildata.15}}" placeholder="Masukkan Nomor Telepeon Desa">
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                    <button class="btn  btn-success btn-sm" type="submit" name="subject" value="simpan"><i class="zmdi zmdi-save mr-20"></i>Simpan Data</button>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                      </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+

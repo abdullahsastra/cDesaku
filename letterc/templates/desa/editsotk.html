@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>SIDEKEM Desa Bulakan </title>
+  <meta name="description" content="Sistem Informasi Desa dan Kawasan Online by Python" />
+  <meta name="keywords" content="Sistem Informasi Desa dan Kawasan Online" />
+  <meta name="author" content="pythonesia"/>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="/baru/vendors/bower_components/datatables/media/css/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
+  <link href="/baru/dist/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="wrapper theme-2-active pimary-color-blue">
+		{% include 'desa/head.html' %}
+				<div class="fixed-sidebar-left">
+			<ul class="nav navbar-nav side-nav nicescroll-bar">
+				<li><hr class="light-grey-hr mb-10"/></li>
+				<li>
+					<a href="/penggunamasuk" data-toggle="collapse" data-target="#dashboard_dr"><div class="pull-left"><i class="zmdi zmdi-home mr-20"></i>Dashboard</div><div class="clearfix"></div></a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#app_dr"><div class="pull-left"><i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">Pelayanan Umum</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="app_dr" class="collapse collapse-level-1">
+						<li>
+							<a href="/keluhanwarga">Aduan Masyarakat</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" data-toggle="collapse" data-target="#auth_dra">Layanan Surat<div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+							<ul id="auth_dra" class="collapse collapse-level-2">
+								<li><a href="/buatsurat" >Pembuatan Surat</a></li>
+                  				<li><a href="/suratmasuk">Surat Masuk</a></li>
+                  				<li><a href="/suratkeluar">Surat Keluar</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="zmdi zmdi-accounts mr-20"></i><span class="right-nav-text">Data Kependudukan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="ui_dr" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/kepalakeluarga"  > Kepala Keluarga</a></li>
+            			<li><a href="/anggotakeluarga" > Anggota Keluarga</a></li>
+            			<li><a href="/datakelahiran" > Data Kelahiran</a></li>
+            			<li><a href="/datakematian" >Data Kematian</a></li>
+						<li><a href="/datamutasi" > Data Mutasi</a></li>
+						<li><a href="/pecahkk" > Pecah KK</a></li>
+            			<li><a href="/importdatapenduduk" > Import Data Penduduk</a></li>
+						<li>
+							<a href="javascript:void(0);" data-toggle="collapse" data-target="#pengaturanpenduduk">Pengaturan<div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+							<ul id="pengaturanpenduduk" class="collapse collapse-level-2">
+								<li><a href="/hapuspenduduk" >Hapus Data Penduduk</a></li>
+								<li><a href="/grafikpenduduk"  >Grafik Kependudukan</a></li>
+								<li><a href="/updatedatapenduduk" >Update Data Penduduk</a></li>
+							</ul>
+						</li>
+
+
+					</ul>
+				</li>
+
+				<li>
+					<a  class="active" href="javascript:void(0);" data-toggle="collapse" data-target="#pages_dr"><div class="pull-left"><i class="zmdi zmdi-google-pages mr-20"></i><span class="right-nav-text">Pemerintah Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="pages_dr" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/sotkdesa">SOTK Desa</a></li>
+            			<li><a href="/AsetDesa">Aset Desa</a></li>
+            			<li><a href="/RegulasiDesa">Regulasi Desa</a></li>
+						<li><a href="/SaranaPrasarana">Data Pembangunan</a></li>
+						<li><a href="/Pemberdayaan">Data Pemberdayaan</a></li>
+					</ul>
+				</li>
+				<!-- <li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#dropdown_dr_lv1"><div class="pull-left"><i class="zmdi zmdi-city-alt mr-20"></i><span class="right-nav-text">Potensi Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="dropdown_dr_lv1" class="collapse collapse-level-1">
+						<li><a href="/prodeskelwilayah"> Wilayah Penggunaan</a></li>
+						<li><a href="/prodeskellahan"> Luas Lahan</a></li>
+						<li><a href="/prodeskelekonomi"> Bidang Ekonomi</a></li>
+						<li><a href="/prodeskelkesehatan"> Bidang Kesehatan</a></li>
+						<li><a href="/prodeskeladat"> Bidang Pendidikan</a></li>
+
+					</ul>
+				</li> -->
+
+                <li>
+                    <a href="javascript:void(0);" data-toggle="collapse" data-target="#datakemiskinan"><div class="pull-left"><i class="zmdi zmdi-account-o mr-20"></i><span class="right-nav-text">Data Kemiskinan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+                        <ul id="datakemiskinan" class="collapse collapse-level-1">
+                            <li><a href="/rumahtangga"  >Rumah Tangga</a></li>
+                            <li><a href="/anggotarumahtangga"  >Anggota Rumah Tangga</a></li>
+                        </ul>
+                </li>
+
+
+
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#keuangan"><div class="pull-left"><i class="zmdi zmdi-money-box mr-20"></i><span class="right-nav-text">Keuangan Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="keuangan" class="collapse collapse-level-1">
+
+							<li><a href="/importdatamdb"> Import Siskeudes</a></li>
+
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#petadesa"><div class="pull-left"><i class="zmdi zmdi-globe mr-20"></i><span class="right-nav-text">Peta Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="petadesa" class="collapse collapse-level-1">
+
+							<li><a href="/inputlatlong"> Input Lat-Long</a></li>
+							<li><a href="/petadesa"> Lihat Peta Desa</a></li>
+
+					</ul>
+				</li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#form_dr"><div class="pull-left"><i class="zmdi zmdi-chart mr-20"></i><span class="right-nav-text">Statistik Penduduk</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="form_dr" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/statusia" >Statistik Usia</a></li>
+            			<li><a href="/statjk" > Statistik Jenis Kelamin</a></li>
+            			<li><a href="/statagama"> Statistik Agama</a></li>
+            			<li><a href="/statpend"> Statistik Pendidikan</a></li>
+            			<li><a href="/statpek"> Statistik Pekerjaan</a></li>
+           				<li><a href="/statistikgolongandarah">Statistik Golongan Darah</a></li>
+
+					</ul>
+				</li>
+				<li>
+                    <a href="javascript:void(0);" data-toggle="collapse" data-target="#statistikdatakemiskinan"><div class="pull-left"><i class="zmdi zmdi-trending-up mr-20"></i><span class="right-nav-text">Statistik Kemiskinan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+                        <ul id="statistikdatakemiskinan" class="collapse collapse-level-1">
+                            <li><a href="/statistikperumahan"  >Perumahan</a></li>
+                            <li><a href="/statistiksanitasi"  >Sanitasi</a></li>
+                            <li><a href="/statistikpenerangan"  >Penerangan</a></li>
+                            <li><a href="/statistikbahanbakarmasak"  >Bahan Bakar Masak</a></li>
+                            <li><a href="/statistikkepemilikanaset" >Kepemilikan Aset</a></li>
+                            <li><a href="/statistikkeikutsertaanprogram" >Keikutsertaan Program</a></li>
+                            <li><a href="/statistikkepemilikankartuidentitas" >Kepemilikan kartu identitas</a></li>
+                            <li><a href="/disabilitas" >Disabilitas</a></li>
+                            <li><a href="/penyakitkronis" id="animasi11">Penyakit kronis</a></li>
+                            <li><a href="/partisipasisekolah" id="animasi12">Partisipasi sekolah</a></li>
+                        </ul>
+                </li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+				
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#kom"><div class="pull-left"><i class="zmdi  zmdi-comment-alt-text mr-20"></i><span class="right-nav-text">Komunikasi</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="kom" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/chatroom">Chat Room</a></li>
+            			<li><a href="/kirimpesan">Pesan Khusus</a></li>
+            			
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#profil"><div class="pull-left"><i class="zmdi zmdi-account-box mr-20"></i><span class="right-nav-text">Pengguna Layanan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="profil" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/tambahpengguna">Tambah Pengguna</a></li>
+						<li><a href="/profil">Profil Anda</a></li>
+						<li><a href="/logout">Keluar</a></li>
+						
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+		
+		
+		{% include 'desa/kanan.html' %}
+		<div class="right-sidebar-backdrop"></div>
+		<div class="page-wrapper">
+            <div class="container-fluid ">
+				<div class="row heading-bg">
+            		<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            			<h5 class="txt-dark">PROFIL SOTK DESA</h5>
+            		</div>
+            		<!-- Breadcrumb -->
+					<div class="col-sm-12">
+						<ol class="breadcrumb">
+							<li><a href="/sotkdesa">SOTK Desa</a></li>
+							<li><a href="/sotkdesa/detail/{{datasotk.0}}">Profil SOTK Desa</a></li>
+							<li class="active"><span>Edit Profil SOTK Desa</span></li>
+						</ol>
+					</div>
+          <!-- /Breadcrumb -->
+          		</div>
+				
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default card-view">
+				<div class="panel-wrapper collapse in">
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-12 col-xs-12">
+								<div class="form-wrap">
+									<form action="/sotkdesa/detail/edit/{{datasotk.0}}" method="post">
+										<div class="form-body">
+											<h6 class="txt-dark capitalize-font">EDIT PROFIL {{ datasotk.13 }} {{ session['des'] }}</h6>
+											<hr class="light-grey-hr"/>
+
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Nama Lengkap (<font color="red">*</font>)</label>
+														{% if datasotk.5 == "-" or datasotk.5 == None %}
+														<input type="text" class="form-control" name="nama_perangkat" value="" placeholder="Masukkan Nama Lengkap Perangkat" required="" style="text-transform:uppercase">
+														{% else %}
+														<input type="text" class="form-control" name="nama_perangkat" value="{{ datasotk.5 }}" placeholder="Masukkan Nama Lengkap Perangkat" required="" style="text-transform:uppercase">
+														{% endif %}
+													</div>
+												</div>
+												<!--/span-->
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Jenis Kelamin (<font color="red">*</font>)</label>
+														<select  class="form-control" name="jk_perangkat" required="">
+															{% if datasotk.8 == "Perempuan" %}
+															<option value="Perempuan" selected="">PEREMPUAN</option>
+															<option value="Laki-laki">LAKI-LAKI</option>
+															{% else %}
+															<option value="Laki-laki" selected="">LAKI-LAKI</option>
+															<option value="Perempuan">PEREMPUAN</option>
+															{% endif %}
+														</select>
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Nomor Induk Aparat Pemerintah (NIAP) (<font color="red">*</font>)</label>
+														{% if datasotk.6 == "-" or datasotk.6 == None %}
+														<input type="number" placeholder="Masukkan Nomor Induk Aparat Pemerintah (NIAP) Perangkat" max="9999999999999" class="form-control quantity" name="niap" value="" placeholder="Masukkan NIAP Perangkat">
+														{% else %}
+														<input type="number" placeholder="Masukkan Nomor Induk Aparat Pemerintah (NIAP) Perangkat" max="9999999999999" class="form-control quantity" name="niap" value="{{ datasotk.6 }}">
+														{% endif %}
+													</div>
+												</div>
+												<!--/span-->
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Nomor Induk Pegawai (NIP) (<font color="red">***</font>)</label>
+														{% if datasotk.7 == "-" or datasotk.7 == None %}
+														<input type="number" placeholder="Masukkan Nomor Induk Pegawai (NIP) Perangkat" max="99999999" class="form-control quantity" name="nip" value="" placeholder="Masukkan NIP Perangkat">
+														{% else %}
+														<input type="number" placeholder="Masukkan Nomor Induk Pegawai (NIP) Perangkat" max="99999999" class="form-control quantity" name="nip" value="{{ datasotk.7 }}">
+														{% endif %}
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Tempat Lahir (<font color="red">*</font>)</label>
+														{% if datasotk.9 == "-" or datasotk.9 == None %}
+														<input type="text" class="form-control" name="tempat_lahir" value="" placeholder="Masukkan Tempat Lahir Perangkat" style="text-transform:uppercase">
+														{% else %}
+														<input type="text" class="form-control" name="tempat_lahir" value="{{ datasotk.9 }}" style="text-transform:uppercase">
+														{% endif %}
+													</div>
+												</div>
+												<!--/span-->
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Tanggal Lahir (HARI-BULAN-TAHUN)(<font color="red">***</font>)</label>
+														{% if datasotk.10 == "-" or datasotk.10 == None %}
+														<input type="text" class="form-control tanggal_lahir" data-mask="99-99-9999" name="tanggal_lahir" value="" placeholder="Masukkan Tanggal Lahir Perangkat" >
+														{% else %}
+														<input type="text" class="form-control tanggal_lahir" data-mask="99-99-9999" name="tanggal_lahir" value="{{ datasotk.10 }}" placeholder="Masukkan tanggal_lahir Lahir Perangkat" >
+														{% endif %}
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Agama (<font color="red">*</font>)</label>
+														<select  class="form-control" name="agama_perangkat" required="">
+														{% if datasotk.11 == "-" or datasotk.11 == None %}
+															<option value="Islam">ISLAM</option>
+															<option value="Kristen Katolik">KRISTEN KATOLIK</option>
+															<option value="Kristen Protestan">KRISTEN PROTESTAN</option>
+															<option value="Hindu">HINDU</option>
+															<option value="Buddha">BUDDHA</option>
+															<option value="Konghuchu">KONGHUCHU</option>
+														{% else %}
+															<option value="{{ datasotk.11 }}" selected="" hidden="">{{ datasotk.11.upper() }}</option>
+															<option value="Islam">ISLAM</option>
+															<option value="Kristen Katolik">KRISTEN KATOLIK</option>
+															<option value="Kristen Protestan">KRISTEN PROTESTAN</option>
+															<option value="Hindu">HINDU</option>
+															<option value="Buddha">BUDDHA</option>
+															<option value="Konghuchu">KONGHUCHU</option>
+														{% endif %}
+														</select>
+													</div>
+												</div>
+												<!--/span-->
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Pendidikan Terakhir (<font color="red">*</font>)</label>
+														<select  class="form-control" name="pendidikan_perangkat" required="">
+														{% if datasotk.14 == "-" or datasotk.14 == None %}
+															<option value="SLTP/SMP/Sederajat" selected="">SLTP/SMP/Sederajat</option>
+															<option value="SLTA/SMA/Sederajat">SLTA/SMA/Sederajat</option>
+															<option value="Diploma I/II">Diploma I/II</option>
+															<option value="Akademi/Diploma III/Sarjana Muda">Akademi/Diploma III/Sarjana Muda</option>
+															<option value="Diploma IV/Strata I">Diploma IV/Strata I</option>
+															<option value="Strata II">Strata II</option>
+															<option value="Strata III">Strata III</option>
+														{% else %}
+															<option value="{{ datasotk.14 }}" selected="" hidden="">{{ datasotk.14.upper() }}</option>
+															<option value="SLTP/SMP/Sederajat">SLTP/SMP/Sederajat</option>
+															<option value="SLTA/SMA/Sederajat">SLTA/SMA/Sederajat</option>
+															<option value="Diploma I/II">Diploma I/II</option>
+															<option value="Akademi/Diploma III/Sarjana Muda">Akademi/Diploma III/Sarjana Muda</option>
+															<option value="Diploma IV/Strata I">Diploma IV/Strata I</option>
+															<option value="Strata II">Strata II</option>
+															<option value="Strata III">Strata III</option>
+														{% endif %}
+														</select>
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Pangkat Golongan (<font color="red">*</font>)</label>
+														<select  class="form-control" name="pangkat_gol" >
+														{% if datasotk.12 == "-" or datasotk.12 == None %}
+															<option value="Eselon I" selected="">ESELON I</option>
+															<option value="Eselon II">ESELON II</option>
+															<option value="Eselon III">ESELON III</option>
+															<option value="Eselon IV">ESELON IV</option>
+															<option value="Bukan PNS">BUKAN PNS</option>
+														{% else %}
+															<option value="{{ datasotk.12 }}" selected="" hidden="">{{ datasotk.12.upper() }}</option>
+															<option value="Eselon I">ESELON I</option>
+															<option value="Eselon II">ESELON II</option>
+															<option value="Eselon III">ESELON III</option>
+															<option value="Eselon IV">ESELON IV</option>
+															<option value="Bukan PNS">BUKAN PNS</option>
+														{% endif %}
+														</select>
+													</div>
+												</div>
+												<!--/span-->
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Jabatan (<font color="red">*</font>)</label>
+														<input type="text" class="form-control" name="jabatan_perangkat" value="{{ datasotk.13 }}" readonly="">
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+
+
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Nomor Surat Keputusan Pengangkatan (<font color="red">*</font>)</label>
+														{% if datasotk.15 == "-" or datasotk.15 == None %}
+														<input type="text" class="form-control" name="no_pengangkatan" value="" a placeholder="Masukkan Nomor Surat Keputusan Pengangkatan Perangkat" style="text-transform:uppercase" >
+														{% else %}
+														<input type="text" class="form-control" name="no_pengangkatan" value="{{ datasotk.15 }}" a placeholder="Masukkan Nomor Surat Keputusan Pengangkatan Perangkat" style="text-transform:uppercase" >
+														{% endif %}
+													</div>
+												</div>
+												<!--/span-->
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Tanggal Pengangkatan (HARI-TANGGAL-TAHUN)(<font color="red">*</font>)</label>
+														{% if datasotk.16 == "-" or datasotk.16 == None %}
+														<input type="text" class="form-control tanggal" data-mask="99-99-9999" name="tanggal_pengangkatan" value="" placeholder="Masukkan Tanggal Pengangkatan Perangkat" required="">
+														{% else %}
+														<input type="text" class="form-control tanggal" data-mask="99-99-9999" name="tanggal_pengangkatan" value="{{ datasotk.16 }}" placeholder="Masukkan Tanggal Pengangkatan Perangkat" required="">
+														{% endif %}
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Nomor Surat Keputusan Pemberhentian (<font color="red">***</font>)</label>
+														{% if datasotk.17 == "-" or datasotk.17 == None %}
+														<input type="text" class="form-control" name="no_pemberhentian" placeholder="Masukkan Nomor Surat Keputusan Pemberhentian Perangkat" value="" style="text-transform:uppercase">
+														{% else %}
+														<input type="text" class="form-control" name="no_pemberhentian" value="{{ datasotk.17 }}" placeholder="Masukkan Nomor Surat Keputusan Pemberhentian Perangkat" style="text-transform:uppercase">
+														{% endif %}
+													</div>
+												</div>
+												<!--/span-->
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Tanggal Pemberhentian (HARI-TANGGAL-TAHUN)(<font color="red">***</font>)</label>
+														{% if datasotk.18 == "-" or datasotk.18 == None %}
+														<input type="text" class="form-control tanggal" data-mask="99-99-9999" name="tanggal_pemberhentian" value="" placeholder="Masukkan Tangal Pemberhentian Perangkat">
+														{% else %}
+														<input type="text" class="form-control tanggal" data-mask="99-99-9999" name="tanggal_pemberhentian" value="{{ datasotk.18 }}" placeholder="Masukkan Tangal Pemberhentian Perangkat">
+														{% endif %}
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Keterangan (<font color="red">***</font>)</label>
+														{% if datasotk.19 == "-" or datasotk.19 == None %}
+														<textarea style="height: 200px;" class="form-control" name="keterangan" placeholder="Masukkan Keterangan..." value="" ></textarea>
+														{% else %}
+														<textarea style="height: 200px;" class="form-control" name="keterangan" placeholder="Masukkan Keterangan..." value="{{ datasotk.19 }}" ></textarea>
+														{% endif %}
+													</div>
+												</div>
+												<!--/span-->
+												<div class="col-md-6">
+													<div class="form-group">
+													<!--	<label class="control-label mb-10">Unggah Dokumen SK Perangkat <b>.PDF</b> (<font color="red">***</font>)</label>
+														<input type="file" class="dropify" name="dokumensk" data-default-file="/dist/img/default-img-sk.png" /> -->
+													</div>
+												</div>
+											</div>
+											<!-- /Row -->
+
+
+										<div class="form-actions mt-10" >
+											<form action="#" method="post">
+												<button type="submit" name="subject"  value ="updatedata" class="btn btn-success  mr-10">SIMPAN PROFIL</button><a href="/sotkdesa/detail/{{datasotk.0}}" role="button" class="btn btn-default">KEMBALI</a>
+											</form>
+										</div>
+									  </div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>
+	</div>
+	<!-- /Row -->
+
+	<div class="row">
+      <div class="col-sm-12" >
+        <div class="panel panel-default card-view">
+          <div class="panel-wrapper collapse in">
+            <div class="panel-body">
+              <div class="table-responsive">
+                <p>(<font color="red">*</font>) Kolom formulir yang bertanda seperti di samping <strong>harus</strong> diisi sesuai data yang ada.</p>
+                <p>(<font color="red">***</font>) Kolom formulir yang bertanda seperti di samping <strong>boleh</strong> diisi sesuai data yang ada atau dapat <strong>dikosongi</strong> jika data yang diminta belum ada.</p>
+                <p>&nbsp &nbsp &nbsp &nbsp - Diisi dengan Nomor Induk Aparat Pemerintah Desa (NIAP) bagi perangkat desa yang bukan berasal dari Pegawai Negeri Sipil.</p>
+                <p>&nbsp &nbsp &nbsp &nbsp - Diisi dengan Nomor Induk Pegawai (NIP) bagi aparat Pemerintahan Desa yang berasal dari Pegawai Negeri Sipil.</p>
+              </div>
+            </div>  
+          </div>  
+        </div>  
+      </div>
+    </div>
+    <!-- /Row -->
+    
+	{% include 'desa/foot.html' %}
+<script src="/baru/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/baru/dist/js/init.js"></script>
+<script src="/baru/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/baru/dist/js/jquery.slimscroll.js"></script>
+<script src="/baru/vendors/bower_components/jquery-ui/jquery-ui.js"></script>
+<script src="/baru/vendors/bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
+<script src="/baru/vendors/bower_components/dropify/dist/js/dropify.min.js"></script>
+<script src="/baru/dist/js/form-file-upload-data.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$( ".tanggal_lahir" ).datepicker({
+		  dateFormat: "dd-mm-yy",
+		  changeYear: true,
+		  yearRange: "1955:2010",
+		  changeMonth: true
+		});
+		$( ".tanggal" ).datepicker({
+		  dateFormat: "dd-mm-yy",
+		  changeYear: true,
+		  yearRange: "1990:2018",
+		  changeMonth: true
+		});
+	});
+	var inputQuantity = [];
+    $(function() {
+      $(".quantity").each(function(i) {
+        inputQuantity[i]=this.defaultValue;
+         $(this).data("idx",i); // save this field's index to access later
+      });
+      $(".quantity").on("keyup", function (e) {
+        var $field = $(this),
+            val=this.value,
+            $thisIndex=parseInt($field.data("idx"),10); // retrieve the index
+//        window.console && console.log($field.is(":invalid"));
+          //  $field.is(":invalid") is for Safari, it must be the last to not error in IE8
+        if (this.validity && this.validity.badInput || isNaN(val) || $field.is(":invalid") ) {
+            this.value = inputQuantity[$thisIndex];
+            return;
+        } 
+        if (val.length > Number($field.attr("maxlength"))) {
+          val=val.slice(0, 14);
+          $field.val(val);
+        }
+        inputQuantity[$thisIndex]=val;
+      });      
+    });
+</script>
+</body>
+</html>

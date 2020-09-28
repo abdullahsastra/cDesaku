@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Data Desa</title>
+  <link href="/static/baru/vendors/bower_components/datatables/media/css/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
+  <link href="/static/baru/dist/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div class="row">
+  <div class="col-lg-12">
+             <div class="panel panel-default card-view">
+              <div class="panel-heading">
+                <div class="pull-left">
+                  <h6 class="panel-title txt-dark">Tabel Usia Penduduk</h6>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                  <canvas id="chart_2" height="200"></canvas>
+                </div>
+              </div>   
+            </div>  
+          </div>
+        </div>  
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="panel panel-default card-view">
+                <div class="panel-wrapper collapse in">
+                  <div class="panel-body">
+                    <div class="table-responsive">
+                      <table id="myTable" class="table table-bordered table-striped" >
+                      <tr class="header">
+                      <th>NO</th>
+                      <th>USIA</th>
+                      <th>LAKI-LAKI</th>
+                      <th>PEREMPUAN</th>
+                      <th>JUMLAH</th>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td> 0 - 4 Tahun</td>
+                        <td>{{ hasilstat.1 }}</td>
+                        <td>{{ hasilstat.2 }}</td>
+                        <td>{{ hasilstat.3 }}</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td> 5 - 9 Tahun</td>
+                        <td>{{ hasilstat.4 }}</td>
+                        <td>{{ hasilstat.5 }}</td>
+                        <td>{{ hasilstat.6 }}</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td> 10 - 14 Tahun</td>
+                        <td>{{ hasilstat.7 }}</td>
+                        <td>{{ hasilstat.8 }}</td>
+                        <td>{{ hasilstat.9 }}</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td> 15 - 19 Tahun</td>
+                        <td>{{ hasilstat.10 }}</td>
+                        <td>{{ hasilstat.11 }}</td>
+                        <td>{{ hasilstat.12 }}</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td> 20 - 24 Tahun</td>
+                        <td>{{ hasilstat.13 }}</td>
+                        <td>{{ hasilstat.14 }}</td>
+                        <td>{{ hasilstat.15 }}</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td> 25 - 29 Tahun</td>
+                        <td>{{ hasilstat.6 }}</td>
+                        <td>{{ hasilstat.7 }}</td>
+                        <td>{{ hasilstat.8 }}</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td> 30 - 34 Tahun</td>
+                        <td>{{ hasilstat.19 }}</td>
+                        <td>{{ hasilstat.20 }}</td>
+                        <td>{{ hasilstat.21 }}</td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td> 35 - 39 Tahun</td>
+                        <td>{{ hasilstat.22 }}</td>
+                        <td>{{ hasilstat.23 }}</td>
+                        <td>{{ hasilstat.24 }}</td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td> 40 - 44 Tahun</td>
+                        <td>{{ hasilstat.25 }}</td>
+                        <td>{{ hasilstat.26 }}</td>
+                        <td>{{ hasilstat.27 }}</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td> 45 - 49 Tahun</td>
+                        <td>{{ hasilstat.28 }}</td>
+                        <td>{{ hasilstat.29 }}</td>
+                        <td>{{ hasilstat.30 }}</td>
+                      </tr>
+                      <tr>
+                        <td>11</td>
+                        <td> 50 - 54 Tahun</td>
+                        <td>{{ hasilstat.31 }}</td>
+                        <td>{{ hasilstat.32 }}</td>
+                        <td>{{ hasilstat.33 }}</td>
+                      </tr>
+                      <tr>
+                        <td>12</td>
+                        <td> 54 - 59 Tahun</td>
+                        <td>{{ hasilstat.34 }}</td>
+                        <td>{{ hasilstat.35 }}</td>
+                        <td>{{ hasilstat.36 }}</td>
+                      </tr>
+                      <tr>
+                        <td>13</td>
+                        <td> > 60 Tahun</td>
+                        <td>{{ hasilstat.37 }}</td>
+                        <td>{{ hasilstat.38 }}</td>
+                        <td>{{ hasilstat.39 }}</td>
+                      </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="panel panel-default card-view">
+                <div class="panel-wrapper collapse in">
+                  <div class="panel-body">
+                    <div class="table-responsive">
+                      <table id="myTable" class="table table-bordered table-striped">
+                      <tr class="header">
+                       <th >NO</th> 
+                      <th>USIA</th>
+                      <th>LAKI-LAKI</th>
+                      <th>PEREMPUAN</th>
+                      <th>JUMLAH</th>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td> 0 - 4 Tahun</td>
+                        <td>{{ hasilstat.40 }}</td>
+                        <td>{{ hasilstat.41 }}</td>
+                        <td>{{ hasilstat.42 }}</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td> 0 - 18 Tahun</td>
+                        <td>{{ hasilstat.43 }}</td>
+                        <td>{{ hasilstat.44 }}</td>
+                        <td>{{ hasilstat.45 }}</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td> 18 - 60 Tahun</td>
+                        <td>{{ hasilstat.46 }}</td>
+                        <td>{{ hasilstat.47 }}</td>
+                        <td>{{ hasilstat.48 }}</td>
+                      </tr>
+                      </table>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+     </div>
+</div>
+  <script src="/static/baru/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+  <script src="/static/baru/dist/js/jquery.slimscroll.js"></script>
+  <script src="/static/baru/vendors/bower_components/waypoints/lib/jquery.waypoints.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/jquery.counterup/jquery.counterup.min.js"></script>
+  <script src="/static/baru/dist/js/dropdown-bootstrap-extended.js"></script>
+  <script src="/static/baru/vendors/jquery.sparkline/dist/jquery.sparkline.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+  <script src="/static/baru/vendors/chart.js/Chart.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/raphael/raphael.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/morris.js/morris.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/switchery/dist/switchery.min.js"></script>
+  <script src="/static/baru/dist/js/init.js"></script>
+<script type="text/javascript">
+    /*Chartjs Init*/
+
+$( document ).ready(function() {
+    "use strict";
+  
+  if( $('#chart_1').length > 0 ){
+    var ctx1 = document.getElementById("chart_1").getContext("2d");
+    var data1 = {
+      labels: ['0-4', '0-17', '18-60'],
+      datasets: [
+      {
+        label: "LAKI-LAKI",
+        backgroundColor: "rgba(46,205,153,.6)",
+        borderColor: "rgba(46,205,153,.6)",
+        pointBorderColor: "rgba(46,205,153,.6)",
+        pointHighlightStroke: "rgba(46,205,153,.6)",
+        data: [{{hasilstat.40}},{{hasilstat.43}},{{hasilstat.46}}]
+      },
+      {
+        label: "PEREMPUAN",
+        backgroundColor: "rgba(240,197,65,.6)",
+        borderColor: "rgba(240,197,65,.6)",
+        pointBorderColor: "rgba(240,197,65,.6)",
+        pointBackgroundColor: "rgba(240,197,65,.6)",
+        data: [{{hasilstat.41}},{{hasilstat.44}},{{hasilstat.47}}],
+      }
+      
+    ]
+    };
+    
+    var areaChart = new Chart(ctx1, {
+      type:"line",
+      data:data1,
+      
+      options: {
+        tooltips: {
+          mode:"label"
+        },
+        elements:{
+          point: {
+            hitRadius:90
+          }
+        },
+        
+        scales: {
+          yAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          xAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }]
+        },
+        animation: {
+          duration: 3000
+        },
+        responsive: true,
+        legend: {
+          display: false,
+        },
+        tooltip: {
+          backgroundColor:'rgba(33,33,33,1)',
+          cornerRadius:0,
+          footerFontFamily:"'Poppins'"
+        }
+        
+      }
+    });
+  }
+    
+  if( $('#chart_2').length > 0 ){
+    var ctx2 = document.getElementById("chart_2").getContext("2d");
+    var data2 = {
+      labels: ['0-4', '5-9', '10-14', '15-19', '20-24', '25-29', '30-34','35-39','40-44','45-49','50-54','55-59','>60'],
+      datasets: [
+        {
+          label: "Laki-laki",
+          backgroundColor: "rgba(240,197,65,.6)",
+          borderColor: "rgba(240,197,65,.6)",
+          data: [{{hasilstat.1}},{{hasilstat.4}},{{hasilstat.7}},{{hasilstat.10}},{{hasilstat.13}},{{hasilstat.16}},{{hasilstat.19}},{{hasilstat.22}},{{hasilstat.25}},{{hasilstat.28}},{{hasilstat.31}},{{hasilstat.34}},{{hasilstat.37}}]
+        },
+        {
+          label: "Perempuan",
+          backgroundColor: "rgba(46,205,153,.6)",
+          borderColor: "rgba(46,205,153,.6)",
+          data: [{{hasilstat.2}},{{hasilstat.5}},{{hasilstat.8}},{{hasilstat.11}},{{hasilstat.14}},{{hasilstat.17}},{{hasilstat.20}},{{hasilstat.23}},{{hasilstat.26}},{{hasilstat.29}},{{hasilstat.33}},{{hasilstat.35}},{{hasilstat.38}}]
+        }
+      ]
+    };
+    
+    var hBar = new Chart(ctx2, {
+      type:"horizontalBar",
+      data:data2,
+      
+      options: {
+        tooltips: {
+          mode:"label"
+        },
+        scales: {
+          yAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          xAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          
+        },
+        elements:{
+          point: {
+            hitRadius:40
+          }
+        },
+        animation: {
+          duration: 3000
+        },
+        responsive: true,
+        legend: {
+          display: false,
+        },
+        tooltip: {
+          backgroundColor:'rgba(33,33,33,1)',
+          cornerRadius:0,
+          footerFontFamily:"'Poppins'"
+        }
+        
+      }
+    });
+  }
+
+   
+});
+  </script> 
+</body>
+
+</html>

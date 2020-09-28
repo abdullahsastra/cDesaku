@@ -1,0 +1,549 @@
+					<!-- Row -->
+					<div class="row">
+						<div class="col-md-12">
+							<div class="panel panel-default card-view">
+								<div class="panel-wrapper collapse in">
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-sm-12 col-xs-12">
+												<div class="form-wrap">
+													<form action="#">
+														<div class="form-body">
+															<h6 class="txt-dark capitalize-font">Ketarangan Sosial Ekonomi, Anggota Rumah Tangga</h6>
+															<hr class="light-grey-hr"/>
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Provinsi</label>
+																		<input type="text" class="form-control" name="prov_id" value="{{lihatisikk.1}}" placeholder="Masukan Kode Provinsi">
+																	</div>
+																</div>
+																<!--/span-->
+																<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Kabupaten</label>
+																		<input type="text" class="form-control" name="kab_id" value="{{lihatisikk.2}}" placeholder="Masukan Kode Kabupaten">
+																	</div>
+																</div>
+																<!--/span-->
+															</div>
+															<!-- /Row -->
+															<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Kecamatan</label>
+																		<input type="text" class="form-control" name="kec_id" value="{{lihatisikk.3}}" placeholder="Masukan Kode Kecamatan">
+																	</div>
+																</div>
+																<!--/span-->
+															<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Desa/Kelurahan</label>
+																		<input type="text" class="form-control" name="desa_id" placeholder="Masukan Kode Desa/Kelurahan" value="{{lihatisikk.4}}">
+																	</div>
+																</div>
+																<!--/span-->
+															</div>
+															<!-- /Row -->
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">No NIK</label>
+																		<input type="text" class="form-control" name="nik" value="{{lihatisikk.12}}" placeholder="Masukan No NIK">
+																	</div>
+																</div>
+																<!--/span-->
+																
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Nama Lengkap</label>
+																		<input type="text" class="form-control" name="namalengkap" value="{{lihatisikk.10}}" placeholder="Masukan Nama Lengkap">
+																	</div>
+																</div>
+																<!--/span-->
+															</div>
+															<!-- /Row -->
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Status Hubungan dengan Kepala Rumah Tangga</label>
+																		<select class="form-control" name="shdkrt">
+																			<option value="Kepala rumah tangga">Kepala rumah tangga</option>
+																			<option value="Istri/suami">Istri/suami</option>
+																			<option value="Anak">Anak</option>
+																			<option value="Menantu">Menantu</option>
+																			<option value="Cucu">Cucu</option>
+																			<option value="Mertua">Mertua</option>
+																			<option value="Pembantu">Pembantu</option>
+																			<option value="Lainnya">Lainnya</option>
+																		</select>
+																	</div>
+																</div>
+																<!--/span-->
+																
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">No urut Keluarga</label>
+																		<input type="text" class="form-control" name="no_urut_keluarga" placeholder="Masukan No urut Keluarga">
+																	</div>
+																</div>
+																<!--/span-->
+															</div>
+															<!-- /Row -->
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Status Hubungan dengan Kepala Keluarga</label>
+																		<select class="form-control" name="shdk">
+																			<option value="{{lihatisikk.16}}">{{lihatisikk.16}}</option>
+																			<option value="KEPALA KELUARGA">KEPALA KELUARGA</option>
+																			<option value="ISTRI">ISTRI</option>
+																			<option value="ANAK">ANAK</option>
+																			<option value="MENANTU">MENANTU</option>
+																			<option value="CUCU">CUCU</option>
+																			<option value="MERTUA">MERTUA</option>
+																			<option value="ORANG TUA">ORANG TUA</option>
+																			<option value="PEMBANTU">PEMBANTU</option>
+																			<option value="LAINNYA">LAINNYA</option>
+																		</select>
+																	</div>
+																</div>
+																<!--/span-->
+																
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Jenis Kelamin</label>
+																		<select class="form-control" name="jk">
+																			<option value="{{lihatisikk.15}}">{{lihatisikk.15}}</option>
+																			<option value="Laki-laki">Laki-laki</option>
+																			<option value="Perempuan">Perempuan</option>
+																		</select>
+																	</div>
+																</div>
+																<!--/span-->
+															</div>
+															<!-- /Row -->
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Umur</label>
+																		<input type="text" class="form-control" name="umur" value="{{lihatisikk.22}}" placeholder="Masukan Umur">
+																	</div>
+																</div>
+																<!--/span-->
+																
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Status perkawinan</label>
+																		<select class="form-control" name="status">
+																			<option value="{{lihatdatlain.15}}">{{lihatdatlain.15}}</option>
+																			<option value="Belum kawin">Belum kawin</option>
+																			<option value="Kawin/nikah">Kawin/nikah</option>
+																			<option value="Cerai hidup">Cerai hidup</option>
+																			<option value="Cerai mati">Cerai mati</option>
+																		</select>
+																	</div>
+																</div>
+																<!--/span-->
+															</div>
+															<!-- /Row -->
+															<div class="seprator-block"></div>
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Kepemilikan buku nikah/akta cerai jika status perkawinan menikah/cerai hidup</label>
+																		<select class="form-control" name="buku_nikah_aktacerai">
+																			<option value="Belum kawin">Tidak diisi</option>
+																			<option value="Tidak">Tidak</option>
+																			<option value="Ya, dapat ditunjukan">Ya, dapat ditunjukan</option>
+																			<option value="Ya, tidak dapat ditunjukan">Ya, tidak dapat ditunjukan</option>
+																		</select>
+																	</div>
+																</div>
+																<!--/span-->
+																
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Tercantum dalam KK di Rumah Tangga ini</label>
+																		<div class="radio-list">
+																			<div class="radio-inline pl-0">
+																				<span class="radio radio-info">
+																					<input type="radio" name="tercantum_dalam_kk_di_rt_ini" value="Ya">
+																			<label for="radio_5">Ya</label>
+																			</span>
+																			</div>
+																			<div class="radio-inline">
+																				<span class="radio radio-info">
+																					<input type="radio" name="tercantum_dalam_kk_di_rt_ini" value="Tidak">
+																			<label for="radio_6">Tidak </label>
+																			</span>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!--/span-->
+															</div>
+															<!-- /Row -->
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Tidak memiliki kartu identitas</label>
+																		<div class="radio-list">
+																			<div class="radio-inline pl-0">
+																				<span class="radio radio-info">
+																					<input type="radio" name="tidak_memiliki_kartu_identitas" value="Ya">
+																			<label for="radio_5">Ya</label>
+																			</span>
+																			</div>
+																			<div class="radio-inline">
+																				<span class="radio radio-info">
+																					<input type="radio" name="tidak_memiliki_kartu_identitas" value="Tidak">
+																			<label for="radio_6">Tidak </label>
+																			</span>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!--/span-->
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Akta Kelahiran</label>
+																		<div class="radio-list">
+																			<div class="radio-inline pl-0">
+																				<span class="radio radio-info">
+																					<input type="radio" name="akta_kelahiran" value="Ya" checked="{{lihatdatlain.21}}">
+																			<label for="radio_5">Ya</label>
+																			</span>
+																			</div> 
+																			<div class="radio-inline">
+																				<span class="radio radio-info">
+																					<input type="radio" name="akta_kelahiran" value="Tidak" checked="{{lihatdatlain.21}}">
+																			<label for="radio_6">Tidak </label>
+																			</span>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!--/span-->
+															</div>
+															<!-- /Row -->
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Kartu Pelajar</label>
+																		<div class="radio-list">
+																			<div class="radio-inline pl-0">
+																				<span class="radio radio-info">
+																					<input type="radio" name="kartu_pelajar" value="Ya">
+																			<label for="radio_5">Ya</label>
+																			</span>
+																			</div>
+																			<div class="radio-inline">
+																				<span class="radio radio-info">
+																					<input type="radio" name="kartu_pelajar" value="Tidak">
+																			<label for="radio_6">Tidak </label>
+																			</span>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!--/span-->
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">KTP</label>
+																		<div class="radio-list">
+																			<div class="radio-inline pl-0">
+																				<span class="radio radio-info">
+																					<input type="radio" name="ktp" value="Ya">
+																			<label for="radio_5">Ya</label>
+																			</span>
+																			</div>
+																			<div class="radio-inline">
+																				<span class="radio radio-info">
+																					<input type="radio" name="ktp" value="Tidak">
+																			<label for="radio_6">Tidak </label>
+																			</span>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!--/span-->
+															</div>
+															<!-- /Row -->
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">SIM</label>
+																		<div class="radio-list">
+																			<div class="radio-inline pl-0">
+																				<span class="radio radio-info">
+																					<input type="radio" name="sim" value="Ya">
+																					<label for="radio_5">Ya</label>
+																				</span>
+																			</div>
+																			<div class="radio-inline">
+																				<span class="radio radio-info">
+																					<input type="radio" name="sim" value="Tidak">
+																					<label for="radio_6">Tidak </label>
+																				</span>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!--/span-->
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Status kehamilan, Jika status perkawinan kawin/nikah</label>
+																		<div class="radio-list">
+																			<div class="radio-inline pl-0">
+																				<span class="radio radio-info">
+																					<input type="radio" name="status_kehamilan" value="Ya">
+																					<label for="radio_5">Ya</label>
+																				</span>
+																			</div>
+																			<div class="radio-inline">
+																				<span class="radio radio-info">
+																					<input type="radio" name="status_kehamilan" value="Tidak">
+																					<label for="radio_6">Tidak </label>
+																				</span>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!--/span-->
+															</div>
+															<!-- /Row -->
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Kepemilikan buku nikah/akta cerai jika status perkawinan menikah/cerai hidup</label>
+																		<select class="form-control" name="buku_nikah_aktacerai">
+																			<option value="Belum kawin">Tidak diisi</option>
+																			<option value="Tidak">Tidak</option>
+																			<option value="Ya, dapat ditunjukan">Ya, dapat ditunjukan</option>
+																			<option value="Ya, tidak dapat ditunjukan">Ya, tidak dapat ditunjukan</option>
+																		</select>
+																	</div>
+																</div>
+																<!--/span-->
+																
+																
+															</div>
+															<!-- /Row -->
+															<div class="seprator-block"></div>
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Jenis Cacat</label>
+																		<select class="form-control" name="jenis_cacat">
+																			<option value="Tidak cacat">Tidak cacat</option>
+																			<option value="Tuna daksa/cacat tubuh">Tuna daksa/cacat tubuh</option>
+																			<option value="Tuna netra/buta">Tuna netra/buta</option>
+																			<option value="Tuna rungu">Tuna wicara</option>
+																			<option value="Tuna rungu dan wicara">Tuna rungu dan wicara</option>
+																			<option value="Tuna netra dan cacat tubuh">Tuna netra dan cacat tubuh</option>
+																			<option value="Tuna netra, rungu dan wicara">Tuna netra, rungu dan wicara</option>
+																			<option value="Tuna rungu, wicara dan cacat tubuh">Tuna rungu, wicara dan cacat tubuh</option>
+																			<option value="Tuna rungu, wicara, netra dan cacat tubuh">Tuna rungu, wicara, netra dan cacat tubuh</option>
+																			<option value="Cacat mental retardasi">Cacat mental retardasi</option>
+																			<option value="Mantan penderita gangguan jiwa">Mantan penderita gangguan jiwa</option>
+																			<option value="Cacat fisik dan mental">Cacat fisik dan mental</option>
+																		</select>
+																	</div>
+																</div>
+																<!--/span-->
+																
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Penyakit Kronis Menahun</label>
+																		<select class="form-control" name="penyakit_kronis">
+																			<option value="Tidak Ada">Tidak Ada</option>
+																			<option value="Hipertensi (tekanan darah tinggi)">Hipertensi (tekanan darah tinggi)</option>
+																			<option value="Rematik">Rematik</option>
+																			<option value="Asma">Asma</option>
+																			<option value="Masalah jantung">Masalah jantung</option>
+																			<option value="Diabetes (kencing manis)">Diabetes (kencing manis)</option>
+																			<option value="Tuberculosis (TBC)">Tuberculosis (TBC)</option>
+																			<option value="Stroke">Stroke</option>
+																			<option value="Kanker atau tumor ganas">Kanker atau tumor ganas</option>
+																			<option value="Kanker atau tumor ganas">Lainnya (gagal ginjal, paru-paru flek, dan sejenisnya)</option>
+																		</select>
+																	</div>
+																</div>
+																<!--/span-->
+															</div>
+															<!-- /Row -->
+															<div class="seprator-block"></div>
+															<div class="row">
+																<div class="col-md-12">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Untuk Anggota Rumah Tangga 5 tahun keatas </label>
+																	</div>
+																</div>
+																<!--/span-->
+																
+															</div>
+															<!-- /Row -->
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Partisipasi Sekolah</label>
+																		<select class="form-control" name="5th_keatas_partisipasi_sekolah">
+																			<option value="Tidak/belum pernah sekolah">Tidak/belum pernah sekolah</option>
+																			<option value="Masih sekolah">Masih sekolah</option>
+																			<option value="Tidak bersekolah lagi">Tidak bersekolah lagi</option>
+																		</select>
+																	</div>
+																</div>
+																<!--/span-->
+																
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Jenjang dan jenis pendidikan tertinggi yang pernah/sedang diduduki</label>
+																		<select class="form-control" name="5th_keatas_jenjang_pendidikan_tertinggi">
+																			<option value="Tidak diisi">Tidak diisi</option>
+																			<option value="SD/SDLB">SD/SDLB</option>
+																			<option value="Paket A">Paket A</option>
+																			<option value="M. Ibtidaiyah">M. Ibtidaiyah</option>
+																			<option value="SMP/SMPLB">SMP/SMPLB</option>
+																			<option value="Paket B">Paket B</option>
+																			<option value="M. Tsanawiyah">M. Tsanawiyah</option>
+																			<option value="SMA/SMK/SMALB">SMA/SMK/SMALB</option>
+																			<option value="Paket C">Paket C</option>
+																			<option value="M. Aliyah">M. Aliyah</option>
+																			<option value="Perguruan tinggi">Perguruan tinggi</option>
+																		</select>
+																	</div>
+																</div>
+																<!--/span-->
+															</div>
+															<!-- /Row -->
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Kelas tertinggi tertinggi yang pernah/sedang diduduki</label>
+																		<select class="form-control" name="5th_keatas_kelas_tertinggi">
+																			<option value="Tidak diisi">Tidak diisi</option>
+																			<option value="1">Kelas 1</option>
+																			<option value="2">Kelas 2</option>
+																			<option value="3">Kelas 3</option>
+																			<option value="4">Kelas 4</option>
+																			<option value="5">Kelas 5</option>
+																			<option value="6">Kelas 6</option>
+																			<option value="7">Kelas 7</option>
+																			<option value="8">Kelas 8</option>
+																		</select>
+																	</div>
+																</div>
+																<!--/span-->
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Ijazah tertinggi yang dimiliki</label>
+																		<select class="form-control" name="5th_keatas_ijazah_tertinggi">
+																			<option value="Tidak diisi">Tidak diisi</option>
+																			<option value="Tidak punya ijazah">Tidak punya ijazah</option>
+																			<option value="SD/sederajat">SD/sederajat</option>
+																			<option value="SMP/sederajat">SMP/sederajat</option>
+																			<option value="SMA/sederajat">SMA/sederajat</option>
+																			<option value="D1/D2/D3">D1/D2/D3</option>
+																			<option value="D4/S1">D4/S1</option>
+																			<option value="S2/S3">S2/S3</option>
+																		</select>
+																	</div>
+																</div>
+																<!--/span-->
+															</div>
+															<!-- /Row -->
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Bekerja/membantu bekerja selama seminggu yang lalu</label>
+																		<div class="radio-list">
+																			<div class="radio-inline pl-0">
+																				<span class="radio radio-info">
+																					<input type="radio" name="bekerja_membantubekerja" value="Ya">
+																					<label for="radio_5">Ya</label>
+																				</span>
+																			</div>
+																			<div class="radio-inline">
+																				<span class="radio radio-info">
+																					<input type="radio" name="bekerja_membantubekerja" value="Tidak">
+																					<label for="radio_6">Tidak </label>
+																				</span>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!--/span-->
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">jam kerja dalam waktu seminggu</label>
+																		<input type="text" class="form-control" name="jam_kerja" placeholder="Masukan jam kerja dalam waktu seminggu">
+																	</div>
+																</div>
+																<!--/span-->
+															</div>
+															<!-- /Row -->
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Lapangan usaha dari pekerjaan utama</label>
+																		<select class="form-control" name="lap_usaha_dr_pekerjaan_utama">
+																			<option value="{{lihatisikk.19}}">{{lihatisikk.19}}</option>
+																			<option value="Pertanian tanaman padi dan palawija">Pertanian tanaman padi dan palawija</option>
+																			<option value="Hortikultura">Hortikultura</option>
+																			<option value="Perkebunan">Perkebunan</option>
+																			<option value="Perikanan tangkap">Perikanan tangkap</option>
+																			<option value="Perikanan budidaya">Perikanan budidaya</option>
+																			<option value="Peternakan">Peternakan</option>
+																			<option value="Kehutanan dan pertanian lainnya">Kehutanan dan pertanian lainnya</option>
+																			<option value="Pertambangan/penggalian">Pertambangan/penggalian</option>
+																			<option value="Industri pengolahan">Industri pengolahan</option>
+																			<option value="Listrik dan gas">Listrik dan gas</option>
+																			<option value="Bangunan/kontruksi">Bangunan/kontruksi</option>
+																			<option value="Perdagangan">Perdagangan</option>
+																			<option value="Hotel dan rumah makan">Hotel dan rumah makan</option>
+																			<option value="Transportasi dan pergudangan">Transportasi dan pergudangan</option>
+																			<option value="Informasi dan komunikasi">Informasi dan komunikasi</option>
+																			<option value="Keuangan dan asuransi">Keuangan dan asuransi</option>
+																			<option value="Jasa pendidikan">Jasa pendidikan</option>
+																			<option value="Jasa kesehatan">Jasa kesehatan</option>
+																			<option value="Jasa kemasyarakatan, pemerintahan dan perorangan">Jasa kemasyarakatan, pemerintahan dan perorangan</option>
+																			<option value="Pemulung">Pemulung</option>
+																			<option value="Lainnya">Lainnya</option>
+																		</select>
+																	</div>
+																</div>
+																<!--/span-->
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10">Status kedudukan dalam pekerjaan utama</label>
+																		<select class="form-control" name="status_kedudukan_dlm_pekerjaan_utama">
+																			<option value="Berusaha sendiri">Berusaha sendiri</option>
+																			<option value="Berusaha dibantu buruh tidak tetap/tidak dibayar">Berusaha dibantu buruh tidak tetap/tidak dibayar</option>
+																			<option value="Berusaha dibantu buruh tetap/dibayar">Berusaha dibantu buruh tetap/dibayar</option>
+																			<option value="Buruh/karyawan/pegawai swasta">Buruh/karyawan/pegawai swasta</option>
+																			<option value="PNS/TNI/Polri/BUMN/BUMD/anggota legislatif">PNS/TNI/Polri/BUMN/BUMD/anggota legislatif</option>
+																			<option value="Pekerja bebas pertanian">Pekerja bebas pertanian</option>
+																			<option value="Pekerja bebas non-pertanian">Pekerja bebas non-pertanian</option>
+																			<option value="Pekerja keluarga/tidak dibayar">Pekerja keluarga/tidak dibayar</option>
+																		</select>
+																	</div>
+																</div>
+																<!--/span-->
+															</div>
+															<!-- /Row -->
+														<div class="form-actions mt-10">
+															<button type="submit" name="subject" value="simpandata" class="btn btn-success  mr-10"> Tambah Data</button>
+															<button type="submit" name="subject" value="kembali" class="btn btn-default">Kembali</button>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>		
+						</div>
+					</div>
+					<!-- /Row -->

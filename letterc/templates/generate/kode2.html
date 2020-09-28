@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Data Desa</title>
+  <link href="/static/baru/vendors/bower_components/datatables/media/css/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
+  <link href="/static/baru/dist/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div class="row">
+            <div class="col-lg-12">
+             <div class="panel panel-default card-view">
+              <div class="panel-heading">
+                <div class="pull-left">
+                  <h6 class="panel-title txt-dark">Grafik Pendidikan</h6>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                  <canvas id="chart_2" height="100"></canvas>
+                </div>  
+              </div>
+            </div>
+          </div>
+        </div>
+<div class="row">
+          <div class="col-lg-12">
+             <div class="panel panel-default card-view">
+                <div class="panel-wrapper collapse in">
+                  <div class="panel-body">
+                    <div class="table-responsive">
+                      <table id="myTable" class="table table-bordered table-striped" >
+                      <tr class="header">
+                      <th>NO</th>
+                      <th>PENDIDIKAN</th>
+                      <th>LAKI-LAKI</th>
+                      <th>PEREMPUAN</th>
+                      <th>JUMLAH</th>
+                      </tr>
+                      <tr>
+                        <td>1.</td>
+                        <td> Tidak/Belum Sekolah</td>
+                        <td>{{hasilstat.12}} </td>
+                        <td>{{hasilstat.23}}</td>
+                        <td>{{hasilstat.1}}</td>
+                      </tr>
+                      <tr>
+                        <td>2.</td>
+                        <td> Tidak Tamat SD/Sederajat</td>
+                        <td>{{hasilstat.13}}</td>
+                        <td>{{hasilstat.24}}</td>
+                        <td>{{hasilstat.2}}</td>
+                      </tr>
+                      <tr>
+                        <td>3.</td>
+                        <td> Tamat SD/Sederajat</td>
+                        <td>{{hasilstat.14}}</td>
+                        <td>{{hasilstat.25}}</td>
+                        <td>{{hasilstat.3}}</td>
+                      </tr>
+                       <tr>
+                        <td>4.</td>
+                        <td> SLTP/Sederajat</td>
+                        <td>{{hasilstat.15}}</td>
+                        <td>{{hasilstat.26}}</td>
+                        <td>{{hasilstat.4}}</td>
+                      </tr>
+                      <tr>
+                        <td>5.</td>
+                        <td> SLTA/Sederajat</td>
+                        <td>{{hasilstat.16}}</td>
+                        <td>{{hasilstat.27}}</td>
+                        <td>{{hasilstat.5}}</td>
+                      </tr>
+                      <tr>
+                        <td>6.</td>
+                        <td> Diploma I/II</td>
+                        <td>{{hasilstat.17}}</td>
+                        <td>{{hasilstat.28}}</td>
+                        <td>{{hasilstat.6}}</td>
+                      </tr>
+                      <tr>
+                        <td>7.</td>
+                        <td> Akademi/Diploma III/S. Muda</td>
+                        <td>{{hasilstat.18}}</td>
+                        <td>{{hasilstat.29}}</td>
+                        <td>{{hasilstat.7}}</td>
+                      </tr>
+                      <tr>
+                        <td>8.</td>
+                        <td> Diploma IV/Strata I</td>
+                        <td>{{hasilstat.19}}</td>
+                        <td>{{hasilstat.30}}</td>
+                        <td>{{hasilstat.8}}</td>
+                      </tr>
+                      <tr>
+                        <td>9.</td>
+                        <td> Strata II</td>
+                        <td>{{hasilstat.20}}</td>
+                        <td>{{hasilstat.31}}</td>
+                        <td>{{hasilstat.9}}</td>
+                      </tr>
+                      <tr>
+                        <td>10.</td>
+                        <td> Strata III</td>
+                        <td>{{hasilstat.21}}</td>
+                        <td>{{hasilstat.32}}</td>
+                        <td>{{hasilstat.10}}</td>
+                      </tr>
+                      <tr>
+                        <td>11.</td>
+                        <td> Pendidikan Non Formal</td>
+                        <td>{{hasilstat.22}}</td>
+                        <td>{{hasilstat.33}}</td>
+                        <td>{{hasilstat.11}}</td>
+                      </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>  
+     </div>
+</div>
+  <script src="/static/baru/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+  <script src="/static/baru/dist/js/jquery.slimscroll.js"></script>
+  <script src="/static/baru/vendors/bower_components/waypoints/lib/jquery.waypoints.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/jquery.counterup/jquery.counterup.min.js"></script>
+  <script src="/static/baru/dist/js/dropdown-bootstrap-extended.js"></script>
+  <script src="/static/baru/vendors/jquery.sparkline/dist/jquery.sparkline.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+  <script src="/static/baru/vendors/chart.js/Chart.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/raphael/raphael.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/morris.js/morris.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
+  <script src="/static/baru/vendors/bower_components/switchery/dist/switchery.min.js"></script>
+  <script src="/static/baru/dist/js/init.js"></script>
+<script type="text/javascript">
+    /*Chartjs Init*/
+
+$( document ).ready(function() {
+    "use strict"; 
+  if( $('#chart_2').length > 0 ){
+    var ctx2 = document.getElementById("chart_2").getContext("2d");
+    var data2 = {
+      labels: ['Tidak/Belum Sekolah', 'Tidak Tamat SD/Sederajat', 'Tamat SD/Sederajat', 'SLTP/Sederajat', 'SLTA/Sederajat', 'Diploma I/II', 'Akademi/Diploma III/S. Muda','Diploma IV/Strata I','Strata II','Strata III','Pendidikan Non Formal'],
+      datasets: [
+        {
+          label: "Laki-laki",
+          backgroundColor: "rgba(240,197,65,.6)",
+          borderColor: "rgba(240,197,65,.6)",
+          data: [{{hasilstat.12}},{{hasilstat.13}},{{hasilstat.14}},{{hasilstat.15}},{{hasilstat.16}},{{hasilstat.17}},{{hasilstat.18}},{{hasilstat.19}},{{hasilstat.20}},{{hasilstat.21}},{{hasilstat.22}}]
+        },
+        {
+          label: "Perempuan",
+          backgroundColor: "rgba(46,205,153,.6)",
+          borderColor: "rgba(46,205,153,.6)",
+          data: [{{hasilstat.23}},{{hasilstat.24}},{{hasilstat.25}},{{hasilstat.26}},{{hasilstat.27}},{{hasilstat.28}},{{hasilstat.29}},{{hasilstat.30}},{{hasilstat.31}},{{hasilstat.32}},{{hasilstat.33}}]
+        }
+      ]
+    };
+    
+    var hBar = new Chart(ctx2, {
+      type:"horizontalBar",
+      data:data2,
+      
+      options: {
+        tooltips: {
+          mode:"label"
+        },
+        scales: {
+          yAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          xAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          
+        },
+        elements:{
+          point: {
+            hitRadius:40
+          }
+        },
+        animation: {
+          duration: 3000
+        },
+        responsive: true,
+        legend: {
+          display: false,
+        },
+        tooltip: {
+          backgroundColor:'rgba(33,33,33,1)',
+          cornerRadius:0,
+          footerFontFamily:"'Poppins'"
+        }
+        
+      }
+    });
+  }
+  if( $('#chart_6').length > 0 ){
+    var ctx6 = document.getElementById("chart_6").getContext("2d");
+    var data6 = {
+       labels: [
+      "Laki-laki",
+      "Perempuan"
+    ],
+    datasets: [
+      {
+        data: [{{hasil1}},{{hasil2}}],
+        backgroundColor: [
+          "rgba(46,205,153,.6)",
+          "rgba(78,157,230,.6)"
+        ],
+        hoverBackgroundColor: [
+          "rgba(46,205,153,.6)",
+          "rgba(78,157,230,.6)"
+        ]
+      }]
+    };
+    
+    var pieChart  = new Chart(ctx6,{
+      type: 'pie',
+      data: data6,
+      options: {
+        animation: {
+          duration: 3000
+        },
+        responsive: true,
+        legend: {
+          labels: {
+          fontFamily: "Poppins",
+          fontColor:"#878787"
+          }
+        },
+        tooltip: {
+          backgroundColor:'rgba(33,33,33,1)',
+          cornerRadius:0,
+          footerFontFamily:"'Poppins'"
+        },
+        elements: {
+          arc: {
+            borderWidth: 0
+          }
+        }
+      }
+    });
+  }
+});
+  </script> 
+</body>
+
+</html>

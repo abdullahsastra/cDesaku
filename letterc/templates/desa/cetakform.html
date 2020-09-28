@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>SIDEKEM Desa Bulakan </title>
+  <meta name="description" content="Sistem Informasi Desa dan Kawasan Online by Python" />
+  <meta name="keywords" content="Sistem Informasi Desa dan Kawasan Online" />
+  <meta name="author" content="pythonesia"/>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="/baru/vendors/bower_components/datatables/media/css/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
+  <link href="/baru/dist/css/cetak.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<page size="A4">
+
+                      <table >
+                        <thead>
+                          <tr>
+                            <th>No</th>
+                            <th>NIK</th>
+                            <th>Nama Lengkap</th>
+                            <th>SHDK</th>
+
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for a in lihatisikklengkap %}
+                          <tr>
+                            <td>{{ loop.index }}<input type="hidden" name="nomor" value="{{ a.0 }}"></td>
+                            <td>{{ a.1|truncate(10, true,'') }}XXXXXX</td>
+                            <td>{{ a.2 }}</td>
+                            <td>{{ a.3 }}</td>
+
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+
+</page>
+</body>
+</html>

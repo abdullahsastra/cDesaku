@@ -1,0 +1,633 @@
+<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default card-view">
+				<div class="panel-wrapper collapse in">
+					<div class="panel-body">
+						<div class="row">
+
+							<div class="col-sm-12 col-xs-12">
+
+								<div class="form-wrap">
+
+										<div class="form-body">
+
+											<h6 class="txt-dark capitalize-font">Edit Data Kepndudukan</h6>
+											<hr class="light-grey-hr"/>
+											<form action="/validasidatapenduduk" method="post">
+											<div class="row">
+
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Nomor Kepala Keluarga<input type="hidden" name="no" value="{{ lihatpenduduk.0 }}"></label>
+														<input type="text" class="form-control" name="nokk" placeholder="Masukkan Nomor KK" value="{{ lihatpenduduk.5 }}" readonly>
+													</div>
+												</div>
+												<!--/span-->
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Nomor Induk Kependudukan (NIK)</label>
+														<input type="text" class="form-control" name="nik"  placeholder="Masukan NIK" value="{{ lihatpenduduk.12 }}" readonly>
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Nama Lengkap</label>
+														<input type="text" class="form-control" name="namalengkap"  placeholder="Masukan Nama Lengkap" value="{{ lihatpenduduk.10 }}" required="" readonly>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Alamat</label>
+														<input type="text" class="form-control" name="alamat"  placeholder="Masukan Alamat" value="{{ lihatpenduduk.6.title() }}" required="" readonly>
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">RT</label>
+														<input type="text" class="form-control" name="rt"  placeholder="Masukan RT" value="{{ lihatpenduduk.8.title() }}" required="" readonly>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">RW</label>
+														<input type="text" class="form-control" name="rw"  placeholder="Masukan RW" value="{{ lihatpenduduk.9.title() }}" required="" readonly>
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Dusun</label>
+														<input type="text" class="form-control" name="dusun"  placeholder="Masukan Dusun" value="{{ lihatpenduduk.7.title() }}" required="" readonly>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Kodepos</label>
+														<input type="text" class="form-control" name="kodepos"  placeholder="Masukan Kodepos" value="{{ lihatpenduduk.11 }}" required="" readonly>
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Tempat Lahir</label>
+														<input type="text" class="form-control" name="tempatlahir"  placeholder="Masukan Tempat Lahir" value="{{ lihatpenduduk.13 }}" required="" readonly>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Tanggal Lahir (DD/MM/YYYY)</label>
+														<input type="text" class="form-control" name="tgllahir"  placeholder="Masukan Tanggal Lahir" value="{{ lihatpenduduk.14 }}" required="" readonly>
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Jenis Kelamin</label>
+														<select required="" class="form-control" name="jk" readonly>
+															<option value="{{ lihatpenduduk.15 }}" selected>{{ lihatpenduduk.15.title() }}</option>
+															<option value="Laki-laki" >Laki-laki</option>
+															<option value="Perempuan">Perempuan</option>
+														</select>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Status Hubungan Dalam Keluarga</label>
+														<input type="text" class="form-control" name="shdk"  placeholder="Masukan Status Hubungan Dalam Keluarga" value="{{ lihatpenduduk.16.title() }}" readonly>
+														
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Agama</label>
+														<select required="" class="form-control" name="agama" readonly>
+															<option value="{{ lihatpenduduk.17.title() }}" selected>{{ lihatpenduduk.17.title() }}</option>
+															<option value="Islam" >Islam</option>
+															<option value="Kristen">Kristen</option>
+															<option value="Katholik">Katholik</option>
+															<option value="Hindu">Hindu</option>
+															<option value="Budha">Budha</option>
+															<option value="Khong Hucu">Khong Hucu</option>
+															<option value="Aliran Kepercayaan" >Aliran Kepercayaan</option>
+															<option value="Agama Lainnya" >Agama Lainnya</option>
+														</select>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Pendidikan Terakhir</label>readonly
+														<select required="" class="form-control" name="pendidikan" >
+															<option value="{{ lihatpenduduk.18 }}" selected="">{{ lihatpenduduk.18 }}</option>
+															<option value="Tidak/Belum Sekolah" >Tidak/Belum Sekolah</option>
+															<option value="Tidak Tamat SD/Sederajat">Tidak Tamat SD/Sederajat</option>
+															<option value="Tamat SD/Sederajat">Tamat SD/Sederajat</option>
+															<option value="SLTP/Sederajat">SLTP/Sederajat</option>
+															<option value="SLTA/Sederjat">SLTA/Sederjat</option>
+															<option value="Diploma I/II">Diploma I/II</option>
+															<option value="Akademi/Diploma III/S. Muda">Akademi/Diploma III/S. Muda</option>
+															<option value="DilpomaIV/Strata I">DilpomaIV/Strata I</option>
+															<option value="Strata II">Strata II </option>
+															<option value="Strata III">Strata III </option>
+															<option value="Pendidikan Non Formal">Pendidikan Non Formal </option>
+														</select>
+														</div>
+													</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Pekerjaan</label>
+														<select required="" class="form-control" name="pekerjaan" readonly>
+															<option value="{{ lihatpenduduk.19 }}" selected>{{ lihatpenduduk.19 }}</option>
+															<option value="Belum/Tidak Bekerja" >Belum/Tidak Bekerja</option>
+															<option value="Mengurus Rumah Tangga" >Mengurus Rumah Tangga</option>
+															<option value="Pelajar/Mahasiswa" >Pelajar/Mahasiswa</option>
+															<option value="Pensiunan" >Pensiunan</option>
+															<option value="Pegawai Negeri Sipil" >Pegawai Negeri Sipil</option>
+															<option value="Tentara Nasional Indonesia" >Tentara Nasional Indonesia</option>
+															<option value="Kepolisian RI" >Kepolisian RI</option>
+															<option value="Perdagangan" >Perdagangan</option>
+															<option value="Petani/Pekebun" >Petani/Pekebun</option>
+															<option value="Peternak" >Peternak</option>
+															<option value="Nelayan/Perikanan" >Nelayan/Perikanan</option>
+															<option value="Industri" >Industri</option>
+															<option value="Konstruksi" >Konstruksi</option>
+															<option value="Transportasi" >Transportasi</option>
+															<option value="Karyawan Swasta" >Karyawan Swasta</option>
+															<option value="Karyawan BUMN" >Karyawan BUMN</option>
+															<option value="Karyawan BUMD" >Karyawan BUMD</option>
+															<option value="Karyawan Honorer" >Karyawan Honorer</option>
+															<option value="Buruh Harian Lepas" >Buruh Harian Lepas</option>
+															<option value="Buruh Tani/Perkebunan" >Buruh Tani/Perkebunan</option>
+															<option value="Buruh Nelayan/Perikanan" >Buruh Nelayan/Perikanan</option>
+															<option value="Buruh Peternakan" >Buruh Peternakan</option>
+															<option value="Pembantu Rumah Tangga" >Pembantu Rumah Tangga</option>
+															<option value="Tukang Cukur" >Tukang Cukur</option>
+															<option value="Tukang Listrik" >Tukang Listrik</option>
+															<option value="Tukang Batu" >Tukang Batu</option>
+															<option value="Tukang Kayu" >Tukang Kayu</option>
+															<option value="Tukang Sol Sepatu" >Tukang Sol Sepatu</option>
+															<option value="Tukang Las/Pandai Besi" >Tukang Las/Pandai Besi</option>
+															<option value="Tukang Jahit" >Tukang Jahit</option>
+															<option value="Penata Rambut" >Penata Rambut</option>
+															<option value="Penata Rias" >Penata Rias</option>
+															<option value="Penata Busana" >Penata Busana</option>
+															<option value="Mekanik" >Mekanik</option>
+															<option value="Tukang Gigi" >Tukang Gigi</option>
+															<option value="Seniman" >Seniman</option>
+															<option value="Tabib" >Tabib</option>
+															<option value="Paraji" >Paraji</option>
+															<option value="Perancang Busana" >Perancang Busana</option>
+															<option value="Penterjemah" >Penterjemah</option>
+															<option value="Imam Masjid" >Imam Masjid</option>
+															<option value="Pendeta" >Pendeta</option>
+															<option value="Pastur" >Pastur</option>
+															<option value="Wartawan" >Wartawan</option>
+															<option value="Ustadz/Mubaligh" >Ustadz/Mubaligh</option>
+															<option value="Juru Masak" >Juru Masak</option>
+															<option value="Promotor Acara" >Promotor Acara</option>
+															<option value="Anggota DPR-RI" >Anggota DPR-RI</option>
+															<option value="Anggota DPD" >Anggota DPD</option>
+															<option value="Anggota BPK" >Anggota BPK</option>
+															<option value="Presiden" >Presiden</option>
+															<option value="Wakil Presiden" >Wakil Presiden</option>
+															<option value="Anggota Mahkamah" >Anggota Mahkamah</option>
+															<option value="Anggota Kabinet/Kementerian" >Anggota Kabinet/Kementerian</option>
+															<option value="Duta Besar" >Duta Besar</option>
+															<option value="Gubernur" >Gubernur</option>
+															<option value="Wakil Gubernur" >Wakil Gubernur</option>
+															<option value="Bupati" >Bupati</option>
+															<option value="Wakil Bupati" >Wakil Bupati</option>
+															<option value="Walikota" >Walikota</option>
+															<option value="Wakil Walikota" >Wakil Walikota</option>
+															<option value="Anggota DPRD Propinsi" >Anggota DPRD Propinsi</option>
+															<option value="Anggota DPRD Kabupaten/Kota" >Anggota DPRD Kabupaten/Kota</option>
+															<option value="Dosen" >Dosen</option>
+															<option value="Guru" >Guru</option>
+															<option value="Pilot" >Pilot</option>
+															<option value="Pengacara" >Pengacara</option>
+															<option value="Notaris" >Notaris</option>
+															<option value="Arsitek" >Arsitek</option>
+															<option value="Akuntan" >Akuntan</option>
+															<option value="Konsultan" >Konsultan</option>
+															<option value="Dokter" >Dokter</option>
+															<option value="Bidan" >Bidan</option>
+															<option value="Perawat" >Perawat</option>
+															<option value="Apoteker" >Apoteker</option>
+															<option value="Psikiater/Psikolog" >Psikiater/Psikolog</option>
+															<option value="Penyiar Televisi" >Penyiar Televisi</option>
+															<option value="Penyiar Radio" >Penyiar Radio</option>
+															<option value="Pelaut" >Pelaut</option>
+															<option value="Peneliti" >Peneliti</option>
+															<option value="Sopir" >Sopir</option>
+															<option value="Pialang" >Pialang</option>
+															<option value="Paranormal" >Paranormal</option>
+															<option value="Pedagang" >Pedagang</option>
+															<option value="Perangkat Desa" >Perangkat Desa</option>
+															<option value="Kepala Desa" >Kepala Desa</option>
+															<option value="Biarawati" >Biarawati</option>
+															<option value="Wiraswasta" >Wiraswasta</option>
+															<option value="Buruh Migran" >Buruh Migran</option>
+															<option value="Lainnya" >Lainnya</option>
+														</select>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Golongan Darah</label>
+														<select required="" class="form-control" name="goldarah" readonly>
+															<option value="{{ lihatpenduduk.24 }}" selected="">{{ lihatpenduduk.24 }}</option>
+															<option value="A">A</option>
+															<option value="AB" >AB</option>
+															<option value="B" >B</option>
+															<option value="O" >O</option>
+															<option value="A+" >A+</option> 
+															<option value="A-" >A-</option>
+															<option value="AB+" >AB+</option>
+															<option value="AB-" >AB-</option>
+															<option value="O+" >O+</option>
+															<option value="O-" >O-</option>
+															<option value="Tidak Tahu" >TidakTahu</option>
+														</select>
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Nama Lengkap Ayah</label>
+														<input type="text" class="form-control" name="namaayah"  placeholder="Masukan Nama Ayah" value="{{ lihatpenduduk.20 }}" required="" readonly>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Nama Lengkap Ibu</label>
+														<input type="text" class="form-control" name="namaibu"  placeholder="Masukan Nama Ibu" value="{{ lihatpenduduk.21 }}" required="" readonly>
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Umur (Tahun)</label>
+														<input type="text" class="form-control" name="tahun"  placeholder="Masukan Umur (Tahun)" value="{{ lihatpenduduk.22 }}" required="" readonly>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Umur (Bulan)</label>
+														<input type="text" class="form-control" name="bulan"  placeholder="Masukan Umur (Bulan)" value="{{ lihatpenduduk.23 }}" required="" readonly>
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Kewarganegaraan</label>
+														<select required="" class="form-control" name="warganegara" readonly>
+															<option value="{{ lihatpenduduk.25 }}" selected>{{ lihatpenduduk.25 }}</option>
+															<option value="WNI">WNI</option>
+															<option value="WNA">WNA</option>
+														</select>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Pekerjaan Lainnya</label>
+														<select required="" class="form-control" name="pekerjaanlain" readonly>
+															<option value="{{ lihatpenduduk.26 }}" selected>{{ lihatpenduduk.26 }}</option>
+															<option value="Belum/Tidak Bekerja" >Belum/Tidak Bekerja</option>
+															<option value="Mengurus Rumah Tangga" >Mengurus Rumah Tangga</option>
+															<option value="Pelajar/Mahasiswa" >Pelajar/Mahasiswa</option>
+															<option value="Pensiunan" >Pensiunan</option>
+															<option value="Pegawai Negeri Sipil" >Pegawai Negeri Sipil</option>
+															<option value="Tentara Nasional Indonesia" >Tentara Nasional Indonesia</option>
+															<option value="Kepolisian RI" >Kepolisian RI</option>
+															<option value="Perdagangan" >Perdagangan</option>
+															<option value="Petani/Pekebun" >Petani/Pekebun</option>
+															<option value="Peternak" >Peternak</option>
+															<option value="Nelayan/Perikanan" >Nelayan/Perikanan</option>
+															<option value="Industri" >Industri</option>
+															<option value="Konstruksi" >Konstruksi</option>
+															<option value="Transportasi" >Transportasi</option>
+															<option value="Karyawan Swasta" >Karyawan Swasta</option>
+															<option value="Karyawan BUMN" >Karyawan BUMN</option>
+															<option value="Karyawan BUMD" >Karyawan BUMD</option>
+															<option value="Karyawan Honorer" >Karyawan Honorer</option>
+															<option value="Buruh Harian Lepas" >Buruh Harian Lepas</option>
+															<option value="Buruh Tani/Perkebunan" >Buruh Tani/Perkebunan</option>
+															<option value="Buruh Nelayan/Perikanan" >Buruh Nelayan/Perikanan</option>
+															<option value="Buruh Peternakan" >Buruh Peternakan</option>
+															<option value="Pembantu Rumah Tangga" >Pembantu Rumah Tangga</option>
+															<option value="Tukang Cukur" >Tukang Cukur</option>
+															<option value="Tukang Listrik" >Tukang Listrik</option>
+															<option value="Tukang Batu" >Tukang Batu</option>
+															<option value="Tukang Kayu" >Tukang Kayu</option>
+															<option value="Tukang Sol Sepatu" >Tukang Sol Sepatu</option>
+															<option value="Tukang Las/Pandai Besi" >Tukang Las/Pandai Besi</option>
+															<option value="Tukang Jahit" >Tukang Jahit</option>
+															<option value="Penata Rambut" >Penata Rambut</option>
+															<option value="Penata Rias" >Penata Rias</option>
+															<option value="Penata Busana" >Penata Busana</option>
+															<option value="Mekanik" >Mekanik</option>
+															<option value="Tukang Gigi" >Tukang Gigi</option>
+															<option value="Seniman" >Seniman</option>
+															<option value="Tabib" >Tabib</option>
+															<option value="Paraji" >Paraji</option>
+															<option value="Perancang Busana" >Perancang Busana</option>
+															<option value="Penterjemah" >Penterjemah</option>
+															<option value="Imam Masjid" >Imam Masjid</option>
+															<option value="Pendeta" >Pendeta</option>
+															<option value="Pastur" >Pastur</option>
+															<option value="Wartawan" >Wartawan</option>
+															<option value="Ustadz/Mubaligh" >Ustadz/Mubaligh</option>
+															<option value="Juru Masak" >Juru Masak</option>
+															<option value="Promotor Acara" >Promotor Acara</option>
+															<option value="Anggota DPR-RI" >Anggota DPR-RI</option>
+															<option value="Anggota DPD" >Anggota DPD</option>
+															<option value="Anggota BPK" >Anggota BPK</option>
+															<option value="Presiden" >Presiden</option>
+															<option value="Wakil Presiden" >Wakil Presiden</option>
+															<option value="Anggota Mahkamah" >Anggota Mahkamah</option>
+															<option value="Anggota Kabinet/Kementerian" >Anggota Kabinet/Kementerian</option>
+															<option value="Duta Besar" >Duta Besar</option>
+															<option value="Gubernur" >Gubernur</option>
+															<option value="Wakil Gubernur" >Wakil Gubernur</option>
+															<option value="Bupati" >Bupati</option>
+															<option value="Wakil Bupati" >Wakil Bupati</option>
+															<option value="Walikota" >Walikota</option>
+															<option value="Wakil Walikota" >Wakil Walikota</option>
+															<option value="Anggota DPRD Propinsi" >Anggota DPRD Propinsi</option>
+															<option value="Anggota DPRD Kabupaten/Kota" >Anggota DPRD Kabupaten/Kota</option>
+															<option value="Dosen" >Dosen</option>
+															<option value="Guru" >Guru</option>
+															<option value="Pilot" >Pilot</option>
+															<option value="Pengacara" >Pengacara</option>
+															<option value="Notaris" >Notaris</option>
+															<option value="Arsitek" >Arsitek</option>
+															<option value="Akuntan" >Akuntan</option>
+															<option value="Konsultan" >Konsultan</option>
+															<option value="Dokter" >Dokter</option>
+															<option value="Bidan" >Bidan</option>
+															<option value="Perawat" >Perawat</option>
+															<option value="Apoteker" >Apoteker</option>
+															<option value="Psikiater/Psikolog" >Psikiater/Psikolog</option>
+															<option value="Penyiar Televisi" >Penyiar Televisi</option>
+															<option value="Penyiar Radio" >Penyiar Radio</option>
+															<option value="Pelaut" >Pelaut</option>
+															<option value="Peneliti" >Peneliti</option>
+															<option value="Sopir" >Sopir</option>
+															<option value="Pialang" >Pialang</option>
+															<option value="Paranormal" >Paranormal</option>
+															<option value="Pedagang" >Pedagang</option>
+															<option value="Perangkat Desa" >Perangkat Desa</option>
+															<option value="Kepala Desa" >Kepala Desa</option>
+															<option value="Biarawati" >Biarawati</option>
+															<option value="Wiraswasta" >Wiraswasta</option>
+															<option value="Buruh Migran" >Buruh Migran</option>
+															<option value="Lainnya" >Lainnya</option>
+														</select>
+														</div>
+													</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Status Perkawinan</label>
+														<select required="" class="form-control" name="status" readonly>
+															<option value="{{ lihatpenduduk.27 }}" selected>{{ lihatpenduduk.27.title() }}</option>
+															<option value="Belum Kawin" >Belum Kawin</option>
+															<option value="Kawin" >Kawin</option>
+															<option value="Cerai Mati" >Cerai Mati</option>
+															<option value="Cerai Hidup" >Cerai Hidup</option>
+														</select>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Status Kependudukan</label>
+														<select required="" class="form-control" name="kependudukan" readonly>
+															<option value="{{ lihatpenduduk.28 }}" selected="">{{ lihatpenduduk.28 }}</option>
+															<option value="Penduduk Tetap" >Penduduk Tetap</option>
+															<option value="Penduduk Sementara" >Penduduk Sementara</option>
+															<option value="Penduduk Pindah/Pindahan" >Penduduk Pindah/Pindahan</option>
+														</select>
+														</div>
+													</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Status Tinggal</label>
+														<select required="" class="form-control" name="statustinggal" readonly>
+															<option value="{{ lihatpenduduk.29 }}" selected>{{ lihatpenduduk.29.title() }}</option>
+															<option value="Tinggal Tetap">Tinggal Tetap</option>
+															<option value="Tinggal Di Luar Desa*" >Tinggal Di Luar Desa</option>
+															<option value="Tinggal Di Luar Kota/Kabupaten" >Tinggal Di Luar Kota/Kabupaten</option>
+															<option value="Tinggal Di Luar Propinsi" >Tinggal Di Luar Propinsi</option>
+															<option value="Tinggal Di Luar Negeri" >Tinggal Di Luar Negeri</option>
+														</select>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Penyandang Disabilitas</label>
+														<select required="" class="form-control" name="disabilitas" readonly>
+															<option value="{{ lihatpenduduk.30 }}" selected="">{{ lihatpenduduk.30 }}</option>
+															<option value="Tidak cacat">Tidak cacat</option>
+															<option value="Cacat Fisik" >Cacat Fisik</option>
+															<option value="Cacat Netra/Buta" >Cacat Netra/Buta</option>
+															<option value="Cacat Rungu/Wicara" >Cacat Rungu/Wicara</option>
+															<option value="Cacat Mental/Jiwa" >Cacat Mental/Jiwa</option>
+															<option value="Cacat Fisik/Mental" >Cacat Fisik/Mental</option>
+															<option value="Cacat Lainnya" >Cacat Lainnya</option>
+														</select>
+														</div>
+													</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Penggunaan Kontrasepsi</label>
+														<select required="" class="form-control" name="kontrasepsi" readonly>
+															<option value="{{ lihatpenduduk.31 }}" selected>{{ lihatpenduduk.29.title() }}</option>
+															<option value="Pil">Pil</option>
+															<option value="Suntik" >Suntik</option>
+															<option value="IUD" >IUD</option>
+															<option value="Kondom" >Kondom</option>
+															<option value="Implant" >Implant</option>
+															<option value="MOP" >MOP</option>
+														</select>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Resiko Kehamilan</label>
+														<select required="" class="form-control" name="resiko_kehamilan" readonly>
+															<option value="{{ lihatpenduduk.32 }}" selected="">{{ lihatpenduduk.28 }}</option>
+															<option value="Resiko Tinggi" >Resiko Tinggi</option>
+															<option value="Tidak Resiko Tinggi" >Tidak Resiko Tinggi</option>
+														</select>
+														</div>
+													</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Kepemilikan Akta Lahir</label>
+														<select required="" class="form-control" name="aktakelahiran" readonly>
+															<option value="{{ lihatpenduduk.33 }}" selected>{{ lihatpenduduk.33 }}</option>
+															<option value="Ya">Ya</option>
+															<option value="Tidak" >Tidak</option>
+														</select>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">No Akta Lahir</label>
+														<input type="text" class="form-control" name="noaktalahir"  placeholder="Masukan Nomor Akta Lahir" value="{{ lihatpenduduk.34 }}" required="" readonly>
+														</div>
+													</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Kepemilikan Akta Nikah</label>
+														<select required="" class="form-control" name="aktanikah" readonly>
+															<option value="{{ lihatpenduduk.35 }}" selected>{{ lihatpenduduk.35 }}</option>
+															<option value="Ya">Ya</option>
+															<option value="Tidak" >Tidak</option>
+														</select>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">No Akta Lahir</label>
+														<input type="text" class="form-control" name="noaktanikah"  placeholder="Masukan Nomor Akta Nikah" value="{{ lihatpenduduk.36 }}" required="" readonly>
+														</div>
+													</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Kepemilikan Akta Cerai</label>
+														<select required="" class="form-control" name="aktacerai" readonly>
+															<option value="{{ lihatpenduduk.37 }}" selected>{{ lihatpenduduk.37 }}</option>
+															<option value="Ya">Ya</option>
+															<option value="Tidak" >Tidak</option>
+														</select>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">No Akta Cerai</label>
+														<input type="text" class="form-control" name="noaktacerai"  placeholder="Masukan Nomor Akta Nikah" value="{{ lihatpenduduk.38 }}" required="" readonly>
+														</div>
+													</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Kepemilikan Paspor</label>
+														<select required="" class="form-control" name="paspor" readonly>
+															<option value="{{ lihatpenduduk.39 }}" selected>{{ lihatpenduduk.39 }}</option>
+															<option value="Ya">Ya</option>
+															<option value="Tidak" >Tidak</option>
+														</select>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">No Paspor</label>
+														<input type="text" class="form-control" name="nopaspor"  placeholder="Masukan Nomor Paspor" value="{{ lihatpenduduk.40 }}" required="" readonly>
+														</div>
+													</div>
+												<!--/span-->
+											</div>
+
+											<div class="row">
+												<div class="col-lg-12">
+													<div  class="panel-wrapper collapse in">
+														<div  class="panel-body">
+															<div class="form-actions mt-10" >
+
+																	<button type="submit" name="subject"  value ="updatedatakel" class="btn btn-success btn-sm btn-rounded"><i class="zmdi zmdi-flip-to-back mr-5"></i>  Kembali</button>
+
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										<!-- /Row -->
+										
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>
+	</div>
+	<!-- /Row -->

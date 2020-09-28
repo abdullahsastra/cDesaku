@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>SIDEKEM Desa Bulakan </title>
+  <meta name="description" content="Sistem Informasi Desa dan Kawasan Online by Python" />
+  <meta name="keywords" content="Sistem Informasi Desa dan Kawasan Online" />
+  <meta name="author" content="pythonesia"/>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="/baru/vendors/bower_components/datatables/media/css/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
+  <link href="/baru/dist/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="wrapper theme-2-active pimary-color-blue">
+		{% include 'desa/head.html' %}
+				<div class="fixed-sidebar-left">
+			<ul class="nav navbar-nav side-nav nicescroll-bar">
+				<li><hr class="light-grey-hr mb-10"/></li>
+				<li>
+					<a href="/penggunamasuk" data-toggle="collapse" data-target="#dashboard_dr"><div class="pull-left"><i class="zmdi zmdi-home mr-20"></i>Dashboard</div><div class="clearfix"></div></a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#app_dr"><div class="pull-left"><i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">Pelayanan Umum</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="app_dr" class="collapse collapse-level-1">
+						<li>
+							<a href="/keluhanwarga">Aduan Masyarakat</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" data-toggle="collapse" data-target="#auth_dra">Layanan Surat<div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+							<ul id="auth_dra" class="collapse collapse-level-2">
+								<li><a href="/buatsurat" >Pembuatan Surat</a></li>
+                  				<li><a href="/suratmasuk">Surat Masuk</a></li>
+                  				<li><a href="/suratkeluar">Surat Keluar</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="zmdi zmdi-accounts mr-20"></i><span class="right-nav-text">Data Kependudukan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="ui_dr" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/kepalakeluarga"  > Kepala Keluarga</a></li>
+            			<li><a href="/anggotakeluarga" > Anggota Keluarga</a></li>
+            			<li><a href="/datakelahiran" > Data Kelahiran</a></li>
+            			<li><a href="/datakematian" >Data Kematian</a></li>
+						<li><a href="/datamutasi" > Data Mutasi</a></li>
+						<li><a href="/pecahkk" > Pecah KK</a></li>
+            			<li><a href="/importdatapenduduk" > Import Data Penduduk</a></li>
+						<li>
+							<a href="javascript:void(0);" data-toggle="collapse" data-target="#pengaturanpenduduk">Pengaturan<div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+							<ul id="pengaturanpenduduk" class="collapse collapse-level-2">
+								<li><a href="/hapuspenduduk" >Hapus Data Penduduk</a></li>
+								<li><a href="/grafikpenduduk"  >Grafik Kependudukan</a></li>
+								<li><a href="/updatedatapenduduk" >Update Data Penduduk</a></li>
+							</ul>
+						</li>
+
+
+					</ul>
+				</li>
+
+				<li>
+					<a  href="javascript:void(0);" data-toggle="collapse" data-target="#pages_dr"><div class="pull-left"><i class="zmdi zmdi-google-pages mr-20"></i><span class="right-nav-text">Pemerintah Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="pages_dr" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/sotkdesa">SOTK Desa</a></li>
+            			<li><a href="/AsetDesa">Aset Desa</a></li>
+            			<li><a href="/RegulasiDesa">Regulasi Desa</a></li>
+						<li><a href="/SaranaPrasarana">Data Pembangunan</a></li>
+						<li><a href="/Pemberdayaan">Data Pemberdayaan</a></li>
+					</ul>
+				</li>
+				<!-- <li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#dropdown_dr_lv1"><div class="pull-left"><i class="zmdi zmdi-city-alt mr-20"></i><span class="right-nav-text">Potensi Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="dropdown_dr_lv1" class="collapse collapse-level-1">
+						<li><a href="/prodeskelwilayah"> Wilayah Penggunaan</a></li>
+						<li><a href="/prodeskellahan"> Luas Lahan</a></li>
+						<li><a href="/prodeskelekonomi"> Bidang Ekonomi</a></li>
+						<li><a href="/prodeskelkesehatan"> Bidang Kesehatan</a></li>
+						<li><a href="/prodeskeladat"> Bidang Pendidikan</a></li>
+
+					</ul>
+				</li> -->
+
+                <li>
+                    <a href="javascript:void(0);" data-toggle="collapse" data-target="#datakemiskinan"><div class="pull-left"><i class="zmdi zmdi-account-o mr-20"></i><span class="right-nav-text">Data Kemiskinan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+                        <ul id="datakemiskinan" class="collapse collapse-level-1">
+                            <li><a href="/rumahtangga"  >Rumah Tangga</a></li>
+                            <li><a href="/anggotarumahtangga"  >Anggota Rumah Tangga</a></li>
+                        </ul>
+                </li>
+
+
+
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#keuangan"><div class="pull-left"><i class="zmdi zmdi-money-box mr-20"></i><span class="right-nav-text">Keuangan Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="keuangan" class="collapse collapse-level-1">
+
+							<li><a href="/importdatamdb"> Import Siskeudes</a></li>
+
+					</ul>
+				</li>
+                <li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#petadesa"><div class="pull-left"><i class="zmdi zmdi-globe mr-20"></i><span class="right-nav-text">Peta Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="petadesa" class="collapse collapse-level-1">
+
+							<li><a href="/inputlatlong"> Input Lat-Long</a></li>
+							<li><a href="/petadesa"> Lihat Peta Desa</a></li>
+
+					</ul>
+				</li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#form_dr"><div class="pull-left"><i class="zmdi zmdi-chart mr-20"></i><span class="right-nav-text">Statistik Penduduk</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="form_dr" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/statusia" >Statistik Usia</a></li>
+            			<li><a href="/statjk" > Statistik Jenis Kelamin</a></li>
+            			<li><a href="/statagama"> Statistik Agama</a></li>
+            			<li><a href="/statpend"> Statistik Pendidikan</a></li>
+            			<li><a href="/statpek"> Statistik Pekerjaan</a></li>
+           				<li><a href="/statistikgolongandarah">Statistik Golongan Darah</a></li>
+
+					</ul>
+				</li>
+				<li>
+                    <a class="active" href="javascript:void(0);" data-toggle="collapse" data-target="#statistikdatakemiskinan"><div class="pull-left"><i class="zmdi zmdi-trending-up mr-20"></i><span class="right-nav-text">Statistik Kemiskinan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+                        <ul id="statistikdatakemiskinan" class="collapse collapse-level-1">
+                            <li><a href="/statistikperumahan"  >Perumahan</a></li>
+                            <li><a href="/statistiksanitasi"  >Sanitasi</a></li>
+                            <li><a href="/statistikpenerangan"  >Penerangan</a></li>
+                            <li><a href="/statistikbahanbakarmasak"  >Bahan Bakar Masak</a></li>
+                            <li><a href="/statistikkepemilikanaset" >Kepemilikan Aset</a></li>
+                            <li><a href="/statistikkeikutsertaanprogram" >Keikutsertaan Program</a></li>
+                            <li><a href="/statistikkepemilikankartuidentitas" >Kepemilikan kartu identitas</a></li>
+                            <li><a href="/disabilitas" >Disabilitas</a></li>
+                            <li><a href="/penyakitkronis" id="animasi11">Penyakit kronis</a></li>
+                            <li><a href="/partisipasisekolah" id="animasi12">Partisipasi sekolah</a></li>
+                        </ul>
+                </li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+				
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#kom"><div class="pull-left"><i class="zmdi  zmdi-comment-alt-text mr-20"></i><span class="right-nav-text">Komunikasi</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="kom" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/chatroom">Chat Room</a></li>
+            			<li><a href="/kirimpesan">Pesan Khusus</a></li>
+            			
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#profil"><div class="pull-left"><i class="zmdi zmdi-account-box mr-20"></i><span class="right-nav-text">Pengguna Layanan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="profil" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/tambahpengguna">Tambah Pengguna</a></li>
+						<li><a href="/profil">Profil Anda</a></li>
+						<li><a href="/logout">Keluar</a></li>
+						
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+		
+		
+		{% include 'desa/kanan.html' %}
+		<div class="right-sidebar-backdrop">  
+    </div>
+		<div class="page-wrapper">
+			<div class="container-fluid">
+				<div class="row heading-bg">
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+					  <h5 class="txt-dark">Statistik Berdasarkan Sanitasi</h5>
+					</div>
+        </div>
+					<div class="row">
+            <div class="col-lg-12">
+             <div class="panel panel-default card-view">
+              <div class="panel-heading">
+                <div class="pull-left">
+                  <h6 class="panel-title txt-dark">Grafik Sumber Air Minum</h6>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                  <canvas id="chart_1" height="100"></canvas><p>Sumber BDT 2015 &copy; TNP2K</p>
+                </div>  
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+             <div class="panel panel-default card-view">
+              <div class="panel-heading">
+                <div class="pull-left">
+                  <h6 class="panel-title txt-dark">Grafik Sumber Air Minum</h6>
+                </div>
+                <div class="clearfix">
+                  
+                </div>
+              </div>
+              <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                  <canvas id="chart_2" height="100"></canvas><p>Sumber BDT 2015 &copy; TNP2K</p>
+                </div>
+              </div>   
+            </div>  
+          </div>
+        </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="panel panel-default card-view"><div class="panel-heading"><div class="pull-left"><h6 class="panel-title txt-dark">Tabel Sumber Air Minum </h6></div><div class="clearfix"></div></div>
+                <div class="panel-wrapper collapse in">
+                  <div class="panel-body">
+                    <div class="table-responsive">
+                      <table id="myTable" class="table table-bordered table-striped" >
+                      <tr class="header">
+                      <th>NO</th>
+                      <th>SUMBER AIR MINUM</th>
+                      <th>BELI ECERAN</th>
+                      <th>LANGGANAN</th>
+                      <th>TIDAK MEMBELI</th>
+                      <th>JUMLAH</th>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td> Air kemasan bermerk</td>
+                        <td>{{ session['jumlahairkemasanbermerkngecer']}}</td>
+                        <td>{{ session['jumlahairkemasanbermerklangganan']}}</td>
+                        <td>{{ session['jumlahairkemasanbermerktidakbeli']}}</td>
+                        <td>{{ session['jumlahairkemasanbermerk']}}</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td> Air isi ulang</td>
+                        <td>{{ session['jumlahairisiulangngecer']}}</td>
+                        <td>{{ session['jumlahairisiulanglangganan']}}</td>
+                        <td>{{ session['jumlahairisiulangtidakbeli']}}</td>
+                        <td>{{ session['jumlahairisiulang']}}</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td> Leding meteran</td>
+                        <td>{{ session['jumlahairledingmeteraneceran']}}</td>
+                        <td>{{ session['jumlahairledingmeteranlangganan']}}</td>
+                        <td>{{ session['jumlahairledingmeterantidakbeli']}}</td>
+                        <td>{{ session['jumlahairledingmeteran']}}</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td> Leding eceran</td>
+                        <td>{{ session['jumlahairledingeceraneceran']}}</td>
+                        <td>{{ session['jumlahairledingeceranlangganan']}}</td>
+                        <td>{{ session['jumlahairledingecerantidakbeli']}}</td>
+                        <td>{{ session['jumlahairledingeceran']}}</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td> Sumur bor/pompa</td>
+                        <td>{{ session['jumlahairsumurborpompaeceran']}}</td>
+                        <td>{{ session['jumlahairsumurborpompalangganan']}}</td>
+                        <td>{{ session['jumlahairsumurborpompatidakbeli']}}</td>
+                        <td>{{ session['jumlahairsumurborpompa']}}</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td> Sumur terlindung</td>
+                        <td>{{ session['jumlahairsumurterlindungeceran']}}</td>
+                        <td>{{ session['jumlahairsumurterlindunglangganan']}}</td>
+                        <td>{{ session['jumlahairsumurterlindungtidakbeli']}}</td>
+                        <td>{{ session['jumlahairsumurterlindung']}}</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td> Sumur tak terlindung</td>
+                        <td>{{ session['jumlahairsumurtakterlindungeceran']}}</td>
+                        <td>{{ session['jumlahairsumurtakterlindunglangganan']}}</td>
+                        <td>{{ session['jumlahairsumurtakterlindungtidakbeli']}}</td>
+                        <td>{{ session['jumlahairsumurtakterlindung']}}</td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td> Mata air terlindung</td>
+                        <td>{{ session['jumlahairmataairterlindungeceran']}}</td>
+                        <td>{{ session['jumlahairmataairterlindunglangganan']}}</td>
+                        <td>{{ session['jumlahairmataairterlindungtidakbeli']}}</td>
+                        <td>{{ session['jumlahairmataairterlindung']}}</td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td> Mata air tak terlindung</td>
+                        <td>{{ session['jumlahairmataairtakterlindungeceran']}}</td>
+                        <td>{{ session['jumlahairmataairtakterlindunglangganan']}}</td>
+                        <td>{{ session['jumlahairmataairtakterlindungtidakbeli']}}</td>
+                        <td>{{ session['jumlahairmataairtakterlindung']}}</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td> Air sungai/danau/waduk</td>
+                        <td>{{ session['jumlahairsungaidanauwadukeceran']}}</td>
+                        <td>{{ session['jumlahairsungaidanauwaduklangganan']}}</td>
+                        <td>{{ session['jumlahairsungaidanauwaduktidakbeli']}}</td>
+                        <td>{{ session['jumlahairsungaidanauwaduk']}}</td>
+                      </tr>
+                      <tr>
+                        <td>11</td>
+                        <td> Air hujan</td>
+                        <td>{{ session['jumlahairhujaneceran']}}</td>
+                        <td>{{ session['jumlahairhujanlangganan']}}</td>
+                        <td>{{ session['jumlahairhujantidakbeli']}}</td>
+                        <td>{{ session['jumlahairhujan']}}</td>
+                      </tr>
+                      <tr>
+                        <td>12</td>
+                        <td> Lainnya</td>
+                        <td>{{ session['jumlahairlainnyaeceran']}}</td>
+                        <td>{{ session['jumlahairlainnyalangganan']}}</td>
+                        <td>{{ session['jumlahairlainnyatidakbeli']}}</td>
+                        <td>{{ session['jumlahairlainnya']}}</td>
+                      </tr>
+                      </table>
+                    </div><p>Sumber BDT 2015 &copy; TNP2K</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="panel panel-default card-view">
+            <div class="panel-heading"><div class="pull-left"><h6 class="panel-title txt-dark">Grafik Penggunaan Fasilitas BAB</h6></div><div class="clearfix"></div></div>
+              <div class="panel-wrapper collapse in"><div class="panel-body"><canvas id="chart_3" height="147"></canvas><p>Sumber BDT 2015 &copy; TNP2K</p></div>  
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="panel panel-default card-view"><div class="panel-heading"><div class="pull-left"><h6 class="panel-title txt-dark">Tabel Penggunaan Fasilitas BAB</h6></div><div class="clearfix"></div></div>
+            <div class="panel-wrapper collapse in">
+              <div class="panel-body" >
+                <div class="table-responsive">
+                  <table id="myTable" class="table table-bordered table-striped">
+                  <tr class="header">
+                  <th >NO</th> 
+                  <th>FASILITAS BAB</th>
+                  <th>JUMLAH</th>
+                  </tr>
+                  <tr>
+                  <td>1</td>
+                  <td> Sendiri</td>
+                  <td>{{ session['babsendiri']}}</td>
+                  </tr>
+                  <tr>
+                  <td>2</td>
+                  <td> Umum</td>
+                  <td>{{ session['babumum']}}</td>
+                  </tr>
+                  <tr>
+                  <td>3</td>
+                  <td> Bersama</td>
+                  <td>{{ session['babbersama']}}</td>
+                  </tr>
+                  <tr>
+                  <td>4</td>
+                  <td> Tidak ada</td>
+                  <td>{{ session['babtidakada']}}</td>
+                  </tr>
+                  </table>
+                </div><p>Sumber BDT 2015 &copy; TNP2K</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+     <div class="row">
+        <div class="col-lg-6">
+          <div class="panel panel-default card-view">
+            <div class="panel-heading"><div class="pull-left"><h6 class="panel-title txt-dark">Grafik Penggunaan Jenis Kloset</h6></div><div class="clearfix"></div></div>
+              <div class="panel-wrapper collapse in"><div class="panel-body"><canvas id="chart_4" height="200"></canvas><p>Sumber BDT 2015 &copy; TNP2K</p></div>  
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="panel panel-default card-view"><div class="panel-heading"><div class="pull-left"><h6 class="panel-title txt-dark">Tabel Penggunaan Jenis Kloset</h6></div><div class="clearfix"></div></div>
+            <div class="panel-wrapper collapse in">
+              <div class="panel-body" >
+                <div class="table-responsive">
+                  <table id="myTable" class="table table-bordered table-striped">
+                  <tr class="header">
+                  <th >NO</th> 
+                  <th>FASILITAS JENIS KLOSET</th>
+                  <th>JUMLAH</th>
+                  </tr>
+                  <tr>
+                  <td>1</td>
+                  <td> Leher angsa</td>
+                  <td>{{ session['klosetleherangsa']}}</td>
+                  </tr>
+                  <tr>
+                  <td>2</td>
+                  <td> Plengsengan</td>
+                  <td>{{ session['klosetplengsengan']}}</td>
+                  </tr>
+                  <tr>
+                  <td>3</td>
+                  <td> Cemplung/cubluk</td>
+                  <td>{{ session['klosetcemplung']}}</td>
+                  </tr>
+                  <tr>
+                  <td>4</td>
+                  <td> Tidak pakai</td>
+                  <td>{{ session['klosettidakpakai']}}</td>
+                  </tr>
+                  </table>
+                </div><p>Sumber BDT 2015 &copy; TNP2K</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+     <div class="row">
+        <div class="col-lg-6">
+          <div class="panel panel-default card-view">
+            <div class="panel-heading"><div class="pull-left"><h6 class="panel-title txt-dark">Grafik Pembuangan Akhir Tinja</h6></div><div class="clearfix"></div></div>
+              <div class="panel-wrapper collapse in"><div class="panel-body"><canvas id="chart_5" height="200"></canvas><p>Sumber BDT 2015 &copy; TNP2K</p></div>  
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="panel panel-default card-view"><div class="panel-heading"><div class="pull-left"><h6 class="panel-title txt-dark">Tabel Pembuangan Akhir Tinja</h6></div><div class="clearfix"></div></div>
+            <div class="panel-wrapper collapse in">
+              <div class="panel-body" >
+                <div class="table-responsive">
+                  <table id="myTable" class="table table-bordered table-striped">
+                  <tr class="header">
+                  <th >NO</th> 
+                  <th>FASILITAS JENIS KLOSET</th>
+                  <th>JUMLAH</th>
+                  </tr>
+                  <tr>
+                  <td>1</td>
+                  <td> Tangki</td>
+                  <td>{{ session['tpatinjatangki']}}</td>
+                  </tr>
+                  <tr>
+                  <td>2</td>
+                  <td> SPAL</td>
+                  <td>{{ session['tpatinjaspal']}}</td>
+                  </tr>
+                  <tr>
+                  <td>3</td>
+                  <td> Lubang tanah</td>
+                  <td>{{ session['tpatinjalubangtanah']}}</td>
+                  </tr>
+                  <tr>
+                  <td>4</td>
+                  <td> Kolam/sawah/sungai/danau/laut</td>
+                  <td>{{ session['tpatinjakolamsawahsungaidanaulaut']}}</td>
+                  </tr>
+                  <tr>
+                  <td>5</td>
+                  <td> Pantai/tanah lapang/kebun</td>
+                  <td>{{ session['tpatinjapantaitanahlapangkebun']}}</td>
+                  </tr>
+                  <tr>
+                  <td>6</td>
+                  <td> Lainnya</td>
+                  <td>{{ session['tpatinjalainnya']}}</td>
+                  </tr>
+                  </table>
+                </div><p>Sumber BDT 2015 &copy; TNP2K</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+     </div>
+         {% include 'desa/foot.html' %}
+			</div>
+		</div>
+{% include 'desa/script.html' %}
+<script type="text/javascript">
+    /*Chartjs Init*/
+
+$( document ).ready(function() {
+    "use strict";
+  
+  if( $('#chart_1').length > 0 ){
+    var ctx1 = document.getElementById("chart_1").getContext("2d");
+    var data1 = {
+      labels: ['Air kemasan bermerk', 'Air isi ulang', 'Leding meteran', 'Leding eceran', 'Sumur bor/pompa', 'Sumur terlindung', 'Sumur tak terlindung', 'Mata air terlindung', 'Mata air tak terlindung', 'Air sungai/danau/waduk', 'Air hujan', 'Lainnya'],
+      datasets: [
+      {
+        label: "Jumlahnya",
+        backgroundColor: "rgba(46,205,153,.6)",
+        borderColor: "rgba(46,205,153,.6)",
+        pointBorderColor: "rgba(46,205,153,.6)",
+        pointHighlightStroke: "rgba(46,205,153,.6)",
+        data: [{{ session['jumlahairkemasanbermerk']}}, {{ session['jumlahairisiulang']}}, {{ session['jumlahairledingmeteran']}}, {{ session['jumlahairledingeceran']}}, {{ session['jumlahairsumurborpompa']}}, {{ session['jumlahairsumurterlindung']}}, {{ session['jumlahairsumurtakterlindung']}}, {{ session['jumlahairmataairterlindung']}}, {{ session['jumlahairmataairtakterlindung']}}, {{ session['jumlahairsungaidanauwaduk']}}, {{ session['jumlahairhujan']}}, {{ session['jumlahairlainnya']}}]
+      },
+      
+    ]
+    };
+    
+    var areaChart = new Chart(ctx1, {
+      type:"line",
+      data:data1,
+      
+      options: {
+        tooltips: {
+          mode:"label"
+        },
+        elements:{
+          point: {
+            hitRadius:90
+          }
+        },
+        
+        scales: {
+          yAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          xAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }]
+        },
+        animation: {
+          duration: 3000
+        },
+        responsive: true,
+        legend: {
+          display: false,
+        },
+        tooltip: {
+          backgroundColor:'rgba(33,33,33,1)',
+          cornerRadius:0,
+          footerFontFamily:"'Poppins'"
+        }
+        
+      }
+    });
+  }
+    
+  if( $('#chart_2').length > 0 ){
+    var ctx2 = document.getElementById("chart_2").getContext("2d");
+    var data2 = {
+      labels: ['Air kemasan bermerk', 'Air isi ulang', 'Leding meteran', 'Leding eceran', 'Sumur bor/pompa', 'Sumur terlindung', 'Sumur tak terlindung', 'Mata air terlindung', 'Mata air tak terlindung', 'Air sungai/danau/waduk', 'Air hujan', 'Lainnya'],
+      datasets: [
+        {
+          label: "Membeli eceran",
+          backgroundColor: "rgba(240,197,65,.6)",
+          borderColor: "rgba(240,197,65,.6)",
+          data: [{{ session['jumlahairkemasanbermerkngecer']}}, {{ session['jumlahairisiulangngecer']}}, {{ session['jumlahairledingmeteraneceran']}}, {{ session['jumlahairledingeceraneceran']}}, {{ session['jumlahairsumurborpompaeceran']}}, {{ session['jumlahairsumurterlindungeceran']}}, {{ session['jumlahairsumurtakterlindungeceran']}}, {{ session['jumlahairmataairterlindungeceran']}}, {{ session['jumlahairmataairtakterlindungeceran']}}, {{ session['jumlahairsungaidanauwadukeceran']}}, {{ session['jumlahairhujaneceran']}}, {{ session['jumlahairlainnyaeceran']}}]
+        },
+        {
+          label: "Langganan",
+          backgroundColor: "rgba(46,205,153,.6)",
+          borderColor: "rgba(46,205,153,.6)",
+          data: [{{ session['jumlahairkemasanbermerklangganan']}}, {{ session['jumlahairisiulanglangganan']}}, {{ session['jumlahairledingmeteranlangganan']}}, {{ session['jumlahairledingeceranlangganan']}}, {{ session['jumlahairsumurborpompalangganan']}}, {{ session['jumlahairsumurterlindunglangganan']}}, {{ session['jumlahairsumurtakterlindunglangganan']}}, {{ session['jumlahairmataairterlindunglangganan']}}, {{ session['jumlahairmataairtakterlindunglangganan']}}, {{ session['jumlahairsungaidanauwaduklangganan']}}, {{ session['jumlahairlainnyalangganan']}}, {{ session['jumlahairlainnyaeceran']}}]
+        },
+        {
+          label: "Tidak membeli",
+          backgroundColor: "rgba(228, 15, 15,.6)",
+          borderColor: "rgba(228, 15, 15,.6)",
+          data: [{{ session['jumlahairkemasanbermerktidakbeli']}}, {{ session['jumlahairisiulangtidakbeli']}}, {{ session['jumlahairledingmeterantidakbeli']}}, {{ session['jumlahairledingecerantidakbeli']}}, {{ session['jumlahairsumurborpompatidakbeli']}}, {{ session['jumlahairsumurterlindungtidakbeli']}}, {{ session['jumlahairsumurtakterlindungtidakbeli']}}, {{ session['jumlahairmataairterlindungtidakbeli']}}, {{ session['jumlahairmataairtakterlindungtidakbeli']}}, {{ session['jumlahairsungaidanauwaduktidakbeli']}}, {{ session['jumlahairhujantidakbeli']}}, {{ session['jumlahairlainnyatidakbeli']}}]
+        }
+        
+      ]
+    };
+    
+    var hBar = new Chart(ctx2, {
+      type:"horizontalBar",
+      data:data2,
+      
+      options: {
+        tooltips: {
+          mode:"label"
+        },
+        scales: {
+          yAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          xAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          
+        },
+        elements:{
+          point: {
+            hitRadius:40
+          }
+        },
+        animation: {
+          duration: 3000
+        },
+        responsive: true,
+        legend: {
+          display: false,
+        },
+        tooltip: {
+          backgroundColor:'rgba(33,33,33,1)',
+          cornerRadius:0,
+          footerFontFamily:"'Poppins'"
+        }
+        
+      }
+    });
+  }
+if( $('#chart_2').length > 0 ){
+    var ctx6 = document.getElementById("chart_3").getContext("2d");
+    var data6 = {
+       labels: [
+      "Sendiri",
+      "Umum",
+      "Bersama",
+      "Tidak ada"
+    ],
+    datasets: [
+      {
+        data: [{{ session['babsendiri']}}, {{ session['babumum']}}, {{ session['babbersama']}}, {{ session['babtidakada']}}],
+        backgroundColor: [
+          "rgba(46,205,153,.6)",
+          "rgba(240,197,65,.6)",
+          "rgba(78,157,230,.6)",
+          "rgba(228, 15, 15,.6)"
+
+           
+        ],
+        hoverBackgroundColor: [
+          "rgba(46,205,153,.6)",
+          "rgba(240,197,65,.6)",
+          "rgba(78,157,230,.6)",
+          "rgba(228, 15, 15,.6)"
+           
+        ]
+      }]
+    };
+    
+    var pieChart  = new Chart(ctx6,{
+      type: 'pie',
+      data: data6,
+      options: {
+        animation: {
+          duration: 3000
+        },
+        responsive: true,
+        legend: {
+          labels: {
+          fontFamily: "Poppins",
+          fontColor:"#878787"
+          }
+        },
+        tooltip: {
+          backgroundColor:'rgba(33,33,33,1)',
+          cornerRadius:0,
+          footerFontFamily:"'Poppins'"
+        },
+        elements: {
+          arc: {
+            borderWidth: 0
+          }
+        }
+      }
+    });
+  }
+  if( $('#chart_2').length > 0 ){
+    var ctx6 = document.getElementById("chart_4").getContext("2d");
+    var data6 = {
+       labels: [
+      "Leher angsa",
+      "Plengsengan",
+      "Cemplung/cubluk",
+      "Tidak pakai"
+    ],
+    datasets: [
+      {
+        data: [{{ session['klosetleherangsa']}}, {{ session['klosetplengsengan']}}, {{ session['klosetcemplung']}}, {{ session['klosettidakpakai']}}],
+        backgroundColor: [
+          "rgba(46,205,153,.6)",
+          "rgba(240,197,65,.6)",
+          "rgba(78,157,230,.6)",
+          "rgba(228, 15, 15,.6)"
+           
+        ],
+        hoverBackgroundColor: [
+          "rgba(46,205,153,.6)",
+          "rgba(240,197,65,.6)",
+          "rgba(78,157,230,.6)",
+          "rgba(228, 15, 15,.6)"
+           
+        ]
+      }]
+    };
+    
+    var pieChart  = new Chart(ctx6,{
+      type: 'pie',
+      data: data6,
+      options: {
+        animation: {
+          duration: 3000
+        },
+        responsive: true,
+        legend: {
+          labels: {
+          fontFamily: "Poppins",
+          fontColor:"#878787"
+          }
+        },
+        tooltip: {
+          backgroundColor:'rgba(33,33,33,1)',
+          cornerRadius:0,
+          footerFontFamily:"'Poppins'"
+        },
+        elements: {
+          arc: {
+            borderWidth: 0
+          }
+        }
+      }
+    });
+  }
+  if( $('#chart_2').length > 0 ){
+    var ctx6 = document.getElementById("chart_5").getContext("2d");
+    var data6 = {
+       labels: [
+      "Tangki",
+      "SPAL",
+      "Lubang tanah",
+      "Kolam/sawah/sungai/danau/laut",
+      "Pantai/tanah lapang/kebun",
+      "Lainnya"
+    ],
+    datasets: [
+      {
+        data: [{{ session['tpatinjatangki']}}, {{ session['tpatinjaspal']}}, {{ session['tpatinjalubangtanah']}}, {{ session['tpatinjakolamsawahsungaidanaulaut']}}, {{ session['tpatinjapantaitanahlapangkebun']}}, {{ session['tpatinjalainnya']}}],
+        backgroundColor: [
+          "rgba(46,205,153,.6)",
+          "rgba(240,197,65,.6)",
+          "rgba(78,157,230,.6)",
+          "rgba(228, 15, 15,.6)",
+          "rgba(191, 63, 191, 0.8)",
+          "rgba(89, 127, 165, 0.2)"
+           
+        ],
+        hoverBackgroundColor: [
+          "rgba(46,205,153,.6)",
+          "rgba(240,197,65,.6)",
+          "rgba(78,157,230,.6)",
+          "rgba(228, 15, 15,.6)",
+          "rgba(191, 63, 191, 0.8)",
+          "rgba(89, 127, 165, 0.2)"
+           
+        ]
+      }]
+    };
+    
+    var pieChart  = new Chart(ctx6,{
+      type: 'pie',
+      data: data6,
+      options: {
+        animation: {
+          duration: 3000
+        },
+        responsive: true,
+        legend: {
+          labels: {
+          fontFamily: "Poppins",
+          fontColor:"#878787"
+          }
+        },
+        tooltip: {
+          backgroundColor:'rgba(33,33,33,1)',
+          cornerRadius:0,
+          footerFontFamily:"'Poppins'"
+        },
+        elements: {
+          arc: {
+            borderWidth: 0
+          }
+        }
+      }
+    });
+  }
+   
+});
+  </script>
+</body>
+</html>

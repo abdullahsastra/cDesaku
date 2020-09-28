@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'desa/header.html' %}
+<body>
+	
+    <div class="wrapper theme-2-active pimary-color-blue">
+		{% include 'desa/head.html' %}
+				<div class="fixed-sidebar-left">
+			<ul class="nav navbar-nav side-nav nicescroll-bar">
+				<li><hr class="light-grey-hr mb-10"/></li>
+				<li>
+					<a class="active" href="/penggunamasuk" data-toggle="collapse" data-target="#dashboard_dr"><div class="pull-left"><i class="zmdi zmdi-home mr-20"></i>Dashboard</div><div class="clearfix"></div></a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#app_dr"><div class="pull-left"><i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">Pelayanan Umum</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="app_dr" class="collapse collapse-level-1">
+						<li>
+							<a href="/keluhanwarga">Aduan Masyarakat</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" data-toggle="collapse" data-target="#auth_dr">Layanan Surat<div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+							<ul id="auth_dr" class="collapse collapse-level-2">	
+								<li><a href="/buatsurat" id="animasi">Pembuatan Surat</a></li>
+                  				<li><a href="/suratmasuk">Surat Masuk</a></li>
+                  				<li><a href="/suratkeluar">Surat Keluar</a></li> 
+							</ul>
+						</li>                      								
+					</ul>
+				</li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+				
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="zmdi zmdi-accounts mr-20"></i><span class="right-nav-text">Data Kependudukan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="ui_dr" class="collapse collapse-level-1 two-col-list">						
+						<li><a href="/kepalakeluarga" id="animasi" > Kepala Keluarga</a></li>
+            			<li><a href="/anggotakeluarga" id="animasi"> Anggota Keluarga</a></li>
+            			<li><a href="/datakelahiran" id="animasi"> Data Kelahiran</a></li>
+            			<li><a href="/datakematian" id="animasi">Data Kematian</a></li>
+						<li><a href="/datamutasi" id="animasi"> Data Mutasi</a></li>
+						<li><a href="/pecahkk" id="animasi"> Pecah KK</a></li>
+            			<li><a href="/importdatapenduduk" id="animasi"> Import Data Penduduk</a></li>
+						<li>
+							<a href="javascript:void(0);" data-toggle="collapse" data-target="#pengaturanpenduduk">Pengaturan<div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+							<ul id="pengaturanpenduduk" class="collapse collapse-level-2">
+								<li><a href="/hapuspenduduk" id="animasi">Hapus Data Penduduk</a></li>
+								<li><a href="/grafikpenduduk" id="animasi" >Grafik Kependudukan</a></li>
+								<li><a href="/updatedatapenduduk" id="animasi">Update Data Penduduk</a></li>                  				
+							</ul>
+						</li>
+            			
+            			
+					</ul>
+				</li>
+				
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#pages_dr"><div class="pull-left"><i class="zmdi zmdi-google-pages mr-20"></i><span class="right-nav-text">Pemerintah Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="pages_dr" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/sotkdesa">SOTK Desa</a></li>
+            			<li><a href="/AsetDesa">Aset Desa</a></li>
+            			<li><a href="/RegulasiDesa">Regulasi di Desa</a></li>
+            			<li><a href="/infrastruktur">Infrastruktur</a></li>
+						<li>
+							<a href="javascript:void(0);" data-toggle="collapse" data-target="#auth_dr">Hasil Pembangunan<div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+							<ul id="auth_dr" class="collapse collapse-level-2">
+								<li><a href="/SaranaPrasarana">Sarana Prasarana</a></li>
+                  				<li><a href="/Pemberdayaan">Pemberdayaan</a></li> 
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#dropdown_dr_lv1"><div class="pull-left"><i class="zmdi zmdi-city-alt mr-20"></i><span class="right-nav-text">Potensi Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="dropdown_dr_lv1" class="collapse collapse-level-1">
+						<li><a href="/prodeskelwilayah"> Wilayah Penggunaan</a></li>
+						<li><a href="/prodeskellahan"> Luas Lahan</a></li>
+						<li><a href="/prodeskelekonomi"> Bidang Ekonomi</a></li>
+						<li><a href="/prodeskelkesehatan"> Bidang Kesehatan</a></li>
+						<li><a href="/prodeskeladat"> Lembaga Adat</a></li>
+						<li><a href="/prodeskel"> Data PRODESKEL</a></li>
+
+					</ul>
+				</li>
+				
+                <li>
+                    <a href="javascript:void(0);" data-toggle="collapse" data-target="#datakemiskinan"><div class="pull-left"><i class="zmdi zmdi-account-o mr-20"></i><span class="right-nav-text">Data Kemiskinan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+                        <ul id="datakemiskinan" class="collapse collapse-level-1">
+                            <li><a href="/rumahtangga" id="animasi" >Rumah Tangga</a></li>
+                            <li><a href="/anggotarumahtangga" id="animasi" >Anggota Rumah Tangga</a></li>
+                            
+							<li><a href="/importbdtsikng" id="animasi12">Import BDT/SikNG</a></li>
+                        </ul>
+                </li>
+       
+				
+				
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#keuangan"><div class="pull-left"><i class="zmdi zmdi-money-box mr-20"></i><span class="right-nav-text">Keuangan Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="keuangan" class="collapse collapse-level-1">
+
+							<li><a href="/importdatamdb"> Import Siskeudes</a></li>
+
+					</ul>
+				</li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+				
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#form_dr"><div class="pull-left"><i class="zmdi zmdi-chart mr-20"></i><span class="right-nav-text">Statistik Penduduk</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="form_dr" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/statusia" id="animasi">Statistik Usia</a></li>
+            			<li><a href="/statjk" id="animasi"> Statistik Jenis Kelamin</a></li>
+            			<li><a href="/statagama"> Statistik Agama</a></li>
+            			<li><a href="/statpend"> Statistik Pendidikan</a></li>
+            			<li><a href="/statpek"> Statistik Pekerjaan</a></li>
+           				<li><a href="/statistikgolongandarah">Statistik Golongan Darah</a></li>
+            			
+					</ul>
+				</li>
+				<li>
+                    <a href="javascript:void(0);" data-toggle="collapse" data-target="#statistikdatakemiskinan"><div class="pull-left"><i class="zmdi zmdi-trending-up mr-20"></i><span class="right-nav-text">Statistik Kemiskinan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+                        <ul id="statistikdatakemiskinan" class="collapse collapse-level-1">
+                            <li><a href="/statistikperumahan" id="animasi" >Perumahan</a></li>
+                            <li><a href="/statistiksanitasi" id="animasi" >Sanitasi</a></li>
+                            <li><a href="/statistikpenerangan" id="animasi" >Penerangan</a></li>
+                            <li><a href="/statistikbahanbakarmasak" id="animasi" >Bahan Bakar Masak</a></li>
+                            <li><a href="/statistikkepemilikanaset" id="animasi">Kepemilikan Aset</a></li>
+                            <li><a href="/statistikkeikutsertaanprogram" id="animasi">Keikutsertaan Program</a></li>
+                            <li><a href="/statistikkepemilikankartuidentitas" id="animasi">Kepemilikan kartu identitas</a></li>
+                            <li><a href="/disabilitas" id="animasi">Disabilitas</a></li>
+                            <li><a href="/penyakitkronis" id="animasi11">Penyakit kronis</a></li>
+                            <li><a href="/partisipasisekolah" id="animasi12">Partisipasi sekolah</a></li>
+                        </ul>
+                </li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+				
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#website"><div class="pull-left"><i class="zmdi zmdi-assignment mr-20"></i><span class="right-nav-text">Pengaturan Domain</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="website" class="collapse collapse-level-1">
+						 <li><a href="/pengaturanwebsite"> Pengaturan Website</a></li>
+						<li><a href="/tambahpenulis">Tambah Penulis</a></li>
+            			
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#penulisankonten"><div class="pull-left"><i class="zmdi zmdi-border-color mr-20"></i><span class="right-nav-text">Penulisan Konten</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="penulisankonten" class="collapse collapse-level-1">
+						 <li><a href="/kategoritulisan">Kategori Tulisn</a></li>
+						<li><a href="/buattulisan">Membuat Tulisan</a></li>
+            			
+					</ul>
+				</li>
+				
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#pengaturanumum"><div class="pull-left"><i class="zmdi zmdi-shopping-cart mr-20"></i><span class="right-nav-text">Jualan Online</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="pengaturanumum" class="collapse collapse-level-1">
+						 <li><a href="/kategoribarang">Kategori Barang</a></li>
+						<li><a href="/buatjualan">Membuat Jualan</a></li>
+            			
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#sosmed"><div class="pull-left"><i class="zmdi zmdi-twitter-box mr-20"></i><span class="right-nav-text">Sosmed Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="sosmed" class="collapse collapse-level-1">
+						 	<li><a href="/pengaturansosmed"> Pengaturan Sosial Media</a></li>
+            				<li><a href="/analisissosmed"> Analisis Sosial Media</a></li>
+					</ul>
+				</li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+				
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#kom"><div class="pull-left"><i class="zmdi  zmdi-comment-alt-text mr-20"></i><span class="right-nav-text">Komunikasi</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="kom" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/chatroom">Chat Room</a></li>
+            			<li><a href="/kirimpesan">Pesan Khusus</a></li>
+            			
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#profil"><div class="pull-left"><i class="zmdi zmdi-account-box mr-20"></i><span class="right-nav-text">Pengguna Layanan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="profil" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/tambahpengguna">Tambah Pengguna</a></li>
+						<li><a href="/profil">Profil Anda</a></li>
+						<li><a href="/logout">Keluar</a></li>
+						
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+		
+		
+		{% include 'desa/kanan.html' %}
+		<div class="right-sidebar-backdrop">  
+    </div>
+		<div class="page-wrapper">
+			<div class="container-fluid">
+				<div class="row heading-bg">
+					<div class="col-lg-12">
+					  <h5 class="txt-dark">Statistik Disabilitas Kecamatan {{ session['pengguna'] }}</h5>
+					</div>
+        </div>
+          {% include 'desa/kolombdtkec.html' %}
+    <div class="row">
+        <div class="col-lg-6">
+          <div class="panel panel-default card-view">
+            <div class="panel-heading"><div class="pull-left"><h6 class="panel-title txt-dark">Grafik Disabilitas</h6></div><div class="clearfix"></div></div>
+              <div class="panel-wrapper collapse in"><div class="panel-body"><canvas id="chart_2" height="418"></canvas><p>Sumber BDT 2015 &copy; TNP2K</p></div>  
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="panel panel-default card-view"><div class="panel-heading"><div class="pull-left"><h6 class="panel-title txt-dark">Tabel Disabilitas</h6></div><div class="clearfix"></div></div>
+            <div class="panel-wrapper collapse in">
+              <div class="panel-body" >
+                <div class="table-responsive">
+                  <table id="myTable" class="table table-bordered table-striped" >
+                      <tr class="header">
+                      <th>NO</th>
+                      <th>JENIS CACAT</th>
+                      <th>JUMLAH</th>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td> Tidak cacat</td>
+                        <td>{{ session['tidakcacat']}}</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td> Tuna daksa/cacat tubuh</td>
+                        <td>{{ session['tunadaksa']}}</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td> Tuna netra/buta</td>
+                        <td>{{ session['tunanetra']}}</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td> Tuna rungu</td>
+                        <td>{{ session['tunarungu']}}</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td> Tuna wicara</td>
+                        <td>{{ session['tunawicara']}}</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td> Tuna rungu & wicara</td>
+                        <td>{{ session['tunarunguwicara']}}</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td> Tuna netra & cacat tubuh</td>
+                        <td>{{ session['tunanetracacattubuh']}}</td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td> Tuna netra, rungu & wicara</td>
+                        <td>{{ session['tunanetrarunguwicara']}}</td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td> Tuna rungu, wicara & cacat tubuh</td>
+                        <td>{{ session['tunarunguwicaracacattubuh']}}</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td> Tuna rungu, wicara, netra & cacat tubuh</td>
+                        <td>{{ session['tunarunguwicaranetracacattubuh']}}</td>
+                      </tr>
+                      <tr>
+                        <td>11</td>
+                        <td> Cacat mental retardasi</td>
+                        <td>{{ session['cacatmental']}}</td>
+                      </tr>
+                      <tr>
+                        <td>12</td>
+                        <td> Tuna rungu, wicara & cacat tubuh</td>
+                        <td>{{ session['mantanpenderitagangguanjiwa']}}</td>
+                      </tr>
+                      <tr>
+                        <td>13</td>
+                        <td> Cacat fisik & mental</td>
+                        <td>{{ session['cacatfisik']}}</td>
+                      </tr>
+                      </table>
+                </div><p>Sumber BDT 2015 &copy; TNP2K</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+     </div>
+         {% include 'desa/foot.html' %}
+			</div>
+		</div>
+{% include 'desa/script.html' %}
+<script type="text/javascript">
+    /*Chartjs Init*/
+
+$( document ).ready(function() {
+    "use strict";
+      
+  if( $('#chart_2').length > 0 ){
+    var ctx2 = document.getElementById("chart_2").getContext("2d");
+    var data2 = {
+      labels: ['Tidak cacat', 'Tuna daksa/cacat tubuh', 'Tuna netra/buta', 'Tuna rungu', 'Tuna wicara', 'Tuna rungu&wicara', 'Tuna netra&cacat tubuh', 'Tuna netra, rungu&wicara', 'Tuna rungu, wicara&cacat tubuh', 'Tuna rungu, wicara, netra&cacat tubuh', 'Cacat mental retardasi', 'Tuna rungu,wicara&cacat tubuh', 'Cacat fisik & mental'],
+      datasets: [
+        {
+          label: "Jumlahnya",
+          backgroundColor: "rgba(240,197,65,.6)",
+          borderColor: "rgba(240,197,65,.6)",
+          data: [{{ session['tidakcacat']}}, {{ session['tunadaksa']}}, {{ session['tunanetra']}}, {{ session['tunarungu']}}, {{ session['tunawicara']}}, {{ session['tunarunguwicara']}}, {{ session['tunanetracacattubuh']}}, {{ session['tunanetrarunguwicara']}}, {{ session['tunarunguwicaracacattubuh']}}, {{ session['tunarunguwicaranetracacattubuh']}}, {{ session['cacatmental']}}, {{ session['mantanpenderitagangguanjiwa']}}, {{ session['cacatfisik']}}]
+        }
+        
+      ]
+    };
+    
+    var hBar = new Chart(ctx2, {
+      type:"horizontalBar",
+      data:data2,
+      
+      options: {
+        tooltips: {
+          mode:"label"
+        },
+        scales: {
+          yAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          xAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          
+        },
+        elements:{
+          point: {
+            hitRadius:40
+          }
+        },
+        animation: {
+          duration: 3000
+        },
+        responsive: true,
+        legend: {
+          display: false,
+        },
+        tooltip: {
+          backgroundColor:'rgba(33,33,33,1)',
+          cornerRadius:0,
+          footerFontFamily:"'Poppins'"
+        }
+        
+      }
+    });
+  }
+});
+  </script>
+</body>
+</html>

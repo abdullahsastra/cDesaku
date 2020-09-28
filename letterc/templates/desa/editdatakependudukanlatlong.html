@@ -1,0 +1,129 @@
+<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default card-view">
+				<div class="panel-wrapper collapse in">
+					<div class="panel-body">
+						<div class="row">
+
+							<div class="col-sm-12 col-xs-12">
+
+								<div class="form-wrap">
+
+										<div class="form-body">
+
+											<h6 class="txt-dark capitalize-font">Tambah Lat - Long Rumah Kepala Keluarga</h6>
+											<hr class="light-grey-hr"/>
+											<form action="/validasidatapenduduk" method="post">
+											<div class="row">
+
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Nomor Kepala Keluarga<input type="hidden" name="no" value="{{ lihatpenduduk.0 }}"></label>
+														<input type="text" class="form-control" name="nokk" placeholder="Masukkan Nomor KK" value="{{ lihatpenduduk.5 }}" readonly>
+													</div>
+												</div>
+												<!--/span-->
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Nomor Induk Kependudukan (NIK)</label>
+														<input type="text" class="form-control" name="nik"  placeholder="Masukan NIK" value="{{ lihatpenduduk.12 }}" readonly>
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Nama Lengkap</label>
+														<input type="text" class="form-control" name="namalengkap"  placeholder="Masukan Nama Lengkap" value="{{ lihatpenduduk.10 }}" required="" readonly>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Alamat</label>
+														<input type="text" class="form-control" name="alamat"  placeholder="Masukan Alamat" value="{{ lihatpenduduk.6.title() }}" required="" readonly>
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">RT</label>
+														<input type="text" class="form-control" name="rt"  placeholder="Masukan RT" value="{{ lihatpenduduk.8.title() }}" required="" readonly>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">RW</label>
+														<input type="text" class="form-control" name="rw"  placeholder="Masukan RW" value="{{ lihatpenduduk.9.title() }}" required="" readonly>
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Dusun</label>
+														<input type="text" class="form-control" name="dusun"  placeholder="Masukan Dusun" value="{{ lihatpenduduk.7.title() }}" required="" readonly>
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Kodepos</label>
+														<input type="text" class="form-control" name="kodepos"  placeholder="Masukan Kodepos" value="{{ lihatpenduduk.11 }}" required="" readonly>
+													</div>
+												</div>
+												<!--/span-->
+											</div>
+											<!-- /Row -->
+
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Posisi Latitude</label>
+														<input type="text" class="form-control" name="nopaspor"  placeholder="Masukan Latitude" value="{{ lihatpenduduk.40 }}" required="">
+													</div>
+												</div>
+												<!--/span-->	
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label mb-10">Posisi Longitude</label>
+														<input type="text" class="form-control" name="nopaspor"  placeholder="Masukan Longitude" value="{{ lihatpenduduk.40 }}" required="">
+														</div>
+													</div>
+												<!--/span-->
+											</div>
+
+											<div class="row">
+												<div class="col-lg-12">
+													<div  class="panel-wrapper collapse in">
+														<div  class="panel-body">
+															<div class="form-actions mt-10" >
+
+																	<button type="submit" name="subject"  value ="updatedatakepkel" class="btn btn-success btn-sm btn-rounded"><i class="zmdi zmdi-save mr-5"></i>  Simpan Perubahan</button>
+
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										<!-- /Row -->
+										
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>
+	</div>
+	<!-- /Row -->

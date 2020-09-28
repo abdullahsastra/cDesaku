@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>SIDEKEM Desa Bulakan </title>
+  <meta name="description" content="Sistem Informasi Desa dan Kawasan Online by Python" />
+  <meta name="keywords" content="Sistem Informasi Desa dan Kawasan Online" />
+  <meta name="author" content="pythonesia"/>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="/baru/vendors/bower_components/datatables/media/css/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
+  <link href="/baru/dist/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="wrapper theme-2-active pimary-color-blue">
+		{% include 'desa/head.html' %}
+				<div class="fixed-sidebar-left">
+			<ul class="nav navbar-nav side-nav nicescroll-bar">
+				<li>
+					<a  href="/penggunamasuk" data-toggle="collapse" data-target="#dashboard_dr"><div class="pull-left"><i class="zmdi zmdi-home mr-20"></i>Dashboard</div><div class="clearfix"></div></a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#app_dr"><div class="pull-left"><i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">Pelayanan Umum</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="app_dr" class="collapse collapse-level-1">
+						<li>
+							<a href="/keluhanwarga">Aduan Masyarakat</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" data-toggle="collapse" data-target="#auth_dra">Layanan Surat<div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+							<ul id="auth_dra" class="collapse collapse-level-2">
+								<li><a href="/buatsurat" >Pembuatan Surat</a></li>
+                  				<li><a href="/suratmasuk">Surat Masuk</a></li>
+                  				<li><a href="/suratkeluar">Surat Keluar</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="zmdi zmdi-accounts mr-20"></i><span class="right-nav-text">Data Kependudukan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="ui_dr" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/kepalakeluarga"  > Kepala Keluarga</a></li>
+            			<li><a href="/anggotakeluarga" > Anggota Keluarga</a></li>
+            			<li><a href="/datakelahiran" > Data Kelahiran</a></li>
+            			<li><a href="/datakematian" >Data Kematian</a></li>
+						<li><a href="/datamutasi" > Data Mutasi</a></li>
+						<li><a href="/pecahkk" > Pecah KK</a></li>
+            			<li><a href="/importdatapenduduk" > Import Data Penduduk</a></li>
+						<li>
+							<a href="javascript:void(0);" data-toggle="collapse" data-target="#pengaturanpenduduk">Pengaturan<div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+							<ul id="pengaturanpenduduk" class="collapse collapse-level-2">
+								<li><a href="/hapuspenduduk" >Hapus Data Penduduk</a></li>
+								<li><a href="/grafikpenduduk"  >Grafik Kependudukan</a></li>
+								<li><a href="/updatedatapenduduk" >Update Data Penduduk</a></li>
+							</ul>
+						</li>
+
+
+					</ul>
+				</li>
+
+				<li>
+					<a  href="javascript:void(0);" data-toggle="collapse" data-target="#pages_dr"><div class="pull-left"><i class="zmdi zmdi-google-pages mr-20"></i><span class="right-nav-text">Pemerintah Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="pages_dr" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/sotkdesa">SOTK Desa</a></li>
+            			<li><a href="/AsetDesa">Aset Desa</a></li>
+            			<li><a href="/RegulasiDesa">Regulasi Desa</a></li>
+						<li><a href="/SaranaPrasarana">Data Pembangunan</a></li>
+						<li><a href="/Pemberdayaan">Data Pemberdayaan</a></li>
+					</ul>
+				</li>
+				<!-- <li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#dropdown_dr_lv1"><div class="pull-left"><i class="zmdi zmdi-city-alt mr-20"></i><span class="right-nav-text">Potensi Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="dropdown_dr_lv1" class="collapse collapse-level-1">
+						<li><a href="/prodeskelwilayah"> Wilayah Penggunaan</a></li>
+						<li><a href="/prodeskellahan"> Luas Lahan</a></li>
+						<li><a href="/prodeskelekonomi"> Bidang Ekonomi</a></li>
+						<li><a href="/prodeskelkesehatan"> Bidang Kesehatan</a></li>
+						<li><a href="/prodeskeladat"> Bidang Pendidikan</a></li>
+
+					</ul>
+				</li> -->
+
+                <li>
+                    <a href="javascript:void(0);" data-toggle="collapse" data-target="#datakemiskinan"><div class="pull-left"><i class="zmdi zmdi-account-o mr-20"></i><span class="right-nav-text">Data Kemiskinan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+                        <ul id="datakemiskinan" class="collapse collapse-level-1">
+                            <li><a href="/rumahtangga"  >Rumah Tangga</a></li>
+                            <li><a href="/anggotarumahtangga"  >Anggota Rumah Tangga</a></li>
+                        </ul>
+                </li>
+
+
+
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#keuangan"><div class="pull-left"><i class="zmdi zmdi-money-box mr-20"></i><span class="right-nav-text">Keuangan Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="keuangan" class="collapse collapse-level-1">
+
+							<li><a href="/importdatamdb"> Import Siskeudes</a></li>
+
+					</ul>
+				</li>
+                <li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#petadesa"><div class="pull-left"><i class="zmdi zmdi-globe mr-20"></i><span class="right-nav-text">Peta Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="petadesa" class="collapse collapse-level-1">
+
+							<li><a href="/inputlatlong"> Input Lat-Long</a></li>
+							<li><a href="/petadesa"> Lihat Peta Desa</a></li>
+
+					</ul>
+				</li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#form_dr"><div class="pull-left"><i class="zmdi zmdi-chart mr-20"></i><span class="right-nav-text">Statistik Penduduk</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="form_dr" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/statusia" >Statistik Usia</a></li>
+            			<li><a href="/statjk" > Statistik Jenis Kelamin</a></li>
+            			<li><a href="/statagama"> Statistik Agama</a></li>
+            			<li><a href="/statpend"> Statistik Pendidikan</a></li>
+            			<li><a href="/statpek"> Statistik Pekerjaan</a></li>
+           				<li><a href="/statistikgolongandarah">Statistik Golongan Darah</a></li>
+
+					</ul>
+				</li>
+				<li>
+                    <a class="active" href="javascript:void(0);" data-toggle="collapse" data-target="#statistikdatakemiskinan"><div class="pull-left"><i class="zmdi zmdi-trending-up mr-20"></i><span class="right-nav-text">Statistik Kemiskinan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+                        <ul id="statistikdatakemiskinan" class="collapse collapse-level-1">
+                            <li><a href="/statistikperumahan"  >Perumahan</a></li>
+                            <li><a href="/statistiksanitasi"  >Sanitasi</a></li>
+                            <li><a href="/statistikpenerangan"  >Penerangan</a></li>
+                            <li><a href="/statistikbahanbakarmasak"  >Bahan Bakar Masak</a></li>
+                            <li><a href="/statistikkepemilikanaset" >Kepemilikan Aset</a></li>
+                            <li><a href="/statistikkeikutsertaanprogram" >Keikutsertaan Program</a></li>
+                            <li><a href="/statistikkepemilikankartuidentitas" >Kepemilikan kartu identitas</a></li>
+                            <li><a href="/disabilitas" >Disabilitas</a></li>
+                            <li><a href="/penyakitkronis" id="animasi11">Penyakit kronis</a></li>
+                            <li><a href="/partisipasisekolah" id="animasi12">Partisipasi sekolah</a></li>
+                        </ul>
+                </li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+				
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#kom"><div class="pull-left"><i class="zmdi  zmdi-comment-alt-text mr-20"></i><span class="right-nav-text">Komunikasi</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="kom" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/chatroom">Chat Room</a></li>
+            			<li><a href="/kirimpesan">Pesan Khusus</a></li>
+            			
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#profil"><div class="pull-left"><i class="zmdi zmdi-account-box mr-20"></i><span class="right-nav-text">Pengguna Layanan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="profil" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/tambahpengguna">Tambah Pengguna</a></li>
+						<li><a href="/profil">Profil Anda</a></li>
+						<li><a href="/logout">Keluar</a></li>
+						
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+		
+		
+    {% include 'desa/kanan.html' %}
+    <div class="right-sidebar-backdrop">  
+    </div>
+    <div class="page-wrapper">
+      <div class="container-fluid">
+        <div class="row heading-bg">
+          <div class="col-lg-12">
+            <h5 class="txt-dark">Statistik Beradasarkan Partisipasi Pendidikan Anak Usia 5 Tahun keatas </h5>
+          </div>
+        </div>
+        {% include 'desa/kolombdt.html' %}
+          <div class="row">
+        <div class="col-lg-6">
+          <div class="panel panel-default card-view">
+            <div class="panel-heading"><div class="pull-left"><h6 class="panel-title txt-dark">Grafik Partisipasi Pendidikan</h6></div><div class="clearfix"></div></div>
+              <div class="panel-wrapper collapse in"><div class="panel-body"><canvas id="chart_6" height="200"></canvas><p>Sumber BDT 2015 &copy; TNP2K</p></div>  
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="panel panel-default card-view"><div class="panel-heading"><div class="pull-left"><h6 class="panel-title txt-dark">Tabel Partisipasi Pendidikan</h6></div><div class="clearfix"></div></div>
+            <div class="panel-wrapper collapse in">
+              <div class="panel-body" >
+                <div class="table-responsive">
+                  <table id="myTable" class="table table-bordered table-striped">
+                  <tr class="header">
+                  <th >NO</th> 
+                  <th>PARTISIPASI SEKOLAH</th>
+                  <th>JUMLAH</th>
+                  </tr>
+                  <tr>
+                  <td>1</td>
+                  <td> Tidak/Belum pernah sekolah</td>
+                  <td>{{ session['tidakbelumpernahsekolah']}}</td>
+                  </tr>
+                  <tr>
+                  <td>2</td>
+                  <td> Masih sekolah</td>
+                  <td>{{ session['masihsekolah']}}</td>
+                  </tr>
+                  <tr>
+                  <td>3</td>
+                  <td> Tidak bersekolah lagi</td>
+                  <td>{{ session['tidakbersekolahlagi']}}</td>
+                  </tr>
+                  </table>
+                </div><p>Sumber BDT 2015 &copy; TNP2K</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+          <div class="panel panel-default card-view">
+            <div class="panel-heading"><div class="pull-left"><h6 class="panel-title txt-dark">Grafik Partisipasi Sekolah berdasarkan umur</h6></div><div class="clearfix"></div></div>
+              <div class="panel-wrapper collapse in"><div class="panel-body"><canvas id="chart_5" height="50"></canvas><p>Sumber BDT 2015 &copy; TNP2K</p></div>  
+            </div>
+          </div>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-lg-6">
+             <div class="panel panel-default card-view">
+              <div class="panel-heading">
+                <div class="pull-left">
+                  <h6 class="panel-title txt-dark">Grafik Jenjang Pendidikan Tertinggi yang sedang/pernah diduduki</h6>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                  <canvas id="chart_2" height="228"></canvas><p>Sumber BDT 2015 &copy; TNP2K</p>
+                </div>  
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="panel panel-default card-view"><div class="panel-heading"><div class="pull-left"><h6 class="panel-title txt-dark">Tabel Jenjang Pendidikan Tertinggi yang sedang/pernah diduduki </h6></div><div class="clearfix"></div></div>
+                <div class="panel-wrapper collapse in">
+                  <div class="panel-body">
+                    <div class="table-responsive">
+                      <table id="myTable" class="table table-bordered table-striped" >
+                      <tr class="header">
+                      <th>NO</th>
+                      <th>JENJANG PENDIDIKAN</th>
+                      <th>MASIH BERSEKOLAH</th>
+                      <th>TIDAK BERSEKOLAH LAGI</th>
+                      </tr>
+                      <tr>
+                        <td>1.</td>
+                        <td> SD/SDLB</td>
+                        <td>{{ session['masihsekolahsd']}}</td>
+                        <td>{{ session['tidaksekolahsd']}}</td>
+                      </tr>
+                      <tr>
+                        <td>2.</td>
+                        <td> Paket A</td>
+                        <td>{{ session['masihsekolahpaketa']}}</td>
+                        <td>{{ session['tidaksekolahpaketa']}}</td>
+                      </tr>
+                      <tr>
+                        <td>3.</td>
+                        <td> M. Ibtidaiyah</td>
+                        <td>{{ session['masihsekolahmibtidaiyah']}}</td>
+                        <td>{{ session['tidaksekolahmibtidaiyah']}}</td>
+                      </tr>
+                      <tr>
+                        <td>4.</td>
+                        <td> SMP/SMPLB</td>
+                        <td>{{ session['masihsekolahsmp']}}</td>
+                        <td>{{ session['tidaksekolahsmp']}}</td>
+                      </tr>
+                      <tr>
+                        <td>5.</td>
+                        <td> Paket B</td>
+                        <td>{{ session['masihsekolahpaketb']}}</td>
+                        <td>{{ session['tidaksekolahpaketb']}}</td>
+                      </tr>
+                      <tr>
+                        <td>6.</td>
+                        <td> M.Tsanawiyah</td>
+                        <td>{{ session['masihsekolahmtsanawiyah']}}</td>
+                        <td>{{ session['tidaksekolahmtsanawiyah']}}</td>
+                      </tr>
+                      <tr>
+                        <td>7.</td>
+                        <td> SMA/SMK/SMALB</td>
+                        <td>{{ session['masihsekolahsma']}}</td>
+                        <td>{{ session['tidaksekolahsma']}}</td>
+                      </tr>
+                      <tr>
+                        <td>8.</td>
+                        <td> Paket C</td>
+                        <td>{{ session['masihsekolahpaketc']}}</td>
+                        <td>{{ session['tidaksekolahpaketc']}}</td>
+                      </tr>
+                      <tr>
+                        <td>9.</td>
+                        <td> M.Aliyah</td>
+                        <td>{{ session['masihsekolahmaliyah']}}</td>
+                        <td>{{ session['tidaksekolahmaliyah']}}</td>
+                      </tr>
+                      <tr>
+                        <td>10.</td>
+                        <td> Perguruan Tinggi</td>
+                        <td>{{ session['masihsekolahperguruantinggi']}}</td>
+                        <td>{{ session['tidaksekolahperguruantinggi']}}</td>
+                      </tr>
+                      </table>
+                    </div><p>Sumber BDT 2015 &copy; TNP2K</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+             <div class="panel panel-default card-view">
+              <div class="panel-heading">
+                <div class="pull-left">
+                  <h6 class="panel-title txt-dark">Grafik Kelas Pendidikan Tertinggi yang sedang/pernah diduduki</h6>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                  <canvas id="chart_3" height="228"></canvas><p>Sumber BDT 2015 &copy; TNP2K</p>
+                </div>  
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="panel panel-default card-view"><div class="panel-heading"><div class="pull-left"><h6 class="panel-title txt-dark">Tabel Kelas Pendidikan Tertinggi yang sedang/pernah diduduki </h6></div><div class="clearfix"></div></div>
+                <div class="panel-wrapper collapse in">
+                  <div class="panel-body">
+                    <div class="table-responsive">
+                      <table id="myTable" class="table table-bordered table-striped" >
+                      <tr class="header">
+                      <th>NO</th>
+                      <th>KELAS PENDIDIKAN</th>
+                      <th>MASIH BERSEKOLAH</th>
+                      <th>TIDAK BERSEKOLAH LAGI</th>
+                      </tr>
+                      <tr>
+                        <td>1.</td>
+                        <td> Kelas 1</td>
+                        <td>{{ session['masihkelas1']}}</td>
+                        <td>{{ session['tidakbersekolahlagikelas1']}}</td>
+                      </tr>
+                      <tr>
+                        <td>2.</td>
+                        <td> Kelas 2</td>
+                        <td>{{ session['masihkelas2']}}</td>
+                        <td>{{ session['tidakbersekolahlagikelas2']}}</td>
+                      </tr>
+                      <tr>
+                        <td>3.</td>
+                        <td> Kelas 3</td>
+                        <td>{{ session['masihkelas3']}}</td>
+                        <td>{{ session['tidakbersekolahlagikelas3']}}</td>
+                      </tr>
+                      <tr>
+                        <td>4.</td>
+                        <td> Kelas 4</td>
+                        <td>{{ session['masihkelas4']}}</td>
+                        <td>{{ session['tidakbersekolahlagikelas4']}}</td>
+                      </tr>
+                      <tr>
+                        <td>5.</td>
+                        <td> Kelas 5</td>
+                        <td>{{ session['masihkelas5']}}</td>
+                        <td>{{ session['tidakbersekolahlagikelas5']}}</td>
+                      </tr>
+                      <tr>
+                        <td>6.</td>
+                        <td> Kelas 6</td>
+                        <td>{{ session['masihkelas6']}}</td>
+                        <td>{{ session['tidakbersekolahlagikelas6']}}</td>
+                      </tr>
+                      <tr>
+                        <td>7.</td>
+                        <td> Kelas 7</td>
+                        <td>{{ session['masihkelas7']}}</td>
+                        <td>{{ session['tidakbersekolahlagikelas7']}}</td>
+                      </tr>
+                      <tr>
+                        <td>8.</td>
+                        <td> Kelas 8</td>
+                        <td>{{ session['masihkelas8']}}</td>
+                        <td>{{ session['tidakbersekolahlagikelas8']}}</td>
+                      </tr>
+                      </table>
+                    </div><p>Sumber BDT 2015 &copy; TNP2K</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div></div>
+        <div class="row">
+            <div class="col-lg-6">
+             <div class="panel panel-default card-view">
+              <div class="panel-heading">
+                <div class="pull-left">
+                  <h6 class="panel-title txt-dark">Grafik Ijazah Pendidikan Tertinggi yang dimiliki</h6>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                  <canvas id="chart_4" height="228"></canvas><p>Sumber BDT 2015 &copy; TNP2K</p>
+                </div>  
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="panel panel-default card-view"><div class="panel-heading"><div class="pull-left"><h6 class="panel-title txt-dark">Tabel Ijazah Pendidikan Tertinggi yang dimiliki </h6></div><div class="clearfix"></div></div>
+                <div class="panel-wrapper collapse in">
+                  <div class="panel-body">
+                    <div class="table-responsive">
+                      <table id="myTable" class="table table-bordered table-striped" >
+                      <tr class="header">
+                      <th>NO</th>
+                      <th>JENJANG PENDIDIKAN</th>
+                      <th>MASIH BERSEKOLAH</th>
+                      <th>TIDAK BERSEKOLAH LAGI</th>
+                      </tr>
+                      <tr>
+                        <td>1.</td>
+                        <td> Tidak punya ijazah</td>
+                        <td>{{ session['masihsekolahtidakpunyaijazah']}}</td>
+                        <td>{{ session['tidaksekolahtidakpunyaijazah']}}</td>
+                      </tr>
+                      <tr>
+                        <td>2.</td>
+                        <td> SD/sederajat</td>
+                        <td>{{ session['masihsekolahijazahsd']}}</td>
+                        <td>{{ session['tidaksekolahijazahsd']}}</td>
+                      </tr>
+                      <tr>
+                        <td>3.</td>
+                        <td> SMP/sederajat</td>
+                        <td>{{ session['masihsekolahijazahsmp']}}</td>
+                        <td>{{ session['tidaksekolahijazahsmp']}}</td>
+                      </tr>
+                      <tr>
+                        <td>4.</td>
+                        <td> SMA/sederajat</td>
+                        <td>{{ session['masihsekolahijazahsma']}}</td>
+                        <td>{{ session['tidaksekolahijazahsma']}}</td>
+                      </tr>
+                      <tr>
+                        <td>5.</td>
+                        <td> D1/D2/D3</td>
+                        <td>{{ session['masihsekolahijazahd1d2d3']}}</td>
+                        <td>{{ session['tidaksekolahijazahd1d2d3']}}</td>
+                      </tr>
+                      <tr>
+                        <td>6.</td>
+                        <td> D4/S1</td>
+                        <td>{{ session['masihsekolahijazahd4s1']}}</td>
+                        <td>{{ session['tidaksekolahijazahd4s1']}}</td>
+                      </tr>
+                      <tr>
+                        <td>7.</td>
+                        <td> S2/S3</td>
+                        <td>{{ session['masihsekolahijazahs2s3']}}</td>
+                        <td>{{ session['tidaksekolahijazahs2s3']}}</td>
+                      </tr>
+                      </table>
+                    </div><p>Sumber BDT 2015 &copy; TNP2K</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+         {% include 'desa/foot.html' %}
+      </div>
+    </div>
+{% include 'desa/script.html' %}
+<script type="text/javascript">
+    /*Chartjs Init*/
+
+$( document ).ready(function() {
+    "use strict"; 
+  if( $('#chart_6').length > 0 ){
+    var ctx6 = document.getElementById("chart_6").getContext("2d");
+    var data6 = {
+       labels: [
+      "Tidak/Belum pernah sekolah",
+      "Masih sekolah",
+      "Tidak bersekolah lagi"
+    ],
+    datasets: [
+      {
+        data: [{{ session['tidakbelumpernahsekolah']}}, {{ session['masihsekolah']}}, {{ session['tidakbersekolahlagi']}}],
+        backgroundColor: [
+          "rgba(46,205,153,.6)",
+          "rgba(240,197,65,.6)",
+          "rgba(78,157,230,.6)"
+        ],
+        hoverBackgroundColor: [
+          "rgba(46,205,153,.6)",
+          "rgba(240,197,65,.6)",
+          "rgba(78,157,230,.6)"
+        ]
+      }]
+    };
+    
+    var pieChart  = new Chart(ctx6,{
+      type: 'pie',
+      data: data6,
+      options: {
+        animation: {
+          duration: 3000
+        },
+        responsive: true,
+        legend: {
+          labels: {
+          fontFamily: "Poppins",
+          fontColor:"#878787"
+          }
+        },
+        tooltip: {
+          backgroundColor:'rgba(33,33,33,1)',
+          cornerRadius:0,
+          footerFontFamily:"'Poppins'"
+        },
+        elements: {
+          arc: {
+            borderWidth: 0
+          }
+        }
+      }
+    });
+  }
+  if( $('#chart_2').length > 0 ){
+    var ctx2 = document.getElementById("chart_2").getContext("2d");
+    var data2 = {
+      labels: ['SD/SDLB', 'Paket A', 'M. Ibtidaiyah', 'SMP/SMPLB', 'Paket B', 'M. Tsanawiyah', 'SMA/SMK/SMALB', 'Paket C', 'M. Aliyah', 'Perguruan Tinggi'],
+
+      datasets: [
+        {
+          label: "Masih bersekolah",
+          backgroundColor: "rgba(240,197,65,.6)",
+          borderColor: "rgba(240,197,65,.6)",
+          data: [{{ session['masihsekolahsd']}}, {{ session['masihsekolahpaketa']}}, {{ session['masihsekolahmibtidaiyah']}}, {{ session['masihsekolahsmp']}}, {{ session['masihsekolahpaketb']}}, {{ session['masihsekolahmtsanawiyah']}}, {{ session['masihsekolahsma']}}, {{ session['masihsekolahpaketc']}}, {{ session['masihsekolahmaliyah']}}, {{ session['masihsekolahperguruantinggi']}}]
+        },
+        {
+          label: "Tidak bersekolah lagi",
+          backgroundColor: "rgba(46,205,153,.6)",
+          borderColor: "rgba(46,205,153,.6)",
+          data: [{{ session['tidaksekolahsd']}}, {{ session['tidaksekolahpaketa']}}, {{ session['tidaksekolahmibtidaiyah']}}, {{ session['tidaksekolahsmp']}}, {{ session['tidaksekolahpaketb']}}, {{ session['tidaksekolahmtsanawiyah']}}, {{ session['tidaksekolahsma']}}, {{ session['tidaksekolahpaketc']}}, {{ session['tidaksekolahmaliyah']}}, {{ session['tidaksekolahperguruantinggi']}}]
+        }
+      ]
+    };
+    
+    var hBar = new Chart(ctx2, {
+      type:"horizontalBar",
+      data:data2,
+      
+      options: {
+        tooltips: {
+          mode:"label"
+        },
+        scales: {
+          yAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          xAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          
+        },
+        elements:{
+          point: {
+            hitRadius:40
+          }
+        },
+        animation: {
+          duration: 3000
+        },
+        responsive: true,
+        legend: {
+          display: false,
+        },
+        tooltip: {
+          backgroundColor:'rgba(33,33,33,1)',
+          cornerRadius:0,
+          footerFontFamily:"'Poppins'"
+        }
+        
+      }
+    });
+  }
+    if( $('#chart_2').length > 0 ){
+    var ctx2 = document.getElementById("chart_3").getContext("2d");
+    var data2 = {
+      labels: ['Kelas 1', 'Kelas 2', 'Kelas 3', 'Kelas 4', 'Kelas 5', 'Kelas 6', 'Kelas 7', 'Kelas 8'],
+
+      datasets: [
+        {
+          label: "Masih bersekolah",
+          backgroundColor: "rgba(240,197,65,.6)",
+          borderColor: "rgba(240,197,65,.6)",
+          data: [{{ session['masihkelas1']}}, {{ session['masihkelas2']}}, {{ session['masihkelas3']}}, {{ session['masihkelas4']}}, {{ session['masihkelas5']}}, {{ session['masihkelas6']}}, {{ session['masihkelas7']}}, {{ session['masihkelas8']}}]
+        },
+        {
+          label: "Tidak bersekolah lagi",
+          backgroundColor: "rgba(46,205,153,.6)",
+          borderColor: "rgba(46,205,153,.6)",
+          data: [{{ session['tidakbersekolahlagikelas1']}}, {{ session['tidakbersekolahlagikelas2']}}, {{ session['tidakbersekolahlagikelas3']}}, {{ session['tidakbersekolahlagikelas4']}}, {{ session['tidakbersekolahlagikelas5']}}, {{ session['tidakbersekolahlagikelas6']}}, {{ session['tidakbersekolahlagikelas7']}}, {{ session['tidakbersekolahlagikelas8']}}]
+        }
+      ]
+    };
+    
+    var hBar = new Chart(ctx2, {
+      type:"horizontalBar",
+      data:data2,
+      
+      options: {
+        tooltips: {
+          mode:"label"
+        },
+        scales: {
+          yAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          xAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          
+        },
+        elements:{
+          point: {
+            hitRadius:40
+          }
+        },
+        animation: {
+          duration: 3000
+        },
+        responsive: true,
+        legend: {
+          display: false,
+        },
+        tooltip: {
+          backgroundColor:'rgba(33,33,33,1)',
+          cornerRadius:0,
+          footerFontFamily:"'Poppins'"
+        }
+        
+      }
+    });
+  }
+  if( $('#chart_2').length > 0 ){
+    var ctx2 = document.getElementById("chart_4").getContext("2d");
+    var data2 = {
+      labels: ['Tidak punya ijazah', 'SD/sederajat', 'SMP/sederajat', 'SMA/sederajat', 'D1/D2/D3', 'D4-S1', 'S2-S3'],
+
+      datasets: [
+        {
+          label: "Masih bersekolah",
+          backgroundColor: "rgba(240,197,65,.6)",
+          borderColor: "rgba(240,197,65,.6)",
+          data: [{{ session['masihsekolahtidakpunyaijazah']}}, {{ session['masihsekolahijazahsd']}}, {{ session['masihsekolahijazahsmp']}}, {{ session['masihsekolahijazahsma']}}, {{ session['masihsekolahijazahd1d2d3']}}, {{ session['masihsekolahijazahd4s1']}}, {{ session['masihsekolahijazahs2s3']}}]
+        },
+        {
+          label: "Tidak bersekolah lagi",
+          backgroundColor: "rgba(46,205,153,.6)",
+          borderColor: "rgba(46,205,153,.6)",
+          data: [{{ session['tidaksekolahtidakpunyaijazah']}}, {{ session['tidaksekolahijazahsd']}}, {{ session['tidaksekolahijazahsmp']}}, {{ session['tidaksekolahijazahsma']}}, {{ session['tidaksekolahijazahd1d2d3']}}, {{ session['tidaksekolahijazahd4s1']}}, {{ session['tidaksekolahijazahs2s3']}}]
+        }
+      ]
+    };
+    
+    var hBar = new Chart(ctx2, {
+      type:"horizontalBar",
+      data:data2,
+      
+      options: {
+        tooltips: {
+          mode:"label"
+        },
+        scales: {
+          yAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          xAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          
+        },
+        elements:{
+          point: {
+            hitRadius:40
+          }
+        },
+        animation: {
+          duration: 3000
+        },
+        responsive: true,
+        legend: {
+          display: false,
+        },
+        tooltip: {
+          backgroundColor:'rgba(33,33,33,1)',
+          cornerRadius:0,
+          footerFontFamily:"'Poppins'"
+        }
+        
+      }
+    });
+  }
+    if( $('#chart_2').length > 0 ){
+    var ctx2 = document.getElementById("chart_5").getContext("2d");
+    var data2 = {
+      labels: ['Tidak/belum pernah sekolah', 'Masih bersekolah', 'Tidak bersekolah lagi'],
+
+      datasets: [
+        {
+          label: "Usia 5-20 Tahun",
+          backgroundColor: "rgba(240,197,65,.6)",
+          borderColor: "rgba(240,197,65,.6)",
+          data: [{{ session['belumpernahsekolahusia5sampai20']}}, {{ session['masihsekolahusia5sampai20']}}, {{ session['tidaksekolahlagiusia5sampai20']}}]
+        },
+        {
+          label: "Usia 21-40 Tahun",
+          backgroundColor: "rgba(46,205,153,.6)",
+          borderColor: "rgba(46,205,153,.6)",
+          data: [{{ session['belumpernahsekolahusia21sampai40']}}, {{ session['masihsekolahusia21sampai40']}}, {{ session['tidaksekolahlagiusia21sampai40']}}]
+        },
+        {
+          label: "Usia diatas 40 Tahun",
+          backgroundColor: "rgba(228, 15, 15,.6)",
+          borderColor: "rgba(228, 15, 15,.6)",
+          data: [{{ session['belumpernahsekolahusiadiatas40']}}, {{ session['masihsekolahusiadiatas40']}}, {{ session['tidaksekolahlagiusiadiatas40']}}]
+        }
+      ]
+    };
+    
+    var hBar = new Chart(ctx2, {
+      type:"horizontalBar",
+      data:data2,
+      
+      options: {
+        tooltips: {
+          mode:"label"
+        },
+        scales: {
+          yAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          xAxes: [{
+            stacked: true,
+            gridLines: {
+              color: "rgba(135,135,135,0)",
+            },
+            ticks: {
+              fontFamily: "Poppins",
+              fontColor:"#878787"
+            }
+          }],
+          
+        },
+        elements:{
+          point: {
+            hitRadius:40
+          }
+        },
+        animation: {
+          duration: 3000
+        },
+        responsive: true,
+        legend: {
+          display: false,
+        },
+        tooltip: {
+          backgroundColor:'rgba(33,33,33,1)',
+          cornerRadius:0,
+          footerFontFamily:"'Poppins'"
+        }
+        
+      }
+    });
+  }
+  if( $('#chart_6').length > 0 ){
+    var ctx6 = document.getElementById("chart_10").getContext("2d");
+    var data6 = {
+       labels: [
+      "Masih bersekolah",
+      "Tidak bersekolah lagi"
+    ],
+    datasets: [
+      {
+        data: [{{hasil1}},{{hasil2}}],
+        backgroundColor: [
+          "rgba(46,205,153,.6)",
+          "rgba(78,157,230,.6)"
+        ],
+        hoverBackgroundColor: [
+          "rgba(46,205,153,.6)",
+          "rgba(78,157,230,.6)"
+        ]
+      }]
+    };
+    
+    var pieChart  = new Chart(ctx6,{
+      type: 'pie',
+      data: data6,
+      options: {
+        animation: {
+          duration: 3000
+        },
+        responsive: true,
+        legend: {
+          labels: {
+          fontFamily: "Poppins",
+          fontColor:"#878787"
+          }
+        },
+        tooltip: {
+          backgroundColor:'rgba(33,33,33,1)',
+          cornerRadius:0,
+          footerFontFamily:"'Poppins'"
+        },
+        elements: {
+          arc: {
+            borderWidth: 0
+          }
+        }
+      }
+    });
+  }
+});
+  </script>
+</body>
+</html>

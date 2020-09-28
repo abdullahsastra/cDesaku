@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>SIDEKEM Desa Bulakan </title>
+  <meta name="description" content="Sistem Informasi Desa dan Kawasan Online by Python" />
+  <meta name="keywords" content="Sistem Informasi Desa dan Kawasan Online" />
+  <meta name="author" content="pythonesia"/>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="/baru/vendors/bower_components/datatables/media/css/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
+  <link href="/baru/dist/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="wrapper theme-2-active pimary-color-blue">
+		{% include 'desa/head.html' %}
+				<div class="fixed-sidebar-left">
+			<ul class="nav navbar-nav side-nav nicescroll-bar">
+				<li><hr class="light-grey-hr mb-10"/></li>
+				<li>
+					<a href="/penggunamasuk" data-toggle="collapse" data-target="#dashboard_dr"><div class="pull-left"><i class="zmdi zmdi-home mr-20"></i>Dashboard</div><div class="clearfix"></div></a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#app_dr"><div class="pull-left"><i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">Pelayanan Umum</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="app_dr" class="collapse collapse-level-1">
+						<li>
+							<a href="/keluhanwarga">Aduan Masyarakat</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" data-toggle="collapse" data-target="#auth_dra">Layanan Surat<div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+							<ul id="auth_dra" class="collapse collapse-level-2">
+								<li><a href="/buatsurat" >Pembuatan Surat</a></li>
+                  				<li><a href="/suratmasuk">Surat Masuk</a></li>
+                  				<li><a href="/suratkeluar">Surat Keluar</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+
+				<li>
+					<a class="active" href="javascript:void(0);" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="zmdi zmdi-accounts mr-20"></i><span class="right-nav-text">Data Kependudukan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="ui_dr" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/kepalakeluarga"  > Kepala Keluarga</a></li>
+            			<li><a href="/anggotakeluarga" > Anggota Keluarga</a></li>
+            			<li><a href="/datakelahiran" > Data Kelahiran</a></li>
+            			<li><a href="/datakematian" >Data Kematian</a></li>
+						<li><a href="/datamutasi" > Data Mutasi</a></li>
+						<li><a href="/pecahkk" > Pecah KK</a></li>
+            			<li><a href="/importdatapenduduk" > Import Data Penduduk</a></li>
+						<li>
+							<a href="javascript:void(0);" data-toggle="collapse" data-target="#pengaturanpenduduk">Pengaturan<div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+							<ul id="pengaturanpenduduk" class="collapse collapse-level-2">
+								<li><a href="/hapuspenduduk" >Hapus Data Penduduk</a></li>
+								<li><a href="/grafikpenduduk"  >Grafik Kependudukan</a></li>
+								<li><a href="/updatedatapenduduk" >Update Data Penduduk</a></li>
+							</ul>
+						</li>
+
+
+					</ul>
+				</li>
+
+				<li>
+					<a  href="javascript:void(0);" data-toggle="collapse" data-target="#pages_dr"><div class="pull-left"><i class="zmdi zmdi-google-pages mr-20"></i><span class="right-nav-text">Pemerintah Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="pages_dr" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/sotkdesa">SOTK Desa</a></li>
+            			<li><a href="/AsetDesa">Aset Desa</a></li>
+            			<li><a href="/RegulasiDesa">Regulasi Desa</a></li>
+						<li><a href="/SaranaPrasarana">Data Pembangunan</a></li>
+						<li><a href="/Pemberdayaan">Data Pemberdayaan</a></li>
+					</ul>
+				</li>
+				<!-- <li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#dropdown_dr_lv1"><div class="pull-left"><i class="zmdi zmdi-city-alt mr-20"></i><span class="right-nav-text">Potensi Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="dropdown_dr_lv1" class="collapse collapse-level-1">
+						<li><a href="/prodeskelwilayah"> Wilayah Penggunaan</a></li>
+						<li><a href="/prodeskellahan"> Luas Lahan</a></li>
+						<li><a href="/prodeskelekonomi"> Bidang Ekonomi</a></li>
+						<li><a href="/prodeskelkesehatan"> Bidang Kesehatan</a></li>
+						<li><a href="/prodeskeladat"> Bidang Pendidikan</a></li>
+
+					</ul>
+				</li> -->
+
+                <li>
+                    <a href="javascript:void(0);" data-toggle="collapse" data-target="#datakemiskinan"><div class="pull-left"><i class="zmdi zmdi-account-o mr-20"></i><span class="right-nav-text">Data Kemiskinan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+                        <ul id="datakemiskinan" class="collapse collapse-level-1">
+                            <li><a href="/rumahtangga"  >Rumah Tangga</a></li>
+                            <li><a href="/anggotarumahtangga"  >Anggota Rumah Tangga</a></li>
+                        </ul>
+                </li>
+
+
+
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#keuangan"><div class="pull-left"><i class="zmdi zmdi-money-box mr-20"></i><span class="right-nav-text">Keuangan Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="keuangan" class="collapse collapse-level-1">
+
+							<li><a href="/importdatamdb"> Import Siskeudes</a></li>
+
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#petadesa"><div class="pull-left"><i class="zmdi zmdi-globe mr-20"></i><span class="right-nav-text">Peta Desa</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="petadesa" class="collapse collapse-level-1">
+
+							<li><a href="/inputlatlong"> Input Lat-Long</a></li>
+							<li><a href="/petadesa"> Lihat Peta Desa</a></li>
+
+					</ul>
+				</li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#form_dr"><div class="pull-left"><i class="zmdi zmdi-chart mr-20"></i><span class="right-nav-text">Statistik Penduduk</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="form_dr" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/statusia" >Statistik Usia</a></li>
+            			<li><a href="/statjk" > Statistik Jenis Kelamin</a></li>
+            			<li><a href="/statagama"> Statistik Agama</a></li>
+            			<li><a href="/statpend"> Statistik Pendidikan</a></li>
+            			<li><a href="/statpek"> Statistik Pekerjaan</a></li>
+           				<li><a href="/statistikgolongandarah">Statistik Golongan Darah</a></li>
+
+					</ul>
+				</li>
+				<li>
+                    <a href="javascript:void(0);" data-toggle="collapse" data-target="#statistikdatakemiskinan"><div class="pull-left"><i class="zmdi zmdi-trending-up mr-20"></i><span class="right-nav-text">Statistik Kemiskinan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+                        <ul id="statistikdatakemiskinan" class="collapse collapse-level-1">
+                            <li><a href="/statistikperumahan"  >Perumahan</a></li>
+                            <li><a href="/statistiksanitasi"  >Sanitasi</a></li>
+                            <li><a href="/statistikpenerangan"  >Penerangan</a></li>
+                            <li><a href="/statistikbahanbakarmasak"  >Bahan Bakar Masak</a></li>
+                            <li><a href="/statistikkepemilikanaset" >Kepemilikan Aset</a></li>
+                            <li><a href="/statistikkeikutsertaanprogram" >Keikutsertaan Program</a></li>
+                            <li><a href="/statistikkepemilikankartuidentitas" >Kepemilikan kartu identitas</a></li>
+                            <li><a href="/disabilitas" >Disabilitas</a></li>
+                            <li><a href="/penyakitkronis" id="animasi11">Penyakit kronis</a></li>
+                            <li><a href="/partisipasisekolah" id="animasi12">Partisipasi sekolah</a></li>
+                        </ul>
+                </li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+				
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#kom"><div class="pull-left"><i class="zmdi  zmdi-comment-alt-text mr-20"></i><span class="right-nav-text">Komunikasi</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="kom" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/chatroom">Chat Room</a></li>
+            			<li><a href="/kirimpesan">Pesan Khusus</a></li>
+            			
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#profil"><div class="pull-left"><i class="zmdi zmdi-account-box mr-20"></i><span class="right-nav-text">Pengguna Layanan</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="profil" class="collapse collapse-level-1 two-col-list">
+						<li><a href="/tambahpengguna">Tambah Pengguna</a></li>
+						<li><a href="/profil">Profil Anda</a></li>
+						<li><a href="/logout">Keluar</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		{% include 'desa/kanan.html' %}
+		<div class="right-sidebar-backdrop"></div>
+		<div class="page-wrapper">
+			<div class="container-fluid">
+				<div class="row heading-bg">
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+					  <h5 class="txt-dark">Data Kelahiran</h5>
+					</div>
+				</div>
+				<div class="row">
+            <div class="col-md-12">
+              <div class="panel panel-default card-view">
+                <div class="panel-wrapper collapse in">
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-12 col-xs-12">
+                        <div class="form-wrap">
+                          <form action="/caripenduduk" method="post">
+                            <div class="form-body">
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <div class="form-group">
+                                    <label class="control-label mb-10">Masukkan Nama Kelahiran:</label>
+                                    <input type="text" width=500px id="myInput" name="cari" class="form-control" onkeyup="myFunction()" placeholder="">
+                                  </div>
+                                </div>
+                                <!--/span-->
+                              </div>
+                              <!-- /Row -->
+                           <div class="form-actions" >
+                              <form action="/caripenduduk" method="post">
+                              <button type="submit" name="subject"  value ="carinamakk" class="btn btn-warning btn-sm btn-rounded"><i class="zmdi zmdi-search mr-5"></i>  Cari Nama</button>
+
+                            </form>
+
+                            </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+		  <div class="row">
+			  <div class="col-sm-12">
+				  <div class="panel panel-default card-view">
+					  <div class="panel-heading">
+						  <div class="pull-left">
+							  <a href="/tambahkelahiran" class="btn  btn-primary btn-sm btn-rounded" type="button" ><i class="zmdi zmdi-plus mr-10"></i>Tambah Kelahiran</a>
+						  </div>
+						  <div class="clearfix"></div>
+					  </div>
+					  <div class="panel-wrapper collapse in">
+						  <div class="panel-body">
+							  <div class="table-wrap">
+								  <div class="table table-responsive">
+									  <table id="datable_1" class="table table-hover display  pb-30">
+										  <thead>
+										  <tr>
+											  <th>No</th>
+											  <th>No KK</th>
+                            <th>NIK</th>
+                            <th>Nama Lengkap</th>
+                            <th>Aksi</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for a in lihatisiak %}
+                          <tr>
+                          <form action="/anggotakeluarga" method="post">
+                          	<td>{{ loop.index }}<input type="hidden" name="nomor" value="{{ a.0 }}"></td>
+                            <td>{{ a.1|truncate(10, true,'') }}XXXXXX<input type="hidden" name="nokk" value="{{ a.1 }}"></td>
+                            <td>{{ a.2|truncate(10, true,'') }}XXXXXX</td>
+                            <td>{{ a.3 }}</td>
+                            <td><button class="btn btn-success " name="subject" value="validasi">Edit Data</button></td>
+                           </form>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+			</div>
+			{% include 'desa/foot.html' %}
+		</div>
+	</div>
+{% include 'desa/script.html' %}
+</body>
+</html>
